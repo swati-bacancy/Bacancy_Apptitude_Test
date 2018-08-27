@@ -1,0 +1,10 @@
+development:
+  adapter: async
+
+test:
+  adapter: async
+
+production:
+  adapter: redis
+  url: redis://localhost:6379/1
+  channel_prefix: Bacancy_Apptitude_Test_production
