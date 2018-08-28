@@ -1,0 +1,15 @@
+<%= link_to 'new', new_test_path%>
+<table border="1">
+  <tr>
+    <th> Test Name: </th>
+    <th> Action </th>
+  </tr>
+  <% @tests.each do |test| %>
+  <tr>
+      <td><%= test.name %></td>
+      <td colspan="3"><%= link_to 'show', test_path(test) %></td>
+      <td colspan="3"><%= link_to 'edit', edit_test_path(test) %></td>
+      <td colspan="3"><%= link_to 'delete', test_path(test), method: :delete, data: {confirm: 'Are You Sure You Want To Delete?'} %></td>
+    </tr>
+    <% end %>
+</table>
