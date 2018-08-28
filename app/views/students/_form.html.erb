@@ -1,0 +1,29 @@
+<%
+  if @student.new_record?
+    url = students_path(@student)
+  else
+    url = student_path(@student)
+  end
+%>
+
+<%= form_for @student , url: url do |f| %>
+  <%= f.label :Name %>
+  <%= f.text_field :name %><br/>
+
+  <%= f.label :Email %>
+  <%= f.email_field :email %><br/>
+
+  <%= f.label :Course %>
+  <%= f.text_field :course %><br/>
+
+  <%= f.label :Roll_number %>
+  <%= f.text_field :roll_number %><br/>
+
+  <%= f.label :Collage_Name %>
+  <%= f.text_field :collage_name %><br/>
+
+  <%= f.label :Mobile_Number %>
+  <%= f.text_field :mobile_number %><br/>
+
+  <%= f.submit %>
+<% end %>
