@@ -1,0 +1,16 @@
+<%= form_tag questions_test_path, method: :patch do %>
+  <%= label_tag :Test%>
+  <%= collection_select(:test,:id, Test.all, :id, :name ) %><br/>
+  <%= label_tag :Questions %>
+  <br />
+  <%= collection_check_boxes :test, :question_ids, Question.all, :id, :question_description do |b| %>
+    <tr>
+       <td>
+       <td>
+         <%= b.check_box %>
+         <%= b.label %><br>
+       </td>
+     </tr>
+  <% end %>
+<%= submit_tag "create", 'data-disable-with' => "Please wait.." %>
+<% end %>
