@@ -1,0 +1,35 @@
+<%= javascript_include_tag "questions", "data-turbolinks-track" => true  %>
+
+<%= form_for @question  do |f| %>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Question</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <%= f.label :question_description %>
+    <%= f.text_area :question_description %><br/>
+  </div>
+</div>
+
+<div  id= 'options'>
+  <%= f.fields_for :options, @option do |ab| %>
+    <%= render "option_fields", :f => ab %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association 'Add', f, :options, class:"btn btn-primary fa fa-plus" %>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <%= f.button  @question.new_record? ? 'Save' : 'Update' , class: "btn btn-primary waves-effect btn-width mrg_lr_10 property_submit", type: 'submit' %>
+    <%= link_to 'Cancel', questions_path, class: 'btn btn-red waves-effect btn-width', data: { confirm: 'Are you sure want to cancel?' } %>
+  </div>
+</div>
+<% end %>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
