@@ -11,7 +11,7 @@ class StudentAnswersController < ApplicationController
       @student_answer.option_id = value
       @student_answer.save
     }
-
+    redirect_to root_path
     # binding.pry
   end
   def index
