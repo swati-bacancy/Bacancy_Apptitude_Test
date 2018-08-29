@@ -1,0 +1,14 @@
+<%= form_for @student_answer do |f| %>
+  <%Student.find(session[:student_id]).test.questions.each do |question| %>
+    <p><%= question.question_description %></p>
+    <% question.options.each do |option|%>
+      <%#= f.hidden_field :question, :value => question.id , id: question.id %>
+      <%#= f.radio_button :option_id, option.id, name: question.id %>
+      <%= radio_button("response_item", question.id, option.id)  %><%=option.option_value %><br/>
+      <%#= f.radio_button :question_id, option.id %>
+
+      <%#= radio_button_tag question.id, option.id %><%#= option.option_value %><br/>
+    <% end %>
+  <% end %>
+  <%= f.submit%>
+<% end %>

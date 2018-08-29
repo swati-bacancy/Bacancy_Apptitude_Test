@@ -1,0 +1,8 @@
+<h1>QuestionsTests#show</h1>
+<p>Test Name:<%= @test.name%></p>
+<p>Test Questions:</p>
+<ul>
+<% @test.questions.each do |question|%>
+  <li><%= question.question_description%></li>
+<% end %>
+</ul>
