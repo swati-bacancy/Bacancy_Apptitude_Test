@@ -13,6 +13,7 @@ class StudentsController < ApplicationController
     else
       render 'new'
     end
+    session[:student_id] = @student.id
   end
 
   def edit
@@ -36,6 +37,11 @@ class StudentsController < ApplicationController
   end
 
   def show
+  end
+
+  def logout
+    session[:student_id] = nil
+    redirect_to root_path
   end
 
   private
