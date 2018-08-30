@@ -19,6 +19,22 @@ class StudentsController < ApplicationController
   def edit
   end
 
+  def existing_user
+  end
+
+  def assign_test
+    @student = Student.find_by(email: params[:email])
+    if @student.present?
+      @test_ids = Test.all.ids
+      @test_ids.delete(@student.test.id)
+      @student.test_id = @test_ids.sample
+      @student.save
+      redirect_to new_student_answer_path
+    else
+      redirect_to student_existing_user_path
+    end
+  end
+
   def update
     if @student.update(student_params)
       redirect_to students_path
