@@ -1,12 +1,4 @@
-<%
-  if @student.new_record?
-    url = students_path(@student)
-  else
-    url = student_path(@student)
-  end
-%>
-
-<%= form_for @student , url: url do |f| %>
+<%= form_for @student do |f| %>
   <%= f.label :Name %>
   <%= f.text_field :name %><br/>
 
