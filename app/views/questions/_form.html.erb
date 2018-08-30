@@ -1,14 +1,15 @@
+<div class="container">
 <%= form_for @question  do |f| %>
 <div class="row">
   <div class="col-sm-12">
-    <h1>Question</h1>
+    <h1 class="text-center">Question</h1>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-sm-12">
-    <%= f.label :question_description %>
-    <%= f.text_area :question_description %><br/>
+  <div class="col-md-6 offset-lg-2">
+      <%= f.label :question_description %>
+      <%= f.text_area :question_description, class: "form-control" %><br/>
   </div>
 </div>
 
@@ -29,4 +30,4 @@
   </div>
 </div>
 <% end %>
-
+</div>
