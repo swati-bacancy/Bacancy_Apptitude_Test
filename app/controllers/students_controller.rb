@@ -37,7 +37,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-
+  end
 
   def logout
     session[:student_id] = nil
