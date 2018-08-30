@@ -1,10 +1,3 @@
-<% if @test.new_record?
-    url = tests_path(@test)
-  else
-    url = test_path(@test)
-  end
-%>
-
 <%= form_for @test do |f|%>
   <%= f.label :name%>
   <%= f.text_field :name%>

@@ -1,0 +1,27 @@
+<table border="1">
+  <tr>
+    <th>Student Name:</th>
+    <th>Student Email:</th>
+    <th>Course:</th>
+    <th>Collage Name: </th>
+    <th>Mobile Number</th>
+    <th>Total Questions</th>
+    <th>Attempted Questions</th>
+    <th>Currect Answer</th>
+    <th colspan="2">Action</th>
+  </tr>
+  <% @results.each do |result| %>
+    <tr>
+      <td><%= result.student.name %></td>
+      <td><%= result.student.email %></td>
+      <td><%= result.student.course %></td>
+      <td><%= result.student.collage_name %></td>
+      <td><%= result.student.mobile_number %></td>
+      <td><%= result.total_questions %></td>
+      <td><%= result.attempted_questions %></td>
+      <td><%= result.correct_answer %></td>
+      <td><%= link_to 'show', result_path(result) %></td>
+      <td><%= link_to 'delete', result_path(result), method: :delete, data: {confirm: 'Are You Sure You Want To Delete???'}%></td>
+    </tr>
+  <% end %>
+</table>
