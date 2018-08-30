@@ -5,7 +5,11 @@ class ResultsController < ApplicationController
   end
 
   def index
-    @results = Result.all
+    if(params[:search] == "" || params[:search] == nil)
+      @results = Result.all
+    else
+      @results =  Result.joins(:student).where('students.email like ?', "%#{params[:search]}%")
+    end
   end
 
   def destroy
