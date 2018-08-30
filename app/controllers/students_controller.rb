@@ -29,6 +29,7 @@ class StudentsController < ApplicationController
       @test_ids.delete(@student.test.id)
       @student.test_id = @test_ids.sample
       @student.save
+      session[:student_id] = @student.id
       redirect_to new_student_answer_path
     else
       redirect_to student_existing_user_path
