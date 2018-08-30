@@ -1,0 +1,16 @@
+<h1>Show Question</h1>
+
+<p>
+  <strong>Question :</strong>
+  <%= @question.question_description %>
+</p> 
+<strong>Options :</strong></br>
+<% if @question.options.present? %>
+	<% @question.options.each_with_index do |op,index| %>
+		<%#= index + 1 %>
+		<%= op.option %>
+		<%= op.option_value %></br>
+	<% end %>
+<% end %>
+
+<%= link_to "back", questions_path%>

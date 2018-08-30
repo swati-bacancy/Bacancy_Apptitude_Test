@@ -9,10 +9,11 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     @student.test_id = Test.ids.sample
     if @student.save
-      redirect_to students_path
+      redirect_to new_student_answer_path
     else
       render 'new'
     end
+    session[:student_id] = @student.id
   end
 
   def edit
@@ -36,6 +37,11 @@ class StudentsController < ApplicationController
   end
 
   def show
+
+
+  def logout
+    session[:student_id] = nil
+    redirect_to root_path
   end
 
   private

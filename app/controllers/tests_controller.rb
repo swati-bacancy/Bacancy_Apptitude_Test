@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :find_test, only:[:show, :edit, :update, :destroy]
-
+  http_basic_authenticate_with name: "Bacancy", password: "Bacancy"
   def new
     @test = Test.new
   end

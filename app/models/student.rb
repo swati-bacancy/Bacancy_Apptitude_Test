@@ -1,3 +1,4 @@
 class Student < ApplicationRecord
-  has_one :test
+  belongs_to :test
+  has_many :student_answers
 end
