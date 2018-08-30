@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  	
+
   before_action :find_question, only: [:show]
 
   def create
@@ -22,7 +22,6 @@ class QuestionsController < ApplicationController
 
    def update
     @question = Question.find(params[:id])
-    
     if @question.update(question_params)
       @option = @question.options.build
       redirect_to questions_path

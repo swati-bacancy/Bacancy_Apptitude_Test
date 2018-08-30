@@ -1,6 +1,8 @@
 <tr class="que-option nested-fields">
   <td>
-    <%= radio_button_tag "question[options_attributes][#{f.index}][is_answer]", true%>
+    <%= check_box_tag "question[options_attributes][#{f.index}][is_answer]",value = "1",false, class: 'option-check'%>
+    <%#= radio_button_tag "question[options_attributes][is_answer]", f.index, f.object.is_answer %>
+    <%#= f.radio_button :is_answer, f.index %>
   </td>
   <td>
     <%= f.label :option %>
@@ -12,3 +14,8 @@
   </td>
 <td><%= link_to_remove_association "Remove", f%></td><br/>
 </tr>
+<script>
+$('input.option-check').on('change', function() {
+    $('input.option-check').not(this).prop('checked', false);
+});
+</script>
