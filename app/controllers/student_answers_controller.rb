@@ -1,10 +1,14 @@
 class StudentAnswersController < ApplicationController
   def new
-    @student_answer = StudentAnswer.new
+    if session[:student_id].present?
+      @student_answer = StudentAnswer.new
+    else
+      redirect_to root_path
+    end
   end
 
-  def create
-    params[:response_item].each{|k, value|
+ def create
+   params[:response_item].each{|k, value|
       @student_answer = StudentAnswer.new
       @student_answer.student = Student.find(session[:student_id])
       @student_answer.question_id = k
