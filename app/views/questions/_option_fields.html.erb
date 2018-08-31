@@ -1,21 +1,25 @@
-<tr class="que-option nested-fields">
-  <td>
-    <%= check_box_tag "question[options_attributes][#{f.index}][is_answer]",value = "1",false, class: 'option-check'%>
-    <%#= radio_button_tag "question[options_attributes][is_answer]", f.index, f.object.is_answer %>
-    <%#= f.radio_button :is_answer, f.index %>
-  </td>
-  <td>
-    <%= f.label :option %>
-    <%= f.text_field :option , class: "form-control", size:5 %>
-  </td>
-  <td>
-    <%= f.label :option_value %>
-    <%= f.text_field :option_value , class: "form-control" %>
-  </td>
-<td><%= link_to_remove_association "Remove", f%></td><br/>
-</tr>
+<table>
+  <tr class="que-option nested-fields form-inline">
+    <td>
+      <%= check_box_tag "question[options_attributes][#{f.index}][is_answer]",value = "1",false, class: 'option-check' %>
+    </td>
+    <td>
+      <%= f.label :option, class: "mr-left mr-right" %>
+      <%= f.text_field :option , class: "form-control mr-right", size:5 %>
+    </td>
+    <td>
+      <%= f.label :option_value, class: "mr-right" %>
+      <%= f.text_field :option_value, class: "form-control mr-right" %>
+    </td>
+    <td><%= link_to_remove_association "Remove", f%></td><br/>
+  </tr>
+</table>
 <script>
 $('input.option-check').on('change', function() {
     $('input.option-check').not(this).prop('checked', false);
 });
 </script>
+<style type="text/css">
+  .mr-right{margin-right: 10px;}  
+  .mr-left{margin-left: 10px;}
+</style>
