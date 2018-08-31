@@ -1,23 +1,31 @@
-<h1>Listing Questions</h1>
-<table border="5">
-  <tr>
-  	<th>ID</th>
-    <th>Question Description</th>
-    <th>Action</th>
-  </tr>
- 
-  <% @questions.each_with_index do |question,index| %>
-    <tr>
-    	<td><%= index + 1 %></td>
-      <td><%= question.question_description %></td>
-      <td>
-      	<%= link_to 'Edit', edit_question_path(question) %> |
-      	<%= link_to 'Show', question_path(question) %> |
-      	<%= link_to 'Delete', question_path(question), method: :delete, data: { confirm: 'Are you sure want to delete?' } %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-<br><%= link_to '+ Add a New Question', new_question_path %></br>
-<%= link_to 'Back', root_path %>
+<div class="container">
+
+  <h3>List Of Questions</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+      	<th>ID</th>
+        <th>Question Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @questions.each_with_index do |question,index| %>
+        <tr>
+        	<td><%= index + 1 %></td>
+          <td><%= question.question_description %></td>
+          <td>
+          	<%= link_to 'Edit', edit_question_path(question) %> |
+          	<%= link_to 'Show', question_path(question) %> |
+          	<%= link_to 'Delete', question_path(question), method: :delete, data: { confirm: 'Are you sure want to delete?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="col-md-2">
+    <%= link_to '+ Add a New Question', new_question_path, class: "btn btn-primary" %>
+  </div>
+  <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+</div>
 

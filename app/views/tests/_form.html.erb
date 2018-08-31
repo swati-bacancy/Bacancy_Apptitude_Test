@@ -1,5 +1,16 @@
-<%= form_for @test do |f|%>
-  <%= f.label :name%>
-  <%= f.text_field :name%>
-  <%= f.submit%>
-<% end %>
+<div class="container">
+	<%= form_for @test do |f|%>
+		<h3><%= @test.new_record? ? 'Add' : 'Edit' %> Test</h3>
+		<div class="row">
+			<div class="col-md-1">
+				<%= f.label :name%>
+			</div>
+			<div class="col-md-5">
+			  <%= f.text_field :name, class: "form-control"%>
+			</div>
+			<div class="col-md-6">
+	  		<%= f.submit "Create Test", class: "btn btn-primary"%>
+	  	</div>
+		</div>
+	<% end %>
+</div>
