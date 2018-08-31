@@ -1,6 +1,8 @@
 <%= form_for @student_answer do |f| %>
-  <%Student.find(session[:student_id]).test.questions.each do |question| %>
-    <p><%= question.question_description %></p>
+  <%Student.find(session[:student_id]).test.questions.each_with_index do |question, index| %>
+    <p><label>Question:</label>
+    <p><b>
+    <%= question.question_description %></b></p>
     <% question.options.each do |option|%>
       <%= radio_button("response_item", question.id, option.id)  %><%=option.option_value %><br/>
       <br/>
