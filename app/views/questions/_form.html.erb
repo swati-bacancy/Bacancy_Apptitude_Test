@@ -1,33 +1,29 @@
-<div class="container">
-<%= form_for @question  do |f| %>
-<div class="row">
-  <div class="col-sm-12">
-    <h1 class="text-center">Question</h1>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6 offset-lg-2">
-      <%= f.label :question_description %>
-      <%= f.text_area :question_description, class: "form-control" %><br/>
-  </div>
-</div>
-
-<div  id= 'options'>
-  <%= f.fields_for :options, @option do |ab| %>
-    <%= render "option_fields", :f => ab %>
+<div class="container content-center">
+  <%= form_for @question  do |f| %>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="text-left">Question</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-lg-2">
+        <%= f.label :question_description %>
+        <%= f.text_area :question_description, class: "form-control" %>
+      </div>
+    </div>
+    <div id= 'options' class="form-inline">
+      <%= f.fields_for :options, @option do |ab| %>
+       <%= render "option_fields", :f => ab %>
+      <% end %>
+    </div>
+    <div class="rows col-sm-offset-1 mr-top">
+      <%= link_to_add_association 'Add More Options', f, :options, class: "btn btn-primary" %>
+      <%= f.button  @question.new_record? ? 'Save' : 'Update' , class: "btn btn-primary", type: 'submit' %>
+      <%= link_to 'Back', :back, class: "btn btn-primary" %>
+    </div>
   <% end %>
-  <div class="links">
-    <%= link_to_add_association 'Add', f, :options, class:"btn btn-primary fa fa-plus" %>
-  </div>
 </div>
 
-
-<div class="row">
-  <div class="col-sm-12">
-    <%= f.button  @question.new_record? ? 'Save' : 'Update' , class: "btn btn-primary waves-effect btn-width mrg_lr_10 property_submit", type: 'submit' %>
-    <%= link_to 'Cancel', questions_path, class: 'btn btn-red waves-effect btn-width', data: { confirm: 'Are you sure want to cancel?' } %>
-  </div>
-</div>
-<% end %>
-</div>
+<style type="text/css">
+  .mr-top{margin-top: 2%;}
+</style>
