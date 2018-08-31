@@ -1,6 +1,7 @@
+<%= render partial: "shared/header"%>
+<div class="container">
 <h1> Student Index Page</h1>
-<%= link_to 'new', new_student_path %>
-<table border="1">
+<table class="table table-striped">
   <tr>
     <th>Name :</th>
     <th>Email :</th>
@@ -19,8 +20,9 @@
       <td><%= student.collage_name %></td>
       <td><%= student.mobile_number %></td>
       <td><%= link_to 'Show',student_path(student) %></td>
-      <td><%= link_to 'Edit', edit_student_path(student) %></td>
+      <td><%#= link_to 'Edit', edit_student_path(student) %></td>
       <td><%= link_to 'Delete', student_path(student), method: :delete, data: {confirm: 'Are You Sure You Want To Delete?'} %></td>
     </tr>
   <% end %>
 </table>
+</div>
