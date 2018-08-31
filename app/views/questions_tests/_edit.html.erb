@@ -1,3 +1,4 @@
+<%= render partial: "shared/header"%>
 <%= form_tag questions_test_path, method: :patch do %>
   <%= label_tag :Test%>
   <%= collection_select(:test,:id, Test.all, :id, :name ) %><br/>

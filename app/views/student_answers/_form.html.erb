@@ -2,11 +2,15 @@
   <%Student.find(session[:student_id]).test.questions.each_with_index do |question, index| %>
     <p><label>Question:</label>
     <p><b>
+      <%= index+1%>.
     <%= question.question_description %></b></p>
     <% question.options.each do |option|%>
-      <%= radio_button("response_item", question.id, option.id)  %><%=option.option_value %><br/>
+      <%= radio_button("response_item", question.id, option.id)  %>
+      <%= option.option%>.
+      <%=option.option_value %>
       <br/>
     <% end %>
   <% end %>
   <%= f.submit%>
 <% end %>
+
