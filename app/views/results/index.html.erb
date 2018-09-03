@@ -1,11 +1,14 @@
 <%= render partial: "shared/header"%>
 <div class="container">
 <%= form_tag  results_path , :method => 'get' do %>
-      <%= label_tag :Search%>
-        <%= text_field_tag :search, params[:search], options = {style:"width:200px"} %>
-      <%= submit_tag("search", :style => "width:100px;") %>
-      <%end%>
-
+  <%= label_tag :Search%>
+  <%= text_field_tag :search, params[:search], options = {style:"width:200px"} %>
+  <%= select_tag :collage_name, options_for_select(Student.pluck(:collage_name).uniq, params[:collage_name]), :prompt => "Select Collage Name" %>
+  <%= submit_tag("search", :style => "width:100px;") %>
+<%end%>
+<div class="float-right pd_15">
+  <%= link_to "Export CSV", results_path(format: 'csv', search: params[:search], collage_name: params[:collage_name]) %>
+</div>
 <table class="table table-striped">
   <tr>
     <th>Student Name:</th>
