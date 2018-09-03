@@ -1,7 +1,8 @@
 <table>
   <tr class="que-option nested-fields form-inline">
     <td>
-      <%= check_box_tag "question[options_attributes][#{f.index}][is_answer]",value = "1",false, class: 'option-check' %>
+      <%= hidden_field_tag "question[options_attributes][#{f.index}][is_answer]", 'false' %>
+      <%= check_box_tag "question[options_attributes][#{f.index}][is_answer]", value = "1",false, class: 'option-check' , checked: f.object.is_answer?%>
     </td>
     <td>
       <%= f.label :option, class: "mr-left mr-right" %>
@@ -20,6 +21,6 @@ $('input.option-check').on('change', function() {
 });
 </script>
 <style type="text/css">
-  .mr-right{margin-right: 10px;}  
+  .mr-right{margin-right: 10px;}
   .mr-left{margin-left: 10px;}
 </style>
