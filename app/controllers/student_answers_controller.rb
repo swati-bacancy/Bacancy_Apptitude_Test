@@ -16,6 +16,7 @@ class StudentAnswersController < ApplicationController
       @student_answer.student = Student.find(session[:student_id])
       @student_answer.question_id = k
       @student_answer.option_id = value
+      @student_answer.test_id = Student.find(session[:student_id]).test.id
       @student_answer.save
     }
 
@@ -24,12 +25,12 @@ class StudentAnswersController < ApplicationController
     @result.student_id = @student.id
     @count = 0
     @student.student_answers.each do |i|
-      if i.option.is_answer== true
+      if i.option.is_answer== true && i.test_id == @student.test_id
         @count += 1
       end
     end
     @result.correct_answer = @count
-    @result.attempted_questions = @student.student_answers.count
+    @result.attempted_questions = @student.student_answers.where(test_id: @student.test_id).count
     @result.total_questions = @student.test.questions.count
     @result.test_id = @student.test.id
     @result.save
