@@ -24,13 +24,19 @@ class StudentsController < ApplicationController
 
   def assign_test
     @student = Student.find_by(email: params[:email])
+    @student.update_attributes(test_started: false)
     if @student.present?
       @test_ids = Test.all.ids
-      @test_ids.delete(@student.test.id)
-      @student.test_id = @test_ids.sample
-      @student.save
-      session[:student_id] = @student.id
-      redirect_to new_student_answer_path
+      @test_ids = @test_ids.delete(@student.student_answers.pluck(:test_id).uniq!)
+      if @test_ids.present?
+        @student.test_id = @test_ids.sample
+        @student.save
+        session[:student_id] = @student.id
+        redirect_to new_student_answer_path
+      else
+        redirect_to root_path
+      end
+
     else
       redirect_to student_existing_user_path
     end
@@ -38,7 +44,10 @@ class StudentsController < ApplicationController
 
   def update
     if @student.update(student_params)
-      redirect_to students_path
+      response do |format|
+        format.html redirect_to students_path
+        format.js
+      end
     else
       render 'edit'
     end
@@ -64,7 +73,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:name, :email, :course, :roll_number, :collage_name, :mobile_number, :test_id)
+    params.require(:student).permit(:name, :email, :course, :roll_number, :collage_name, :mobile_number, :test_id, :test_started)
   end
 
   def find_student

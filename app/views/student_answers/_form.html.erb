@@ -1,6 +1,8 @@
+<div id="countdowntimer"><span id="future_date"><span></div>
+ <%#= countdown Time.now + 28.hours %>
 <div class="container">
   <%= form_for @student_answer do |f| %>
-  <%= render "shared/error_messages", :target => @student_answer %>
+    <%= render "shared/error_messages", :target => @student_answer %>
     <div class="row">
       <div class="col-sm-12">
         <h3 class="text-left">Start Your Test</h3></br>
@@ -9,7 +11,7 @@
     <div class="rows">
       <label>Please Fill Up The Following Questions :</label></br></br>
     </div>
-    <%Student.find(session[:student_id]).test.questions.each_with_index do |question, index| %>
+    <% Student.find(session[:student_id]).test.questions.each_with_index do |question, index| %>
       <b>
         <%= index+1%>.
         <%= question.question_description %></b></br></br>
@@ -26,3 +28,31 @@
       </div>
   <% end %>
 </div>
+<script type="text/javascript">
+  $( document ).ready(function() {
+      var d = new Date().toISOString;
+      var hours = <%= Student.find(session[:student_id]).test.total_time %>
+    if(<%= Student.find(session[:student_id]).test_started %> == false){
+      $("#future_date").countdowntimer({
+        minutes : hours,
+        size : "lg",
+        timeUp : timeIsUp
+      });
+    }
+    function timeIsUp() {
+      //Code to be executed when timer expires.
+      $("#submit").trigger('click');
+    }
+    $.ajax({
+      url: "/students/" + <%= Student.find(session[:student_id]).id %>,
+      method: 'put',
+      data: {
+        student: {
+          test_started: true
+        }
+      },
+      type: 'script'
+    });
+
+  });
+</script>
