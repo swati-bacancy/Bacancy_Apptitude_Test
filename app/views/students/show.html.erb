@@ -1,10 +1,48 @@
+<%= render partial: "shared/header"%>
 <div class="container">
-  <h1>Students#show</h1>
-  <p>Name: <%= @student.name %></p>
-  <p>Email: <%= @student.email %></p>
-  <p>Course: <%= @student.course %></p>
-  <p>Roll Number: <%= @student.roll_number %></p>
-  <p>Collage Name: <%= @student.collage_name %></p>
-  <p>Mobile Number: <%= @student.mobile_number %></p>
-  <%= link_to 'Back', :back, class: "btn btn-primary"%>
+  <h3> Student Detail </h3>
+
+  <div class="row">
+		<label class="col-md-2"> Name : </label>	
+		<div class="col-md-4">
+			<p> <%= @student.name %></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<label class="col-md-2"> Email : </label>
+		<div class="col-md-4">
+			<p><%= @student.email %></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<label class="col-md-2"> Course : </label>
+		<div class="col-md-4">
+			<p><%= @student.course %></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<label class="col-md-2"> Roll Number : </label>
+		<div class="col-md-4">
+			<p><%= @student.roll_number %></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<label class="col-md-2"> Collage Name : </label>
+		<div class="col-md-4">
+			<p><%= @student.collage_name %></p>
+		</div>
+	</div>
+  
+  <div class="row">
+		<label class="col-md-2"> Mobile Number : </label>
+		<div class="col-md-4">
+			<p><%= @student.mobile_number %></p>
+		</div>
+	</div>
+
+  	<%= link_to 'Back', :back, class: "btn btn-primary"%>
 </div>
