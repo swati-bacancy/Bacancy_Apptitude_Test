@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   before_action :find_question, only: [:show]
-
+  http_basic_authenticate_with name: "Bacancy", password: "Bacancy"
   def create
     @question = Question.new(question_params)
     if @question.save
