@@ -1,3 +1,7 @@
+<div id="countdowntimer"><span id="future_date"><span></div>
+ <%#= countdown Time.now + 28.hours %>
+
+
 <%= form_for @student_answer do |f| %>
   <%Student.find(session[:student_id]).test.questions.each_with_index do |question, index| %>
     <p><label>Question:</label>
@@ -11,6 +15,34 @@
       <br/>
     <% end %>
   <% end %>
-  <%= f.submit%>
+  <%= f.submit "submit", id: 'submit'  %>
 <% end %>
 
+<script type="text/javascript">
+  $( document ).ready(function() {
+      var d = new Date().toISOString;
+      var hours = <%= Student.find(session[:student_id]).test.total_time %>
+    if(<%= Student.find(session[:student_id]).test_started %> == false){
+      $("#future_date").countdowntimer({
+        minutes : hours,
+        size : "lg",
+        timeUp : timeIsUp
+      });
+    }
+    function timeIsUp() {
+      //Code to be executed when timer expires.
+      $("#submit").trigger('click');
+    }
+    $.ajax({
+      url: "/students/" + <%= Student.find(session[:student_id]).id %>,
+      method: 'put',
+      data: {
+        student: {
+          test_started: true
+        }
+      },
+      type: 'script'
+    });
+
+  });
+</script>

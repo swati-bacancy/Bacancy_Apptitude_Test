@@ -2,6 +2,9 @@ class StudentAnswersController < ApplicationController
   def new
     if session[:student_id].present?
       @student_answer = StudentAnswer.new
+      s = Student.find(session[:student_id])
+      s.start_time = DateTime.now
+      s.save
     else
       redirect_to root_path
     end
@@ -32,6 +35,7 @@ class StudentAnswersController < ApplicationController
     @result.save
     redirect_to root_path
   end
+
   def index
   end
 

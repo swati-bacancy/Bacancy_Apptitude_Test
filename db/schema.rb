@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180829132103) do
+ActiveRecord::Schema.define(version: 20180903103719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20180829132103) do
   create_table "options", force: :cascade do |t|
     t.string "option"
     t.text "option_value"
-    t.boolean "is_answer"
+    t.boolean "is_answer", default: false
     t.bigint "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20180829132103) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "test_id"
+    t.datetime "start_time"
+    t.boolean "test_started", default: false
     t.index ["test_id"], name: "index_students_on_test_id"
   end
 
@@ -94,6 +96,7 @@ ActiveRecord::Schema.define(version: 20180829132103) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "total_time"
   end
 
   add_foreign_key "answers", "options"
