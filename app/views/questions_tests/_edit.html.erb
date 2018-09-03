@@ -1,17 +1,34 @@
 <%= render partial: "shared/header"%>
-<%= form_tag questions_test_path, method: :patch do %>
-  <%= label_tag :Test%>
-  <%= collection_select(:test,:id, Test.all, :id, :name ) %><br/>
-  <%= label_tag :Questions %>
-  <br />
-  <%= collection_check_boxes :test, :question_ids, Question.all, :id, :question_description do |b| %>
-    <tr>
-       <td>
-       <td>
-         <%= b.check_box %>
-         <%= b.label %><br>
-       </td>
-     </tr>
+<div class="container">
+  <%= form_tag questions_test_path, method: :patch do %>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="text-left">Update Questions in Test</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <%= label_tag :Test%>
+      </div>
+      <div class="col-md-2">
+        <%= collection_select(:test,:id, Test.all, :id, :name, {}, class: "form-control" ) %>
+      </div>
+      <div class="form-inline">
+        <div class="col-md-12 form-group">
+          <%= label_tag :Questions %>
+          <%= collection_check_boxes :test, :question_ids, Question.all, :id, :question_description do |b| %>
+            <div class="rows">
+              <div class="col-sm-12">
+                <%= b.check_box %>
+                <%= b.label %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <%= submit_tag "create", 'data-disable-with' => "Please wait..", class: 'btn btn-primary' %>
+      </div>
+    </div>
   <% end %>
-<%= submit_tag "create", 'data-disable-with' => "Please wait.." %>
-<% end %>
+</div>

@@ -1,6 +1,7 @@
 <%= render partial: "shared/header"%>
 <div class="container content-center">
   <%= form_for @question  do |f| %>
+  <%= render "shared/error_messages", :target => @question %>
     <div class="row">
       <div class="col-sm-12">
         <h3 class="text-left">Question</h3>
