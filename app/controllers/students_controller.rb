@@ -26,11 +26,16 @@ class StudentsController < ApplicationController
     @student = Student.find_by(email: params[:email])
     if @student.present?
       @test_ids = Test.all.ids
-      @test_ids.delete(@student.test.id)
-      @student.test_id = @test_ids.sample
-      @student.save
-      session[:student_id] = @student.id
-      redirect_to new_student_answer_path
+      @test_ids = @test_ids.delete(@student.student_answers.pluck(:test_id).uniq!)
+      if @test_ids.present?
+        @student.test_id = @test_ids.sample
+        @student.save
+        session[:student_id] = @student.id
+        redirect_to new_student_answer_path
+      else
+        redirect_to root_path
+      end
+
     else
       redirect_to student_existing_user_path
     end
