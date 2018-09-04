@@ -1,6 +1,6 @@
 <%= render partial: "shared/header"%>
 <div class="container">
-  <h3> Details of Student </h3>
+  <h3> Student Result </h3>
 <%= form_tag  results_path , :method => 'get' do %>
   <%= label_tag :Search%>
   <%= text_field_tag :search, params[:search], options = {style:"width:200px"} %>

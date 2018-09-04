@@ -1,7 +1,7 @@
 <%= render partial: "shared/header"%>
 <div class="container">
   <%= form_tag questions_tests_path do %>
-     <div class="row">
+    <div class="row">
       <div class="col-sm-12">
         <h3 class="text-left">Add Questions in Test</h3>
       </div>
@@ -18,8 +18,10 @@
           <%= label_tag :Questions %>
           <%= collection_check_boxes :question, :question_ids, Question.all, :id, :question_description do |b| %>
             <div class="rows">
-              <div class="col-sm-12">
+              <div class="col-sm-3 col-md-1">
                 <%= b.check_box %>
+              </div>
+              <div class="col-sm-3 col-md-11">
                 <%= b.label %>
               </div>
             </div>
