@@ -1,6 +1,10 @@
 class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @students = Student.all
+  end
+
   def new
     @student = Student.new
   end
@@ -24,20 +28,18 @@ class StudentsController < ApplicationController
 
   def assign_test
     @student = Student.find_by(email: params[:email])
-    @student.update_attributes(test_started: false)
     if @student.present?
+      @student.update_attributes(test_started: false)
       @test_ids = Test.all.ids
-      @student_test_ids =@student.student_answers.pluck(:test_id).uniq
+      @student_test_ids = @student.student_answers.pluck(:test_id).uniq
       @test_ids = @test_ids - @student_test_ids
       if @test_ids.present?
-        @student.test_id = @test_ids.sample
-        @student.save
+        @student.update_attributes(test_id: @test_ids.sample)
         session[:student_id] = @student.id
         redirect_to new_student_answer_path
       else
         redirect_to root_path
       end
-
     else
       redirect_to student_existing_user_path
     end
@@ -57,10 +59,6 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     redirect_to students_path
-  end
-
-  def index
-    @students = Student.all
   end
 
   def show
