@@ -4,5 +4,5 @@ class Test < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :student_answers, dependent: :destroy
 
-  validates :name, presence: true
+  validates :name,:total_time, presence: true
 end

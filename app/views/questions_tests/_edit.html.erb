@@ -18,8 +18,10 @@
           <%= label_tag :Questions %>
           <%= collection_check_boxes :test, :question_ids, Question.all, :id, :question_description do |b| %>
             <div class="rows">
-              <div class="col-sm-12">
+              <div class="col-sm-3 col-md-1">
                 <%= b.check_box %>
+              </div>
+              <div class="col-sm-3 col-md-11">
                 <%= b.label %>
               </div>
             </div>
