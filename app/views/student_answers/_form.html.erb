@@ -30,8 +30,7 @@
 </div>
 <script type="text/javascript">
   $( document ).ready(function() {
-      var d = new Date().toISOString;
-      var hours = <%= Student.find(session[:student_id]).test.total_time %>
+    var hours = <%= Student.find(session[:student_id]).test.total_time %>
     if(<%= Student.find(session[:student_id]).test_started %> == false){
       $("#future_date").countdowntimer({
         minutes : hours,

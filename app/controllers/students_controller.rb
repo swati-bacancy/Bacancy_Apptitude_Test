@@ -27,7 +27,7 @@ class StudentsController < ApplicationController
     @student.update_attributes(test_started: false)
     if @student.present?
       @test_ids = Test.all.ids
-      @student_test_ids =@student.student_answers.pluck(:test_id).uniq!
+      @student_test_ids =@student.student_answers.pluck(:test_id).uniq
       @test_ids = @test_ids - @student_test_ids
       if @test_ids.present?
         @student.test_id = @test_ids.sample
