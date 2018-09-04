@@ -11,7 +11,7 @@
         <%= label_tag :Test%>
       </div>
       <div class="col-md-2">
-        <%= collection_select(:test,:id, Test.all, :id, :name, {}, class: "form-control" ) %>
+        <%= collection_select('',:id, Test.all, :id, :name, {selected: @test.id}, class: "form-control" ) %>
       </div>
       <div class="form-inline">
         <div class="col-md-12 form-group">

@@ -1,29 +1,18 @@
 class QuestionsTestsController < ApplicationController
   http_basic_authenticate_with name: "Bacancy", password: "Bacancy"
+  before_action :find_test, only: [:edit, :update, :show]
 
-  def new
-  end
-
-  def create
-    @test = Test.find(params[:test][:id])
-    @question_ids = params[:question][:question_ids].reject(&:empty?)
-    @questions = Question.find(@question_ids)
-    @test.questions.delete_all
-    @questions.each do |question|
-      question.tests << @test
-    end
-    redirect_to questions_tests_path
+  def index
+    @tests = Test.all
   end
 
   def edit
-    @test = Test.find(params[:id])
   end
 
   def update
-    @test = Test.find(params[:test][:id])
     @question_ids = params[:test][:question_ids].reject(&:empty?)
     @questions = Question.find(@question_ids)
-    @test.questions.delete_all
+    @test.questions.destroy_all
     @questions.each do |question|
       question.tests << @test
     end
@@ -31,10 +20,11 @@ class QuestionsTestsController < ApplicationController
   end
 
   def show
-    @test = Test.find(params[:id])
   end
 
-  def index
-    @tests = Test.all
+  private
+
+  def find_test
+    @test =  Test.find(params[:id])
   end
 end

@@ -7,8 +7,7 @@
 	</p>
 	<strong>Options :</strong></br><br/>
 	<% if @question.options.present? %>
-		<% @question.options.each_with_index do |op,index| %>
-			<%#= index + 1 %>
+		<% @question.options.each do |op| %>
 			<%if op.is_answer == true %>
 				<b><u><%= op.option %>.
 			<%= op.option_value %></u></b></br>
