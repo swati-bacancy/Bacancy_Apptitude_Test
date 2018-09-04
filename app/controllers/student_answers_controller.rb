@@ -23,12 +23,12 @@ class StudentAnswersController < ApplicationController
     @result =  Result.new(student_id: @student.id)
     @count = 0
     @student.student_answers.map {|i| @count+=1 if (i.option.is_answer == true && i.test_id == @student.test_id)}
-
     @test = @student.test
     @result.update_attributes(correct_answer: @count,
     attempted_questions: @student.student_answers.where(test_id: @test.id).count,
     total_questions: @test.questions.count,
     test_id: @test.id)
+    session[:student_id] = nil
     redirect_to root_path
   end
 

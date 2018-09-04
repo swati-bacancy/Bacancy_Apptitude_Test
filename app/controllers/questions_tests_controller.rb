@@ -1,4 +1,5 @@
 class QuestionsTestsController < ApplicationController
+  http_basic_authenticate_with name: "Bacancy", password: "Bacancy"
   before_action :find_test, only: [:edit, :update, :show]
 
   def index

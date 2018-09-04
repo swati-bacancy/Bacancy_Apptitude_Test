@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: "Bacancy", password: "Bacancy", only: [:index, :edit, :destroy]
 
   def index
     @students = Student.all
