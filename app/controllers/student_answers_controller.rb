@@ -10,8 +10,8 @@ class StudentAnswersController < ApplicationController
     end
   end
 
- def create
-   params[:response_item].each{|k, value|
+  def create
+    params[:response_item] && params[:response_item].each{|k, value|
       @student_answer = StudentAnswer.new
       @student_answer.student = Student.find(session[:student_id])
       @student_answer.question_id = k
