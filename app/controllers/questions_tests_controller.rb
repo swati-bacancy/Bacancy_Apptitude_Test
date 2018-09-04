@@ -1,4 +1,6 @@
 class QuestionsTestsController < ApplicationController
+  http_basic_authenticate_with name: "Bacancy", password: "Bacancy"
+
   def new
   end
 

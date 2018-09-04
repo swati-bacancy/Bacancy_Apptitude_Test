@@ -5,7 +5,7 @@
     resources :students
     resources :questions_tests
     resources :student_answers
-    resources :results, only: %i[index show]
+    resources :results, only: %i[index show destroy]
     get 'student/existing_user' => 'students#existing_user'
     post 'student/assign_test' => 'students#assign_test'
     delete "logout" => 'students#logout'

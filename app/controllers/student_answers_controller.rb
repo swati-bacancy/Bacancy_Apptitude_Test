@@ -34,6 +34,7 @@ class StudentAnswersController < ApplicationController
     @result.total_questions = @student.test.questions.count
     @result.test_id = @student.test.id
     @result.save
+    session[:student_id] = nil
     redirect_to root_path
   end
 
