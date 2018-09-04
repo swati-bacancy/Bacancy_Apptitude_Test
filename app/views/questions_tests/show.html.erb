@@ -1,0 +1,12 @@
+<%= render partial: "shared/header"%>
+<div class="container">
+	<h3>Details of QuestionsTest</h3>
+	<p>Test Name:<%= @test.name%></p>
+	<p>Test Questions:</p>
+	<ul>
+	<% @test.questions.each do |question|%>
+	  <li><%= question.question_description%></li>
+	<% end %>
+	</ul>
+	<%= link_to 'Back', :back, class: "btn btn-primary"%>
+</div>

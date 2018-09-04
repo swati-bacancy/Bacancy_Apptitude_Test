@@ -1,0 +1,24 @@
+<%= render partial: "shared/header"%>
+<div class="container">
+	<h3>Show Question</h3>
+	<p>
+	  <strong>Question :</strong>
+	  <%= @question.question_description %>
+	</p>
+	<strong>Options :</strong></br><br/>
+	<% if @question.options.present? %>
+		<% @question.options.each_with_index do |op,index| %>
+			<%#= index + 1 %>
+			<%if op.is_answer == true %>
+				<b><u><%= op.option %>.
+			<%= op.option_value %></u></b></br>
+			<% else %>
+				<%= op.option %>.
+				<%= op.option_value %></br>
+			<% end %>
+		<% end %>
+	<% end %>
+
+<br />
+	<%= link_to "Back", questions_path, class: "btn btn-primary" %>
+</div>

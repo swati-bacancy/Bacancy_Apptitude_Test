@@ -1,0 +1,31 @@
+<%= render partial: "shared/header"%>
+<div class="container content-center">
+  <%= form_for @question  do |f| %>
+  <%= render "shared/error_messages", :target => @question %>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="text-left">Question</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-lg-2">
+        <%= f.label :question_description %>
+        <%= f.text_area :question_description, class: "form-control", placeholder: 'Enter Question Discription' %>
+      </div>
+    </div>
+    <div id= 'options' class="form-inline">
+      <%= f.fields_for :options, @option do |ab| %>
+       <%= render "option_fields", :f => ab %>
+      <% end %>
+    </div>
+    <div class="rows col-sm-offset-1 mr-top">
+      <%= link_to_add_association 'Add More Options', f, :options, class: "btn btn-primary" %>
+      <%= f.button  @question.new_record? ? 'Save' : 'Update' , class: "btn btn-primary", type: 'submit' %>
+      <%= link_to 'Back', :back, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+<style type="text/css">
+  .mr-top{margin-top: 2%;}
+</style>

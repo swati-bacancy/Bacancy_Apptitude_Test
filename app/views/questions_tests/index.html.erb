@@ -1,0 +1,32 @@
+<%= render partial: "shared/header"%>
+<div class="container">
+  <h3>List of QuestionsTests</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Test Name</th>
+        <th>Test Questions</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tests.each_with_index do |test, index|%>
+        <tr>
+          <td><%= test.name%></td>
+          <td>
+            <ul>
+              <% test.questions.each do |question| %>
+             <li><%=question.question_description%></li>
+           <%end%>
+         </li>
+          </td>
+
+          <td><%= link_to 'Show',questions_test_path(test)%> |
+          <%= link_to 'Edit', edit_questions_test_path(test)  %>
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to '+ Add a New Question Tests', new_questions_test_path, class: "btn btn-primary" %>
+  <%= link_to 'Back', :back, class: "btn btn-primary"%>
+</td>
