@@ -1,27 +1,29 @@
 class QuestionsController < ApplicationController
-
-  before_action :find_question, only: [:show]
+  before_action :find_question, only: [:show, :edit, :update, :destroy]
   http_basic_authenticate_with name: "Bacancy", password: "Bacancy"
-  def create
-    @question = Question.new(question_params)
-    if @question.save
-  		redirect_to questions_path
-  	else
-  		render 'new'
-  	end
+
+  def index
+  	@questions = Question.all
   end
 
   def new
-  	@question = Question.new
+    @question = Question.new
     @option = @question.options.build
   end
 
-  def edit
-  	@question = Question.find(params[:id])
+  def create
+    @question = Question.new(question_params)
+    if @question.save
+      redirect_to questions_path
+    else
+      render 'new'
+    end
   end
 
-   def update
-    @question = Question.find(params[:id])
+  def edit
+  end
+
+  def update
     if @question.update(question_params)
       @option = @question.options.build
       redirect_to questions_path
@@ -30,21 +32,17 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def index
-  	@questions = Question.all
-  end
-
   def show
     @option = @question.options
   end
 
   def destroy
-  	@question = Question.find(params[:id])
     @question.destroy
     redirect_to questions_path
   end
 
-private
+  private
+
   def question_params
   	params.require(:question).permit(:question_description, options_attributes: [:id, :option, :option_value, :is_answer, :_destroy])
   end

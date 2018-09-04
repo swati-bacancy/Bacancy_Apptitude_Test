@@ -1,4 +1,6 @@
+<%= render partial: "shared/header_logout"%>
 <div id="countdowntimer"><span id="future_date"><span></div>
+<div id='warning_text'></div>
  <%#= countdown Time.now + 28.hours %>
 <div class="container">
   <%= form_for @student_answer do |f| %>
@@ -11,41 +13,47 @@
     <div class="rows">
       <label>Please Fill Up The Following Questions :</label></br></br>
     </div>
-    <% Student.find(session[:student_id]).test.questions.each_with_index do |question, index| %>
+    <% @student.test.questions.each_with_index do |question, index| %>
       <b>
-        <%= index+1%>.
+        <%= index+1 %>.
         <%= question.question_description %></b></br></br>
         <div class="col-md-12">
           <% question.options.each do |option|%>
             <%= radio_button("response_item", question.id, option.id)  %>
             <%= option.option%>.
-            <%=option.option_value %><br/></br>
+            <%= option.option_value %><br/></br>
           <% end %>
         </div>
     <% end %>
+    <% if @student.test_started == false %>
       <div class="col-md-12">
         <%= f.submit 'Submit' , class: "btn btn-primary", type: 'submit', id: 'submit'%>
       </div>
+    <% end %>
   <% end %>
 </div>
 <script type="text/javascript">
   $( document ).ready(function() {
-    var hours = <%= Student.find(session[:student_id]).test.total_time.split(":").first %>
-    var minutes = <%= Student.find(session[:student_id]).test.total_time.split(":").last %>
+    var time =  "<%= Student.find(session[:student_id]).test.total_time.blank? ? "" :  Student.find(session[:student_id]).test.total_time %>";
+    if(time == ""){
+      var hours = "1"
+      var minutes = "0"
+    }
+    else {
+      var hours = "<%= Student.find(session[:student_id]).test.total_time.split(":").first %>";
+      var minutes = "<%= Student.find(session[:student_id]).test.total_time.split(":").last %>";
+    }
+
     if(<%= Student.find(session[:student_id]).test_started %> == false){
+    if(<%= @student.test_started %> == false){
       $("#future_date").countdowntimer({
         hours : hours,
         minutes : minutes,
         size : "lg",
         timeUp : timeIsUp
       });
-    }
-    function timeIsUp() {
-      //Code to be executed when timer expires.
-      $("#submit").trigger('click');
-    }
-    $.ajax({
-      url: "/students/" + <%= Student.find(session[:student_id]).id %>,
+      $.ajax({
+        url: "/students/" + <%= @student.id %>,
       method: 'put',
       data: {
         student: {
@@ -54,6 +62,12 @@
       },
       type: 'script'
     });
+    }
+    function timeIsUp() {
+      //Code to be executed when timer expires.
+      $("#submit").trigger('click');
+    }
+  }
 
   });
 </script>
