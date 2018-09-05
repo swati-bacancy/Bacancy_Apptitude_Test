@@ -15,6 +15,7 @@ class StudentsController < ApplicationController
     @student.test_id = Test.ids.sample
     if @student.save
       redirect_to new_student_answer_path
+      flash[:success] = "Welcome to the Test Page!"
     else
       render 'new'
     end
@@ -40,9 +41,11 @@ class StudentsController < ApplicationController
         redirect_to new_student_answer_path
       else
         redirect_to root_path
+        flash[:alert] = "You have already attended All Tests!"
       end
     else
       redirect_to student_existing_user_path
+      flash[:alert] = "Please create a new user!"
     end
   end
 

@@ -18,3 +18,9 @@
 //= require bootstrap-sprockets
 //= require jquery.countdownTimer
 //= require_tree .
+
+$(document).ready(function(){
+	$(".alert").delay(3000).slideUp(1000, function(){
+	  $(".alert").alert('close');
+	});
+});

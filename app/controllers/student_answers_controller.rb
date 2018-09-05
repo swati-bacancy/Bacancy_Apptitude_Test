@@ -30,6 +30,7 @@ class StudentAnswersController < ApplicationController
     test_id: @test.id)
     session[:student_id] = nil
     redirect_to root_path
+    flash[:success] = "Your Test submitted successfully!"
   end
 
   private
