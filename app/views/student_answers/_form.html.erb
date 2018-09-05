@@ -1,8 +1,7 @@
 <%= render partial: "shared/header_logout"%>
-<div id="countdowntimer"><span id="future_date"><span></div>
-<div id='warning_text'></div>
- <%#= countdown Time.now + 28.hours %>
+<div id="countdowntimer" class="pull-right"><span id="future_date"><span></div>
 <div class="container">
+  <h3><div id='warning_text'></div></h3>
   <%= form_for @student_answer do |f| %>
     <%= render "shared/error_messages", :target => @student_answer %>
     <div class="row">

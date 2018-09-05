@@ -1,6 +1,7 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
+      <a class="navbar-brand" href="/"><%= image_tag 'logo-dark.png'%></a>
       <li class="active"><%= link_to 'Home', root_path%></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Test
@@ -33,3 +34,6 @@
     </ul>
   </div>
 </nav>
+<style type="text/css">
+  img{ margin-top: -11px;}
+</style>
