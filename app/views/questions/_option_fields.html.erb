@@ -22,7 +22,6 @@
         $('input.option-check').not(this).prop('checked', false);
     });
     $("input:checkbox[class=option-check]").click(function(){
-      debugger;
       if($("input:checkbox[class=option-check]:checked").length >=  1){
         $('button').attr('disabled', false);
       }
