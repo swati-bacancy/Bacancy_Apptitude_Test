@@ -8,21 +8,21 @@
 				<%= f.label :name%>
 			</div>
 			<div class="col-md-5">
-			  <%= f.text_field :name, class: "form-control"%>
+			  <%= f.text_field :name, class: "form-control" %>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-1">
-				<%= f.label :total_time%>
+				<%= f.label :total_time %>
 			</div>
 			<div class="col-md-5">
-				<%= time_field(:test, :total_time) %>
+				<%= f.time_field :total_time %>
 			</div>
 		</div>
 			<div class="row">
 			<div class="col-md-6">
-	  		<%= f.submit "Create Test", class: "btn btn-primary"%>
-	  		<%= link_to 'Back', :back, class: "btn btn-primary"%>
+	  		<%= f.submit "Create Test", class: "btn btn-primary" %>
+	  		<%= link_to 'Back', :back, class: "btn btn-primary" %>
 			<div>
 	  	</div>
 		</div>

@@ -8,7 +8,7 @@ class TestsController < ApplicationController
   def create
     @test = Test.new(test_params)
     if @test.save
-      redirect_to new_questions_test_path
+      redirect_to edit_questions_test_path(@test)
     else
       render 'new'
     end
@@ -21,7 +21,7 @@ class TestsController < ApplicationController
     if @test.update(test_params)
       redirect_to tests_path
     else
-      render 'new'
+      render 'edit'
     end
   end
 
