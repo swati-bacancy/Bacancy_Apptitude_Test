@@ -16,7 +16,7 @@ class QuestionsTestsController < ApplicationController
     @questions.each do |question|
       question.tests << @test
     end
-    redirect_to questions_tests_path
+    redirect_to test_path(@test)
   end
 
   def show

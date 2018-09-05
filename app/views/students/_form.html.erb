@@ -50,46 +50,39 @@
       <h1>Student Registration Form</h1>
       <div class="row extra-pedding">
         <%= form_for @student, :html => {class: 'form-horizontal'} do |f| %>
-        <%= render "shared/error_messages", :target => @student %>
-        <div class="form-group">
-          <%= f.label :Name, class: 'control-label col-sm-4' %>
-          <div class="col-sm-6">
-            <%= f.text_field :name, class: "form-control" %>
+          <%= render "shared/error_messages", :target => @student %>
+          <div class="form-group">
+            <%= f.label :Name, class: 'control-label col-sm-4' %>
+            <div class="col-sm-6">
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :Email, class: 'control-label col-sm-4' %>
-          <div class="col-sm-6">
-            <%= f.email_field :email, class: "form-control" %>
+          <div class="form-group">
+            <%= f.label :Email, class: 'control-label col-sm-4' %>
+            <div class="col-sm-6">
+              <%= f.email_field :email, class: "form-control" %>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :Course, class: 'control-label col-sm-4' %>
-          <div class="col-sm-6 offset-lg-2">
-            <%= f.text_field :course, class: "form-control" %>
+          <div class="form-group">
+            <%= f.label :Course, class: 'control-label col-sm-4' %>
+            <div class="col-sm-6 offset-lg-2">
+              <%= f.text_field :course, class: "form-control" %>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :Roll_number, class: 'control-label col-sm-4' %>
-          <div class="col-sm-6">
-            <%= f.text_field :roll_number, class: "form-control" %>
+          <div class="form-group">
+            <%= f.label :roll_number, 'EnRoll Number', class: 'control-label col-sm-4' %>
+            <div class="col-sm-6">
+              <%= f.text_field :roll_number, class: "form-control" %>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :Collage_Name, class: 'control-label col-sm-4' %>
-          <div class="col-sm-6">
-            <%= f.text_field :collage_name, class: "form-control" %>
+          <div class="form-group">
+            <%= f.label :Collage_Name, class: 'control-label col-sm-4' %>
+            <div class="col-sm-6">
+              <%= f.text_field :collage_name, class: "form-control" %>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :Mobile_Number, class: 'control-label col-sm-4' %>
-          <div class="col-sm-6">
-            <%= f.text_field :mobile_number, class: "form-control" %>
-          </div>
-        </div>
-
-         <%= f.submit class: "btn btn-success" %>
-       <% end %>
+          <%= f.submit class: "btn btn-success" %>
+        <% end %>
      </div>
    </div>
 </div>

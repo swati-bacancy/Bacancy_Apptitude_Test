@@ -1,6 +1,6 @@
 <%= render partial: "shared/header_logout"%>
 <div id="countdowntimer" class="pull-right"><span id="future_date"><span></div>
-<div class="container">
+<div class="container" id="student_answer">
   <h3><div id='warning_text'></div></h3>
   <%= form_for @student_answer do |f| %>
     <%= render "shared/error_messages", :target => @student_answer %>
@@ -44,29 +44,37 @@
     }
 
     if(<%= Student.find(session[:student_id]).test_started %> == false){
-    if(<%= @student.test_started %> == false){
-      $("#future_date").countdowntimer({
-        hours : hours,
-        minutes : minutes,
-        size : "lg",
-        timeUp : timeIsUp
-      });
-      $.ajax({
-        url: "/students/" + <%= @student.id %>,
-      method: 'put',
-      data: {
-        student: {
-          test_started: true
-        }
-      },
-      type: 'script'
+      if(<%= @student.test_started %> == false){
+        $("#future_date").countdowntimer({
+          hours : hours,
+          minutes : minutes,
+          size : "lg",
+          timeUp : timeIsUp
+        });
+        $.ajax({
+          url: "/students/" + <%= @student.id %>,
+          method: 'put',
+          data: {
+            student: {
+              test_started: true
+            }
+          },
+          type: 'script'
+        });
+      }
+      function timeIsUp() {
+        //Code to be executed when timer expires.
+        $("#submit").trigger('click');
+      }
+    }
+    $('#student_answer').bind('cut copy paste', function (e) {
+        e.preventDefault();
     });
-    }
-    function timeIsUp() {
-      //Code to be executed when timer expires.
-      $("#submit").trigger('click');
-    }
-  }
-
+    $("#student_answer").on("contextmenu",function(e){
+        // return false;
+    });
+    $(window).bind('beforeunload',function(){
+      return 'are you sure you want to leave?';
+    });
   });
 </script>

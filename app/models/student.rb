@@ -5,6 +5,4 @@ class Student < ApplicationRecord
 
   validates :name,:course,:roll_number,:collage_name, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :mobile_number, numericality: { only_integer: true }
-
 end

@@ -3,7 +3,7 @@
   <h3> Student Detail </h3>
 
   <div class="row">
-		<label class="col-md-2"> Name : </label>	
+		<label class="col-md-2"> Name : </label>
 		<div class="col-md-4">
 			<p> <%= @student.name %></p>
 		</div>
@@ -36,13 +36,6 @@
 			<p><%= @student.collage_name %></p>
 		</div>
 	</div>
-  
-  <div class="row">
-		<label class="col-md-2"> Mobile Number : </label>
-		<div class="col-md-4">
-			<p><%= @student.mobile_number %></p>
-		</div>
-	</div>
 
-  	<%= link_to 'Back', :back, class: "btn btn-primary"%>
+  <%= link_to 'Back', :back, class: "btn btn-primary"%>
 </div>

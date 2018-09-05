@@ -1,10 +1,16 @@
 <%= render partial: "shared/header"%>
-	<div class="container">
+<div class="container">
 	<h3>Details of Test</h3>
 	<p>Name: <%= @test.name %></p>
 	<p>Total Time: <%= @test.total_time %></p>
-
-	<h3>Test Questions</h3>
+	<div class="row">
+		<div class="col-md-10">
+			<h3>Test Questions</h3>
+		</div>
+		<div class="col-md-2">
+			<h3><%= link_to 'Add/Remove Questions', edit_questions_test_path(@test), class: 'btn btn-primary'  %></h3>
+		</div>
+	</div>
 	<% @test.questions.each_with_index do |question, index| %>
 	  <p><%= index + 1 %>.<%= question.question_description %></p>
 		<% question.options.each do |option| %>

@@ -4,7 +4,7 @@ class StudentAnswersController < ApplicationController
   def new
     if session[:student_id].present?
       @student_answer = StudentAnswer.new
-      return redirect_to root_path if @student.test_started?
+      # return redirect_to root_path if @student.test_started?
       @student.update_attributes(test_started: false, start_time: DateTime.now)
     else
       redirect_to root_path
