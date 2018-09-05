@@ -17,4 +17,6 @@ class Result < ApplicationRecord
       end
     end
   end
+
+  default_scope { order(correct_answer: :desc) }
 end
