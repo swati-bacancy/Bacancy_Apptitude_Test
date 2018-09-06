@@ -3,6 +3,8 @@ class Student < ApplicationRecord
   has_many :student_answers, dependent: :destroy
   has_many :results, dependent: :destroy
 
-  validates :name,:course,:roll_number,:collage_name, presence: true
-  validates :email, presence: true, uniqueness: true
+  validates :course,:collage_name, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: /\A([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})\z/ }
+  validates :roll_number, presence: true, uniqueness: true
+  validates :name, presence: true, format: { with: /\A[a-zA-Z .]+\z/ }, length: { maximum: 50, :message => "Must be less than 50 characters"}
 end
