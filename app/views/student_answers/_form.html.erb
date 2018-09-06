@@ -73,8 +73,14 @@
     $("#student_answer").on("contextmenu",function(e){
         // return false;
     });
+    var submitted = false;
+    $("#new_student_answer").submit(function() {
+      submitted = true;
+    });
     $(window).bind('beforeunload',function(){
-      return 'are you sure you want to leave?';
+      if(!submitted){
+        return 'are you sure you want to leave?';
+      }
     });
   });
 </script>
