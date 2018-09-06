@@ -6,7 +6,7 @@ class ResultsController < ApplicationController
 
   def index
     if(params[:search] || params[:collage_name])
-      @results =  Result.joins(:student).where('students.email like ? and students.collage_name like ?', "%#{params[:search]}%", "%#{params[:collage_name]}%")
+      @results =  Result.joins(:student).where('students.email ilike ? and students.collage_name ilike ?', "%#{params[:search]}%", "%#{params[:collage_name]}%")
     else
       @results = Result.all
     end

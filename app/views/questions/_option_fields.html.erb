@@ -1,3 +1,4 @@
+<%= javascript_include_tag "questions", "data-turbolinks-track" => true  %>
 <table>
   <tr class="que-option nested-fields form-inline">
     <td>
@@ -18,17 +19,8 @@
 <script>
   $( document ).ready(function() {
     $('button').attr('disabled', true);
-    $('input.option-check').on('change', function() {
-        $('input.option-check').not(this).prop('checked', false);
-    });
-    $("input:checkbox[class=option-check]").click(function(){
-      if($("input:checkbox[class=option-check]:checked").length >=  1){
-        $('button').attr('disabled', false);
-      }
-      else{
-        $('button').attr('disabled', true);
-      }
-    });
+    Bacancy_Apptitude_Test.Questions.form.singleCheck();
+    Bacancy_Apptitude_Test.Questions.form.saveDisable();
   });
 </script>
 <style type="text/css">

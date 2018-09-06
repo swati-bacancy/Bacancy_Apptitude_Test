@@ -33,17 +33,17 @@
 </div>
 <script type="text/javascript">
   $( document ).ready(function() {
-    var time =  "<%= Student.find(session[:student_id]).test.total_time.blank? ? "" :  Student.find(session[:student_id]).test.total_time %>";
+    var time =  "<%= @student.test.total_time.blank? ? "" :  @student.test.total_time %>";
     if(time == ""){
       var hours = "1"
       var minutes = "0"
     }
     else {
-      var hours = "<%= Student.find(session[:student_id]).test.total_time.split(":").first %>";
-      var minutes = "<%= Student.find(session[:student_id]).test.total_time.split(":").last %>";
+      var hours = "<%= @student.test.total_time.split(":").first %>";
+      var minutes = "<%= @student.test.total_time.split(":").last %>";
     }
 
-    if(<%= Student.find(session[:student_id]).test_started %> == false){
+    if(<%= @student.test_started %> == false){
       if(<%= @student.test_started %> == false){
         $("#future_date").countdowntimer({
           hours : hours,
