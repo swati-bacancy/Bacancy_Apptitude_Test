@@ -1,6 +1,6 @@
 class ResultsController < ApplicationController
   before_action :find_result, only: [:show, :destroy]
-  http_basic_authenticate_with name: "Bacancy", password: "Bacancy"
+  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
 
   require 'csv'
 
