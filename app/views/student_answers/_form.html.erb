@@ -17,7 +17,7 @@
         <%= index+1 %>.
         <%= question.question_description %></b></br></br>
         <div class="col-md-12">
-          <% question.options.each do |option|%>
+          <% question.options.order(:option).each do |option|%>
             <%= radio_button("response_item", question.id, option.id)  %>
             <%= option.option%>.
             <%= option.option_value %><br/></br>
