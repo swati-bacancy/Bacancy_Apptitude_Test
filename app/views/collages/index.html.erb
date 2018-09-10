@@ -1,0 +1,25 @@
+<%= render partial: "shared/header"%>
+<div class="container">
+  <h3> List of Collages</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Collage Name</th>
+        <th colspan="3">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @collages.each do |collage| %>
+        <tr>
+          <td><%= collage.name %></td>
+          <td>
+            <%= link_to 'Show', collage_path(collage) %> |
+            <%= link_to 'Edit', edit_collage_path(collage) %> |
+            <%= link_to 'Delete', collage_path(collage), method: :delete, data: {confirm: 'Are You Sure You Want To Delete?'} %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+    <%= link_to '+ Add a New Collage', new_collage_path, class: "btn btn-primary" %>
+</div>

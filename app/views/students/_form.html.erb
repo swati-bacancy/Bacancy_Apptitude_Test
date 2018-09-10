@@ -78,7 +78,7 @@
           <div class="form-group">
             <%= f.label :Collage_Name, class: 'control-label col-sm-4' %>
             <div class="col-sm-6">
-              <%= f.text_field :collage_name, class: "form-control" %>
+              <%= f.collection_select :collage_name, Collage.all, :name, :name, { include_blank: 'Select a Collage' }, class: 'form-control' %>
             </div>
           </div>
           <%= f.submit class: "btn btn-success" %>
