@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_question, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: "Bacancy", password: "Bacancy"
+  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
 
   def index
   	@questions = Question.all

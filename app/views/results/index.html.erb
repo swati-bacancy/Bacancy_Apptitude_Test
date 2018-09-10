@@ -13,6 +13,7 @@
   </div>
   <table class="table table-striped">
     <tr>
+      <th> Enr. No </th>
       <th>Student Name</th>
       <th>Student Email</th>
       <th>Course</th>
@@ -24,6 +25,7 @@
     </tr>
     <% @results && @results.each do |result| %>
       <tr>
+        <td><%= result.roll_number %></td> 
         <td><%= result.student.name %></td>
         <td><%= result.student.email %></td>
         <td><%= result.student.course %></td>
