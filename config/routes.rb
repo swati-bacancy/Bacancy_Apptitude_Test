@@ -2,6 +2,7 @@
     root 'home#index'
     resources :tests
     resources :questions
+    resources :collages
     resources :students
     resources :questions_tests, except: %i[new create]
     resources :student_answers, only: %i[new create]
