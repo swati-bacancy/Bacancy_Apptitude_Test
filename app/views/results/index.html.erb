@@ -25,7 +25,7 @@
     </tr>
     <% @results && @results.each do |result| %>
       <tr>
-        <td><%= result.roll_number %></td> 
+        <td><%= result.student.roll_number %></td>
         <td><%= result.student.name %></td>
         <td><%= result.student.email %></td>
         <td><%= result.student.course %></td>
