@@ -1,0 +1,30 @@
+<%= render partial: "shared/header"%>
+<div class="container">
+  <h3>List Of Questions</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+      	<th>ID</th>
+        <th>Question Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @technical_questions.each_with_index do |question,index| %>
+        <tr>
+        	<td><%= index + 1 %></td>
+          <td width="100px"><pre><%= question.question_description %></pre></td>
+          <td>
+          	<%= link_to 'Edit', edit_technical_question_path(question) %> |
+          	<%= link_to 'Show', technical_question_path(question) %> |
+          	<%= link_to 'Delete', technical_question_path(question), method: :delete, data: { confirm: 'Are you sure want to delete?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="col-md-2">
+    <%= link_to '+ Add a New Technical Question', new_technical_question_path, class: "btn btn-primary" %>
+  </div>
+  <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+</div>

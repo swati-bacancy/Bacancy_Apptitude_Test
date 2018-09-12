@@ -1,0 +1,82 @@
+<%= render partial: "shared/header_logout"%>
+<div id="countdowntimer" class="pull-right"><span id="future_date"><span></div>
+<div class="container" id="technical_student_answer">
+  <h3><div id='warning_text'></div></h3>
+  <%= form_for @answer, url: create_technical_student_answers_path do |f| %>
+    <%= render "shared/error_messages", :target => @answer %>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="text-left">Start Your Test</h3></br>
+      </div>
+    </div>
+    <div class="rows">
+      <label>Please Fill Up The Following Questions :</label></br></br>
+    </div>
+    <% @student.test.questions.each_with_index do |question, index| %>
+      <b>
+        <%= index+1 %>.
+        <pre><%= question.question_description %></pre></b></br></br>
+        <div class="col-md-12">
+          <%= text_area_tag "response_item[#{question.id}]", nil, size: "90x10" %>
+        </div>
+    <% end %>
+    <% if @student.test_started == false %>
+      <div class="col-md-12">
+        <%= f.submit 'Submit' , class: "btn btn-primary", type: 'submit', id: 'submit'%>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<script type="text/javascript">
+  $( document ).ready(function() {
+    var time =  "<%= @student.test.total_time.blank? ? "" :  @student.test.total_time %>";
+    if(time == ""){
+      var hours = "1"
+      var minutes = "0"
+    }
+    else {
+      var hours = "<%= @student.test.total_time.split(":").first %>";
+      var minutes = "<%= @student.test.total_time.split(":").last %>";
+    }
+
+    if(<%= @student.test_started %> == false){
+      if(<%= @student.test_started %> == false){
+        $("#future_date").countdowntimer({
+          hours : hours,
+          minutes : minutes,
+          size : "lg",
+          timeUp : timeIsUp
+        });
+        $.ajax({
+          url: "/students/" + <%= @student.id %>,
+          method: 'put',
+          data: {
+            student: {
+              test_started: true
+            }
+          },
+          type: 'script'
+        });
+      }
+      function timeIsUp() {
+        //Code to be executed when timer expires.
+        $("#submit").trigger('click');
+      }
+    }
+    $('#technical_student_answer').bind('cut copy paste', function (e) {
+        e.preventDefault();
+    });
+    $("#technical_student_answer").on("contextmenu",function(e){
+        return false;
+    });
+    var submitted = false;
+    $("#new_answer").submit(function() {
+      submitted = true;
+    });
+    $(window).bind('beforeunload',function(){
+      if(!submitted){
+        return 'are you sure you want to leave?';
+      }
+    });
+  });
+</script>

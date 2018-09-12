@@ -1,0 +1,14 @@
+<%= render partial: "shared/header"%>
+<div class="container">
+	<h3><%= @student.name %></h3>
+	<% if @answers.present? %>
+		<% @answers.each_with_index do |answer, index|%>
+			<b><%= index + 1 %>.</b>
+		  <%= answer.question.question_description %><br/>
+		  <pre><%= answer.answer %></pre>
+		<% end %>
+	<% else %>
+		<h4>Technical Test not attempted.</h4>
+	<% end %>
+	<%= link_to 'Back', :back, class: "btn btn-primary"%>
+</div>

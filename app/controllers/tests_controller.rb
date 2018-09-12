@@ -39,7 +39,7 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:name, :total_time)
+    params.require(:test).permit(:name, :total_time, :is_technical)
   end
 
   def find_test
