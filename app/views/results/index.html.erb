@@ -22,6 +22,7 @@
       <th>Attempted Questions</th>
       <th>Correct Answer</th>
       <th>Technical Answer</th>
+      <th>Technical Marks</th>
       <th colspan="2">Action</th>
     </tr>
     <% @results && @results.each do |result| %>
@@ -35,10 +36,11 @@
         <td><%= result.attempted_questions %></td>
         <td><%= result.correct_answer %></td>
         <% if result.student.test.is_technical %>
-          <td><%= link_to 'Answer', technical_answers_path(result.student) %></td>
+          <td><%= link_to 'Answer', technical_answers_path(result) %></td>
         <% else %>
           <td> Technical Test not available.</td>
         <% end %>
+        <td><%= result.technical_marks ? result.technical_marks : 'Check Technical Answer' %></td>
         <td><%= link_to 'Show', result_path(result) %></td>
         <td><%= link_to 'Delete', result_path(result), method: :delete, data: {confirm: 'Are You Sure You Want To Delete???'} %></td>
       </tr>

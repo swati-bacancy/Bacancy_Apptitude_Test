@@ -1,6 +1,6 @@
 class ResultsController < ApplicationController
-  before_action :find_result, only: [:show, :destroy]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
+  before_action :find_result, only: [:show, :destroy, :edit, :update, :technical_answers]
+  # http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
 
   require 'csv'
 
@@ -21,13 +21,23 @@ class ResultsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if params[:sum].present?
+      @result.update_attributes(technical_marks: params[:sum])
+      redirect_to results_path
+    end
+  end
+
   def destroy
     @result.destroy
     redirect_to results_path
   end
 
   def technical_answers
-    @student = Student.find(params[:student_id])
+    @student = @result.student
     @answers = @student.answers
   end
 

@@ -1,14 +1,46 @@
 <%= render partial: "shared/header"%>
 <div class="container">
-	<h3><%= @student.name %></h3>
+	<h4>Student Name: <b><%= @student.name %></b></h4>
+	<h4>Test: <b><%= @student.test.name %></b></h4>
 	<% if @answers.present? %>
 		<% @answers.each_with_index do |answer, index|%>
 			<b><%= index + 1 %>.</b>
 		  <%= answer.question.question_description %><br/>
 		  <pre><%= answer.answer %></pre>
+		  <% if !@result.technical_marks.present? %>
+			  <div class="col-md-2 pull-right">
+			  	<%= text_field_tag 'marks', nil, placeholder:'Enter marks of question', class: 'marks' %>
+			  </div>
+			<% end %>
+		  <br/><br/>
 		<% end %>
 	<% else %>
 		<h4>Technical Test not attempted.</h4>
 	<% end %>
 	<%= link_to 'Back', :back, class: "btn btn-primary"%>
+	<% if !@result.technical_marks.present? %>
+		<%= link_to 'submit', '', class: "btn btn-primary", id: 'submit' %>
+	<% end %>
 </div>
+<script type="text/javascript">
+	$( document ).ready(function() {
+		var arr = [];
+		$('#submit').on('click', function(){
+			$('.marks').each(function() {
+				var val_i = $(this).val()
+			  arr.push(parseFloat(val_i));
+			});
+			arr =  arr.filter(n => n)
+			var sum = eval(arr.join('+'));
+			$.ajax({
+        type: "PUT",
+        url: "/results/"+ <%= @result.id %>,
+        data: {'sum' : sum },
+        dataType: "script",
+        success: function(msg)
+        {
+        }
+      });
+		});
+	});
+</script>
