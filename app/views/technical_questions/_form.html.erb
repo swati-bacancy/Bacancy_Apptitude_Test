@@ -1,8 +1,14 @@
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 <%= render partial: "shared/header"%>
+<%
+  if @technical_question.new_record?
+    url = technical_questions_path
+  else
+    url = technical_question_path
+  end
+%>
 <div class="container content-center">
-  <%= form_for @question  do |f| %>
-  <%= render "shared/error_messages", :target => @question %>
+  <%= form_for @technical_question, :url => url  do |f| %>
+  <%= render "shared/error_messages", :target => @technical_question %>
     <div class="row">
       <div class="col-sm-12">
         <h3 class="text-left">Question</h3>
@@ -14,14 +20,8 @@
         <%= f.text_area :question_description, class: "form-control", placeholder: 'Enter Question Discription' %>
       </div>
     </div>
-    <div id= 'options' class="form-inline">
-      <%= f.fields_for :options, @option do |ab| %>
-       <%= render "option_fields", :f => ab %>
-      <% end %>
-    </div>
     <div class="rows col-sm-offset-1 mr-top">
-      <%= link_to_add_association 'Add More Options', f, :options, class: "btn btn-primary" %>
-      <%= f.button  @question.new_record? ? 'Save' : 'Update' , class: "btn btn-primary", type: 'submit' %>
+      <%= f.button  @technical_question.new_record? ? 'Save' : 'Update' , class: "btn btn-primary", type: 'submit' %>
       <%= link_to 'Back', :back, class: "btn btn-primary" %>
     </div>
   <% end %>

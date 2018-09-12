@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    @student.test_id = Test.ids.sample
+    @student.test_id = Test.non_technical.ids.sample
     if @student.save
       redirect_to new_student_answer_path
       flash[:success] = "Welcome to the Test Page!"

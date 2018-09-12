@@ -1,5 +1,5 @@
 class StudentAnswersController < ApplicationController
-  before_action :find_student, only: [:new, :create]
+  before_action :find_student, only: [:new, :create, :new_technical, :create_technical]
 
   def new
     if session[:student_id].present?
@@ -28,9 +28,37 @@ class StudentAnswersController < ApplicationController
     attempted_questions: @student.student_answers.where(test_id: @test.id).count,
     total_questions: @test.questions.count,
     test_id: @test.id)
-    session[:student_id] = nil
+    tech_test = Test.technical.ids.sample
+    if tech_test.present?
+      @student.update_attributes(test_id: Test.technical.ids.sample, test_started: false)
+      redirect_to new_technical_student_answers_path
+      flash[:success] = "Your Aptitude Test submitted successfully And Start your Technical Test!"
+    else
+      redirect_to root_path
+      flash[:success] = "Your Aptitude Test submitted successfully And No Technical Test available! "
+    end
+  end
+
+  def new_technical
+    if session[:student_id].present?
+      @answer = Answer.new
+      return redirect_to root_path if @student.test_started?
+      @student.update_attributes(test_started: false, start_time: DateTime.now)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def create_technical
+    params[:response_item] && params[:response_item].each{|k, value|
+      @answer = Answer.create(
+                          student_id: session[:student_id],
+                          question_id: k,
+                          answer: value,
+                        )
+    }
     redirect_to root_path
-    flash[:success] = "Your Test submitted successfully!"
+    flash[:success] = "Your Technical Test submitted successfully!"
   end
 
   private

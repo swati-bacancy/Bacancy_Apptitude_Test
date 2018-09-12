@@ -7,6 +7,11 @@ class QuestionsTestsController < ApplicationController
   end
 
   def edit
+    if @test.is_technical
+      @questions = Question.technical
+    else
+      @questions = Question.non_technical
+    end
   end
 
   def update

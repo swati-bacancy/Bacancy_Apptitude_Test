@@ -5,4 +5,7 @@ class Test < ApplicationRecord
   has_many :student_answers, dependent: :destroy
 
   validates :name,:total_time, presence: true
+
+  scope :technical, -> { where(is_technical: true) }
+  scope :non_technical, -> { where(is_technical: false) }
 end

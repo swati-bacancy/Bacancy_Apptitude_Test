@@ -26,6 +26,11 @@ class ResultsController < ApplicationController
     redirect_to results_path
   end
 
+  def technical_answers
+    @student = Student.find(params[:student_id])
+    @answers = @student.answers
+  end
+
   private
 
   def find_result

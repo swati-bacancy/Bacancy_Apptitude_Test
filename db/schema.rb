@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180910075626) do
+ActiveRecord::Schema.define(version: 20180911110213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.bigint "question_id"
-    t.bigint "option_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["option_id"], name: "index_answers_on_option_id"
+    t.bigint "student_id"
+    t.text "answer"
     t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["student_id"], name: "index_answers_on_student_id"
   end
 
   create_table "collages", force: :cascade do |t|
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20180910075626) do
     t.text "question_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_technical", default: false
   end
 
   create_table "questions_tests", id: false, force: :cascade do |t|
@@ -106,10 +108,11 @@ ActiveRecord::Schema.define(version: 20180910075626) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "total_time"
+    t.boolean "is_technical", default: false
   end
 
-  add_foreign_key "answers", "options"
   add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "students"
   add_foreign_key "options", "questions"
   add_foreign_key "results", "students"
   add_foreign_key "results", "tests"
