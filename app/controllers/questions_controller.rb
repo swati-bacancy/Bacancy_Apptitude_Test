@@ -1,9 +1,9 @@
 class QuestionsController < ApplicationController
   before_action :find_question, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
+  # http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
 
   def index
-  	@questions = Question.all
+  	@questions = Question.non_technical
   end
 
   def new
@@ -44,7 +44,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-  	params.require(:question).permit(:question_description, options_attributes: [:id, :option, :option_value, :is_answer, :_destroy])
+  	params.require(:question).permit(:question_description, :is_technical, options_attributes: [:id, :option, :option_value, :is_answer, :_destroy])
   end
 
   def find_question

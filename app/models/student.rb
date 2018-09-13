@@ -1,6 +1,7 @@
 class Student < ApplicationRecord
   belongs_to :test
   has_many :student_answers, dependent: :destroy
+  has_many :answers, dependent: :destroy
   has_many :results, dependent: :destroy
 
   validates :course,:collage_name, presence: true

@@ -1,30 +1,38 @@
 <%= render partial: "shared/header"%>
 <div class="container">
-	<%= form_for @test do |f|%>
-		<%= render "shared/error_messages", :target => @test %>
-		<h3><%= @test.new_record? ? 'Add' : 'Edit' %> Test</h3>
-		<div class="row">
-			<div class="col-md-1">
-				<%= f.label :name%>
-			</div>
-			<div class="col-md-5">
-			  <%= f.text_field :name, class: "form-control" %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-1">
-				<%= f.label :total_time %>
-			</div>
-			<div class="col-md-5">
-				<%= f.time_field :total_time %>
-			</div>
-		</div>
-			<div class="row">
-			<div class="col-md-6">
-	  		<%= f.submit "Create Test", class: "btn btn-primary" %>
-	  		<%= link_to 'Back', :back, class: "btn btn-primary" %>
-			<div>
-	  	</div>
-		</div>
-	<% end %>
+  <%= form_for @test do |f|%>
+    <%= render "shared/error_messages", :target => @test %>
+    <h3><%= @test.new_record? ? 'Add' : 'Edit' %> Test</h3>
+    <div class="row">
+      <div class="col-md-1">
+        <%= f.label :name%>
+      </div>
+      <div class="col-md-5">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div><br />
+    <div class="row">
+      <div class="col-md-1">
+        <%= f.label :total_time %>
+      </div>
+      <div class="col-md-5">
+        <%= f.time_field :total_time %>
+      </div>
+    </div><br />
+    <div class="row">
+      <div class="col-md-1">
+        <%= f.label :is_technical, 'Technical' %>
+      </div>
+      <div class="col-md-5">
+        <%= f.check_box :is_technical, {checked: @test.is_technical} %>
+      </div>
+    </div><br />
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.submit "Create Test", class: "btn btn-primary" %>
+        <%= link_to 'Back', :back, class: "btn btn-primary" %>
+      <div>
+      </div>
+    </div>
+  <% end %>
 </div>

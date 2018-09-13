@@ -1,0 +1,10 @@
+<%= render partial: "shared/header"%>
+<div class="container">
+	<h3>Show Question</h3>
+	<p>
+	  <strong>Question :</strong>
+	  <pre><%= @technical_question.question_description %></pre>
+	</p>
+<br />
+	<%= link_to "Back", technical_questions_path, class: "btn btn-primary" %>
+</div>

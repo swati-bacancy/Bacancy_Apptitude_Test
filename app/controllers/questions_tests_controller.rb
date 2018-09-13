@@ -1,5 +1,5 @@
 class QuestionsTestsController < ApplicationController
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
+  # http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
   before_action :find_test, only: [:edit, :update, :show]
 
   def index
@@ -7,6 +7,11 @@ class QuestionsTestsController < ApplicationController
   end
 
   def edit
+    if @test.is_technical
+      @questions = Question.technical
+    else
+      @questions = Question.non_technical
+    end
   end
 
   def update

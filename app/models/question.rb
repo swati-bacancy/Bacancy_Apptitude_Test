@@ -6,4 +6,7 @@ class Question < ApplicationRecord
   accepts_nested_attributes_for :options, :allow_destroy => true
 
   validates :question_description, presence: true
+
+  scope :technical, -> { where(is_technical: true) }
+  scope :non_technical, -> { where(is_technical: false) }
 end

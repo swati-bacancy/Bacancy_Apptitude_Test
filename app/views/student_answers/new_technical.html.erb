@@ -1,9 +1,9 @@
 <%= render partial: "shared/header_logout"%>
 <div id="countdowntimer" class="pull-right"><span id="future_date"><span></div>
-<div class="container" id="student_answer">
+<div class="container" id="technical_student_answer">
   <h3><div id='warning_text'></div></h3>
-  <%= form_for @student_answer do |f| %>
-    <%= render "shared/error_messages", :target => @student_answer %>
+  <%= form_for @answer, url: create_technical_student_answers_path do |f| %>
+    <%= render "shared/error_messages", :target => @answer %>
     <div class="row">
       <div class="col-sm-12">
         <h3 class="text-left">Start Your Test :- <b><%= @student.test.name %></b></h3></br>
@@ -15,13 +15,9 @@
     <% @student.test.questions.each_with_index do |question, index| %>
       <b>
         <%= index+1 %>.
-        <%= question.question_description %></b></br></br>
+        <pre><%= question.question_description %></pre></b></br></br>
         <div class="col-md-12">
-          <% question.options.order(:option).each do |option|%>
-            <%= radio_button("response_item", question.id, option.id)  %>
-            <%= option.option%>.
-            <%= option.option_value %><br/></br>
-          <% end %>
+          <%= text_area_tag "response_item[#{question.id}]", nil, size: "90x10" %>
         </div>
     <% end %>
     <% if @student.test_started == false %>
@@ -67,14 +63,14 @@
         $("#submit").trigger('click');
       }
     }
-    $('#student_answer').bind('cut copy paste', function (e) {
+    $('#technical_student_answer').bind('cut copy paste', function (e) {
         e.preventDefault();
     });
-    $("#student_answer").on("contextmenu",function(e){
-        // return false;
+    $("#technical_student_answer").on("contextmenu",function(e){
+        return false;
     });
     var submitted = false;
-    $("#new_student_answer").submit(function() {
+    $("#new_answer").submit(function() {
       submitted = true;
     });
     $(window).bind('beforeunload',function(){

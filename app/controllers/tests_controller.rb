@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :find_test, only:[:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
+  # http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
   def new
     @test = Test.new
   end
@@ -39,7 +39,7 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:name, :total_time)
+    params.require(:test).permit(:name, :total_time, :is_technical)
   end
 
   def find_test
