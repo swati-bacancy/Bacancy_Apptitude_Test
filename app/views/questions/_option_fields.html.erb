@@ -7,11 +7,11 @@
     </td>
     <td>
       <%= f.label :option, class: "mr-left mr-right" %>
-      <%= f.text_field :option , class: "form-control mr-right", size:4, placeholder: 'A' %>
+      <%= f.text_field :option , class: "form-control mr-right option", size:4, placeholder: 'A', tabindex: 2, value: 'A' %>
     </td>
     <td>
       <%= f.label :option_value, class: "mr-right" %>
-      <%= f.text_field :option_value, class: "form-control mr-right", placeholder: 'Enter Option Value' %>
+      <%= f.text_field :option_value, class: "form-control mr-right option_value", placeholder: 'Enter Option Value', tabindex: 3 %>
     </td>
     <td><%= link_to_remove_association "Remove", f%></td><br/>
   </tr>
