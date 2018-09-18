@@ -17,6 +17,8 @@
 //= require cocoon
 //= require bootstrap-sprockets
 //= require jquery.countdownTimer
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
 
 $(document).ready(function(){
