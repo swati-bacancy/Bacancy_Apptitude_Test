@@ -16,7 +16,12 @@
         <%= f.label :total_time %>
       </div>
       <div class="col-md-5">
-        <%= f.time_field :total_time %>
+        <div class='input-group date' id='datetimepicker1'>
+          <%= f.text_field :total_time, class: "form-control" %>
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
       </div>
     </div><br />
     <div class="row">
@@ -36,3 +41,10 @@
     </div>
   <% end %>
 </div>
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker({
+      format: 'HH:mm'
+    });
+  });
+</script>

@@ -31,6 +31,8 @@ gem "cocoon"
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails', '4.3.1'
 
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
