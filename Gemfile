@@ -34,6 +34,9 @@ gem 'jquery-rails', '4.3.1'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
+gem 'paperclip'
+
+
 gem 'ckeditor'
 
 # Use Redis adapter to run Action Cable in production
