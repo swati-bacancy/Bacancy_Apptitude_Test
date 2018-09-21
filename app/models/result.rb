@@ -3,7 +3,7 @@ class Result < ApplicationRecord
   belongs_to :test
 
   def self.to_csv(options = {})
-    desired_columns = %w(student_enroll_number student_name student_email course collage_name total_questions attempted_questions correct_answer)
+    desired_columns = %w(student_enroll_number student_name student_email course collage_name total_questions attempted_questions correct_answer technical_marks)
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |result|
@@ -13,6 +13,7 @@ class Result < ApplicationRecord
         attributes["student_email"] = result.student.email
         attributes["course"] = result.student.course
         attributes["collage_name"] = result.student.collage_name
+        attributes["technical_marks"] = result.technical_marks
         csv << attributes.values_at(*desired_columns)
       end
     end
