@@ -13,7 +13,7 @@
       <% @technical_questions.each_with_index do |question,index| %>
         <tr>
         	<td><%= index + 1 %></td>
-          <td width="100px"><pre><%= question.question_description %></pre></td>
+          <td width="100px"><%= raw(question.question_description) %></td>
           <td>
           	<%= link_to 'Edit', edit_technical_question_path(question) %> |
           	<%= link_to 'Show', technical_question_path(question) %> |
