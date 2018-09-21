@@ -4,7 +4,7 @@
   <%= form_tag  results_path , :method => 'get' do %>
     <%= label_tag :Search %>
     <%= text_field_tag :search, params[:search], options = {style:"width:200px"} %>
-    <%= select_tag :collage_name, options_for_select(Student.pluck(:collage_name).uniq, params[:collage_name]), :prompt => "Select Collage Name" %>
+    <%= select_tag :collage_name, options_for_select(Student.pluck(:collage_name).uniq, params[:collage_name]), :prompt => "Select College Name" %>
     <%= submit_tag("search", :style => "width:100px;") %>
   <%end%>
 
@@ -17,7 +17,7 @@
       <th>Student Name</th>
       <th>Student Email</th>
       <th>Course</th>
-      <th>Collage Name</th>
+      <th>College Name</th>
       <th>Total Questions</th>
       <th>Attempted Questions</th>
       <th>Correct Answer</th>

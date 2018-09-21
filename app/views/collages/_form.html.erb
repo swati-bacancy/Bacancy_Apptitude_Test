@@ -2,7 +2,7 @@
 <div class="container">
 	<%= form_for @collage do |f|%>
 		<%= render "shared/error_messages", :target => @collage %>
-		<h3><%= @collage.new_record? ? 'Add' : 'Edit' %> Collage</h3>
+		<h3><%= @collage.new_record? ? 'Add' : 'Edit' %> College</h3>
 		<div class="row">
 			<div class="col-md-1">
 				<%= f.label :name%>
@@ -13,7 +13,7 @@
 		</div><br />
 		<div class="row">
 			<div class="col-md-6">
-	  		<%= f.submit "Create Collage", class: "btn btn-primary" %>
+	  		<%= f.submit "Create College", class: "btn btn-primary" %>
 	  		<%= link_to 'Back', :back, class: "btn btn-primary" %>
 			<div>
 	  	</div>

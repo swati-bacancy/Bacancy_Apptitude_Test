@@ -76,7 +76,7 @@
             </div>
           </div>
           <div class="form-group">
-            <%= f.label :Collage_Name, class: 'control-label col-sm-4' %>
+            <%= f.label :Collage_Name, 'College Name',class: 'control-label col-sm-4' %>
             <div class="col-sm-6">
               <%= f.collection_select :collage_name, Collage.all, :name, :name, { include_blank: 'Select a Collage' }, class: 'form-control' %>
             </div>
