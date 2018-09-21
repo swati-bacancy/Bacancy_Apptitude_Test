@@ -19,6 +19,7 @@
 //= require jquery.countdownTimer
 //= require moment
 //= require bootstrap-datetimepicker
+//= require ckeditor/init
 //= require_tree .
 
 $(document).ready(function(){

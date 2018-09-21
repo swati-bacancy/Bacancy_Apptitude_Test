@@ -17,7 +17,11 @@
                 <%= b.check_box %>
               </div>
               <div class="col-sm-3 col-md-11">
-                <pre><%= b.label %></pre>
+                <% if b.object.is_technical %>
+                  <%= raw(b.object.question_description) %>
+                <% else %>
+                  <pre><%= b.label %></pre>.
+                <% end %>
               </div>
             </div>
           <% end %>

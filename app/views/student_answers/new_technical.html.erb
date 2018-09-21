@@ -15,7 +15,7 @@
     <% @student.test.questions.each_with_index do |question, index| %>
       <b>
         <%= index+1 %>.
-        <pre><%= question.question_description %></pre></b></br></br>
+        <%= raw(question.question_description) %></b></br></br>
         <div class="col-md-12">
           <%= text_area_tag "response_item[#{question.id}]", nil, size: "90x10" %>
         </div>

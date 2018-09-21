@@ -5,7 +5,7 @@
 	<% if @answers.present? %>
 		<% @answers.each_with_index do |answer, index|%>
 			<b><%= index + 1 %>.</b>
-		  <%= answer.question.question_description %><br/>
+		  <%= raw(answer.question.question_description) %><br/>
 		  <pre><%= answer.answer %></pre>
 		  <% if !@result.technical_marks.present? %>
 			  <div class="col-md-2 pull-right">

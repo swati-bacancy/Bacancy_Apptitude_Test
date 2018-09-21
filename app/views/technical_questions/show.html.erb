@@ -3,7 +3,7 @@
 	<h3>Show Question</h3>
 	<p>
 	  <strong>Question :</strong>
-	  <pre><%= @technical_question.question_description %></pre>
+	  <%= raw(@technical_question.question_description) %>
 	</p>
 <br />
 	<%= link_to "Back", technical_questions_path, class: "btn btn-primary" %>
