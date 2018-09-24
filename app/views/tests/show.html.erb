@@ -14,13 +14,13 @@
 	<% @test.questions.each_with_index do |question, index| %>
 	  <p><%= index + 1 %>.<%= raw(question.question_description) %></p>
 		<% question.options.each do |option| %>
-		<% if option.is_answer==true %>
-			<p class="col-lg-1 col-md-1 col-sm-1"><b><%= option.option %></p></b>
-			<p><b><%= option.option_value %></b></p>
-		<% else %>
-			<p class="col-lg-1 col-md-1 col-sm-1"><%= option.option %></p>
-			<p><%= option.option_value %></p>
-		<% end %>
+			<% if option.is_answer==true %>
+				<p class="col-lg-1 col-md-1 col-sm-1"><b><%= option.option %></p></b>
+				<p><b><%= option.option_value %></b></p>
+			<% else %>
+				<p class="col-lg-1 col-md-1 col-sm-1"><%= option.option %></p>
+				<p><%= option.option_value %></p>
+			<% end %>
 		<% end %>
 	<% end %>
 	<%= link_to 'Back', :back, class: "btn btn-primary" %>

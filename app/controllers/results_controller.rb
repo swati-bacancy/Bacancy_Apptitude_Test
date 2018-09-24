@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-  before_action :find_result, only: [:show, :destroy, :edit, :update, :technical_answers]
+  before_action :find_result, only: [:show, :destroy, :edit, :update, :technical_answers, :check_student_answers]
   http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
 
   require 'csv'
@@ -39,6 +39,11 @@ class ResultsController < ApplicationController
   def technical_answers
     @student = @result.student
     @answers = @student.answers
+  end
+
+  def check_student_answers
+    @student = @result.student
+    @student_answers = @student.student_answers.where(test_id: @student.test.id)
   end
 
   private

@@ -1,0 +1,23 @@
+<%= render partial: "shared/header"%>
+<div class="container">
+	<h3>Test: <%= @student.test.name %></h3>
+	<% @student_answers.each_with_index do |st_an, index| %>
+		<p><%= index + 1 %>.<%= raw(st_an.question.question_description) %></p>
+		<% st_an.question.options.each do |option| %>
+			<% if st_an.option.option_value == option.option_value  %>
+				<p class="col-lg-1 col-md-1 col-sm-1"><b><%= option.option %></p></b>
+				<p><b><%= option.option_value %></b></p>
+			<% else %>
+				<p class="col-lg-1 col-md-1 col-sm-1"><%= option.option %></p>
+				<p><%= option.option_value %></p>
+			<% end %>
+		<% end %>
+		<p>Correct Answer</p>
+		<% st_an.question.options.each do |option| %>
+			<% if option.is_answer==true %>
+				<p class="col-lg-1 col-md-1 col-sm-1"><b><%= option.option %></p></b>
+				<p><b><%= option.option_value %></b></p>
+			<% end %>
+		<% end %>
+	<% end %>
+</div>

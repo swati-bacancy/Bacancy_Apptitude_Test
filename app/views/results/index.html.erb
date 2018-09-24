@@ -20,7 +20,8 @@
       <th>College Name</th>
       <th>Total Questions</th>
       <th>Attempted Questions</th>
-      <th>Correct Answer</th>
+      <th>Check Answer</th>
+      <th>Correct Answers</th>
       <th>Technical Answer</th>
       <th>Technical Marks</th>
       <th colspan="2">Action</th>
@@ -34,6 +35,7 @@
         <td><%= result.student.collage_name %></td>
         <td><%= result.total_questions %></td>
         <td><%= result.attempted_questions %></td>
+        <td><%= link_to "Check Answers", check_student_answers_path(result)  %></td>
         <td><%= result.correct_answer %></td>
         <% if result.student.test.is_technical %>
           <td><%= link_to 'Answer', technical_answers_path(result) %></td>
