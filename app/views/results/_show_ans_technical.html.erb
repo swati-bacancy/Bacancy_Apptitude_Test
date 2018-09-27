@@ -1,0 +1,59 @@
+<div class="modal-dialog">  
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Technical Test Answer</h4>
+    </div>
+    <div class="modal-body">
+      
+
+				<h4>Student Name: <b><%= @student.name %></b></h4>
+				<h4>Enrollment No: <b><%= @student.roll_number %></b></h4>
+				<h4>Test: <b><%= @student.test.name %></b></h4>
+				<% if @answers.present? %>
+					<% @answers.each_with_index do |answer, index|%>
+						<b><%= index + 1 %>.</b>
+					  <%= raw(answer.question.question_description) %><br/>
+					  <pre style="width: 1000px;"><%= answer.answer %></pre>
+					  <br/><br/>
+					<% end %>
+				<% else %>
+					<h4>Technical Test not attempted.</h4>
+				<% end %>
+			  <% if !@result.technical_marks.present? %>
+				  <div class="col-md-2 pull-right">
+				  	<%= text_field_tag 'marks', nil, placeholder:'Enter marks of question', class: 'marks' %>
+				  </div>
+				<% end %>
+				<%= link_to 'Back', :back, class: "btn btn-primary"%>
+				<% if !@result.technical_marks.present? %>
+					<%= link_to 'submit', '', class: "btn btn-primary", id: 'submit' %>
+				<% end %>
+
+
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+	$( document ).ready(function() {
+		var arr = [];
+		$('#submit').on('click', function(){
+			var sum = parseFloat($('.marks').val());					
+			$.ajax({
+        type: "PUT",
+        url: "/results/"+ <%= @result.id %>,
+        data: {'sum' : sum },
+        dataType: "script",
+        success: function(msg)
+        {
+        }
+      });
+		});
+	});
+
+	$(".close").click(function(){
+    $(".modal").hide();
+  });
+</script>
