@@ -39,6 +39,9 @@ class ResultsController < ApplicationController
   def technical_answers
     @student = @result.student
     @answers = @student.answers
+    respond_to do |format|
+      format.js
+    end
   end
 
   def check_student_answers
