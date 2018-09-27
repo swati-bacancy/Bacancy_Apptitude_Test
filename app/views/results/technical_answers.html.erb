@@ -31,7 +31,11 @@
 			  arr.push(parseFloat(val_i));
 			});
 			arr =  arr.filter(n => n)
-			var sum = eval(arr.join('+'));
+			if(arr.length > 0 ){
+				var sum = eval(arr.join('+'));
+			} else {
+				var sum = 0
+			}
 			$.ajax({
         type: "PUT",
         url: "/results/"+ <%= @result.id %>,
