@@ -1,0 +1,934 @@
+# Logfile created on 2018-09-28 13:47:43 +0530 by logger.rb/53141
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 13:47:43 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a85505ca] Running /usr/bin/env mkdir -p /tmp on 54.161.174.215
+ DEBUG [a85505ca] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 13:53:58 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7ce9dc91] Running /usr/bin/env mkdir -p /tmp on 54.161.174.215
+ DEBUG [7ce9dc91] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:15:27 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c5f08f4f] Running /usr/bin/env mkdir -p /tmp on 54.161.174.215
+ DEBUG [c5f08f4f] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:24:20 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0da99779] Running /usr/bin/env mkdir -p /tmp on 54.161.174.215
+ DEBUG [0da99779] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:26:20 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0a67efad] Running /usr/bin/env mkdir -p /tmp on 139.59.7.98
+ DEBUG [0a67efad] Command: /usr/bin/env mkdir -p /tmp
+  INFO [dd541cb3] Finished in 5.382 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 100.0%
+  INFO [05cd98fb] Running /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh on 139.59.7.98
+ DEBUG [05cd98fb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh
+  INFO [a0084343] Finished in 0.167 seconds with exit status 0 (successful).
+  INFO [ed1baad9] Running /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD on 139.59.7.98
+ DEBUG [ed1baad9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD )
+ DEBUG [8eb21aa7] 	Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+ DEBUG [8eb21aa7] 	
+ DEBUG [8eb21aa7] 	7055d0f0df5ccc004eec82222bda8dd22971a138
+ DEBUG [8eb21aa7] 		HEAD
+  INFO [8eb21aa7] Finished in 3.047 seconds with exit status 0 (successful).
+  INFO [92bb1d32] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [92bb1d32] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+  INFO [a9933c23] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [4e4dce05] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home on 139.59.7.98
+ DEBUG [4e4dce05] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home
+  INFO [4eab8079] Finished in 0.174 seconds with exit status 0 (successful).
+ DEBUG [edee2b3a] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ] on 139.59.7.98
+ DEBUG [edee2b3a] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ]
+ DEBUG [4e99e926] Finished in 0.164 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb does not exist on 139.59.7.98
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:30:57 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [fcdccaa9] Running /usr/bin/env mkdir -p /tmp on 139.59.7.98
+ DEBUG [fcdccaa9] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7751cfc8] Finished in 5.752 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 100.0%
+  INFO [ec99abd6] Running /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh on 139.59.7.98
+ DEBUG [ec99abd6] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh
+  INFO [bc827bca] Finished in 0.179 seconds with exit status 0 (successful).
+  INFO [13a52f71] Running /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD on 139.59.7.98
+ DEBUG [13a52f71] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD )
+ DEBUG [c82a307f] 	7055d0f0df5ccc004eec82222bda8dd22971a138
+ DEBUG [c82a307f] 		HEAD
+  INFO [c82a307f] Finished in 5.299 seconds with exit status 0 (successful).
+  INFO [688e8c9f] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [688e8c9f] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+  INFO [8a6cdc60] Finished in 0.137 seconds with exit status 0 (successful).
+  INFO [7c199ad3] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home on 139.59.7.98
+ DEBUG [7c199ad3] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home
+  INFO [2ab5c0ed] Finished in 0.180 seconds with exit status 0 (successful).
+ DEBUG [dfa422ce] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ] on 139.59.7.98
+ DEBUG [dfa422ce] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ]
+ DEBUG [fa6c0819] Finished in 0.172 seconds with exit status 0 (successful).
+ DEBUG [31fbdb2a] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [31fbdb2a] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ]
+ DEBUG [e22612b2] Finished in 0.164 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb does not exist on 139.59.7.98
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:34:00 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b62bac57] Running /usr/bin/env mkdir -p /tmp on 139.59.7.98
+ DEBUG [b62bac57] Command: /usr/bin/env mkdir -p /tmp
+  INFO [1f602029] Finished in 6.051 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 100.0%
+  INFO [3862b14a] Running /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh on 139.59.7.98
+ DEBUG [3862b14a] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh
+  INFO [1f57f460] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [f11d060a] Running /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD on 139.59.7.98
+ DEBUG [f11d060a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD )
+ DEBUG [3a468dbd] 	7055d0f0df5ccc004eec82222bda8dd22971a138
+ DEBUG [3a468dbd] 		HEAD
+  INFO [3a468dbd] Finished in 3.861 seconds with exit status 0 (successful).
+  INFO [6ce65696] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [6ce65696] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+  INFO [07b151a9] Finished in 0.140 seconds with exit status 0 (successful).
+  INFO [c6c8b85d] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home on 139.59.7.98
+ DEBUG [c6c8b85d] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home
+  INFO [6378999c] Finished in 0.175 seconds with exit status 0 (successful).
+ DEBUG [5275d558] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ] on 139.59.7.98
+ DEBUG [5275d558] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ]
+ DEBUG [1ad10748] Finished in 0.179 seconds with exit status 0 (successful).
+ DEBUG [454c29d6] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [454c29d6] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ]
+ DEBUG [677e7ae8] Finished in 0.186 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb does not exist on 139.59.7.98
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:35:06 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [001d98f9] Running /usr/bin/env mkdir -p /tmp on 139.59.7.98
+ DEBUG [001d98f9] Command: /usr/bin/env mkdir -p /tmp
+  INFO [fe27686f] Finished in 4.807 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 100.0%
+  INFO [8917ce21] Running /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh on 139.59.7.98
+ DEBUG [8917ce21] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh
+  INFO [15ad6674] Finished in 0.178 seconds with exit status 0 (successful).
+  INFO [5a7238ca] Running /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD on 139.59.7.98
+ DEBUG [5a7238ca] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD )
+ DEBUG [884dcf72] 	Warning: Permanently added the RSA host key for IP address '192.30.253.112' to the list of known hosts.
+ DEBUG [884dcf72] 	
+ DEBUG [884dcf72] 	7055d0f0df5ccc004eec82222bda8dd22971a138
+ DEBUG [884dcf72] 		HEAD
+  INFO [884dcf72] Finished in 3.352 seconds with exit status 0 (successful).
+  INFO [1d38fe84] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [1d38fe84] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+  INFO [a16c9fbc] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [60e2f288] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home on 139.59.7.98
+ DEBUG [60e2f288] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home
+  INFO [cdbf562a] Finished in 0.352 seconds with exit status 0 (successful).
+ DEBUG [b1b2b09f] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ] on 139.59.7.98
+ DEBUG [b1b2b09f] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ]
+ DEBUG [f309f6d5] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [bcf75a02] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [bcf75a02] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ]
+ DEBUG [274caf26] Finished in 0.167 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb does not exist on 139.59.7.98
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:35:35 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [9203601a] Running /usr/bin/env mkdir -p /tmp on 139.59.7.98
+ DEBUG [9203601a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c4c053d9] Finished in 4.232 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 100.0%
+  INFO [1a2b8f8c] Running /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh on 139.59.7.98
+ DEBUG [1a2b8f8c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh
+  INFO [58f20cea] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO [c71c1ba0] Running /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD on 139.59.7.98
+ DEBUG [c71c1ba0] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD )
+ DEBUG [808d7756] 	7055d0f0df5ccc004eec82222bda8dd22971a138
+ DEBUG [808d7756] 		HEAD
+  INFO [808d7756] Finished in 2.884 seconds with exit status 0 (successful).
+  INFO [17d39328] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [17d39328] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+  INFO [97252a24] Finished in 0.140 seconds with exit status 0 (successful).
+  INFO [86edc67d] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home on 139.59.7.98
+ DEBUG [86edc67d] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home
+  INFO [8681ef61] Finished in 0.175 seconds with exit status 0 (successful).
+ DEBUG [bde27595] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ] on 139.59.7.98
+ DEBUG [bde27595] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ]
+ DEBUG [38e5a156] Finished in 0.185 seconds with exit status 0 (successful).
+ DEBUG [14e662b2] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [14e662b2] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ]
+ DEBUG [e4672d3c] Finished in 0.180 seconds with exit status 0 (successful).
+ DEBUG [1633a5dc] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION ] on 139.59.7.98
+ DEBUG [1633a5dc] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION ]
+ DEBUG [c5b3330b] Finished in 0.206 seconds with exit status 1 (failed).
+ DEBUG [e545ab8e] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/repo/HEAD ] on 139.59.7.98
+ DEBUG [e545ab8e] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/repo/HEAD ]
+ DEBUG [06f96098] Finished in 0.174 seconds with exit status 1 (failed).
+ DEBUG [e12dabc2] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [e12dabc2] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test'" 1>&2; false; fi
+ DEBUG [d59832c0] Finished in 0.186 seconds with exit status 0 (successful).
+  INFO [e02e8914] Running /usr/bin/env git clone --mirror git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git /home/ubuntu/apps/Bacancy_Apptitude_Test/repo on 139.59.7.98
+ DEBUG [e02e8914] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git clone --mirror git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git /home/ubuntu/apps/Bacancy_Apptitude_Test/repo )
+ DEBUG [fce4060c] 	Cloning into bare repository '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'...
+ DEBUG [fce4060c] 	
+ DEBUG [fce4060c] 	remote: Counting objects: 1294, done.[K
+ DEBUG [fce4060c] 	
+ DEBUG [fce4060c] 	remote: Compressing objects:   0% (1/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:   1% (3/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:   2% (6/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:   3% (8/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:   4% (11/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:   5% (13/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:   6% (16/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:   7% (18/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:   8% (21/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:   9% (24/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  10% (26/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  11% (29/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  12% (31/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  13% (34/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  14% (36/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  15% (39/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  16% (41/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  17% (44/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  18% (47/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  19% (49/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  20% (52/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  21% (54/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  22% (57/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  23% (59/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  24% (62/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  25% (64/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  26% (67/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  27% (70/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  28% (72/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  29% (75/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  30% (77/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  31% (80/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  32% (82/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  33% (85/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  34% (88/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  35% (90/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  36% (93/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  37% (95/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  38% (98/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  39% (100/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  40% (103/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  41% (105/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  42% (108/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  43% (111/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  44% (113/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  45% (116/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  46% (118/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  47% (121/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  48% (123/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  49% (126/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  50% (128/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  51% (131/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  52% (134/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  53% (136/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  54% (139/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  55% (141/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  56% (144/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  57% (146/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  58% (149/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  59% (152/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  60% (154/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  61% (157/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  62% (159/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  63% (162/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  64% (164/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  65% (167/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  66% (169/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  67% (172/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  68% (175/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  69% (177/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  70% (180/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  71% (182/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  72% (185/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  73% (187/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  74% (190/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  75% (192/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  76% (195/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  77% (198/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  78% (200/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  79% (203/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  80% (205/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  81% (208/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  82% (210/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  83% (213/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  84% (216/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  85% (218/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  86% (221/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  87% (223/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  88% (226/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  89% (228/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  90% (231/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  91% (233/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  92% (236/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  93% (239/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  94% (241/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  95% (244/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  96% (246/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  97% (249/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  98% (251/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects:  99% (254/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects: 100% (256/256)   [K
+ DEBUG [fce4060c] 	remote: Compressing objects: 100% (256/256), done.[K
+ DEBUG [fce4060c] 	
+ DEBUG [fce4060c] 	Receiving objects:   0% (1/1294)   
+ DEBUG [fce4060c] 	Receiving objects:   1% (13/1294)   
+ DEBUG [fce4060c] 	Receiving objects:   2% (26/1294)   
+ DEBUG [fce4060c] 	Receiving objects:   3% (39/1294)   
+ DEBUG [fce4060c] 	Receiving objects:   4% (52/1294)   
+ DEBUG [fce4060c] 	Receiving objects:   5% (65/1294)   
+ DEBUG [fce4060c] 	Receiving objects:   6% (78/1294)   
+ DEBUG [fce4060c] 	Receiving objects:   7% (91/1294)   
+ DEBUG [fce4060c] 	Receiving objects:   8% (104/1294)   
+ DEBUG [fce4060c] 	Receiving objects:   9% (117/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  10% (130/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  11% (143/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  12% (156/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  13% (169/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  14% (182/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  15% (195/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  16% (208/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  17% (220/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  18% (233/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  19% (246/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  20% (259/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  21% (272/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  22% (285/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  23% (298/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  24% (311/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  25% (324/1294)   
+ DEBUG [fce4060c] 	Receiving objects:  26% (337/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  27% (350/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  28% (363/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  29% (376/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  30% (389/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  31% (402/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  32% (415/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  33% (428/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  34% (440/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  35% (453/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  36% (466/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  37% (479/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  38% (492/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  39% (505/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  40% (518/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  41% (531/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  42% (544/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  43% (557/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  44% (570/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  45% (583/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  46% (596/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  47% (609/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  48% (622/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  49% (635/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  50% (647/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  51% (660/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  52% (673/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  53% (686/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  54% (699/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  55% (712/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  56% (725/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  57% (738/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  58% (751/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  59% (764/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  60% (777/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  61% (790/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  62% (803/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  63% (816/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  64% (829/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  65% (842/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  66% (855/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	remote: Total 1294 (delta 205), reused 211 (delta 92), pack-reused 943[K
+ DEBUG [fce4060c] 	
+ DEBUG [fce4060c] 	Receiving objects:  67% (867/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  68% (880/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  69% (893/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  70% (906/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  71% (919/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  72% (932/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  73% (945/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  74% (958/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  75% (971/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  76% (984/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  77% (997/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  78% (1010/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  79% (1023/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  80% (1036/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  81% (1049/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  82% (1062/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  83% (1075/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  84% (1087/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  85% (1100/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  86% (1113/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  87% (1126/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  88% (1139/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  89% (1152/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  90% (1165/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  91% (1178/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  92% (1191/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  93% (1204/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  94% (1217/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  95% (1230/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  96% (1243/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  97% (1256/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  98% (1269/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects:  99% (1282/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects: 100% (1294/1294), 252.01 KiB | 397.00 KiB/s   
+ DEBUG [fce4060c] 	Receiving objects: 100% (1294/1294), 732.40 KiB | 397.00 KiB/s, done.
+ DEBUG [fce4060c] 	
+ DEBUG [fce4060c] 	Resolving deltas:   0% (0/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  11% (91/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  12% (97/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  13% (102/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  14% (109/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  18% (142/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  19% (148/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  20% (155/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  21% (169/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  22% (173/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  24% (192/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  25% (194/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  26% (202/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  27% (209/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  30% (237/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  31% (240/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  32% (251/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  33% (255/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  34% (265/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  35% (272/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  36% (284/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  37% (286/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  38% (300/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  40% (310/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  42% (325/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  43% (335/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  46% (356/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  47% (368/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  49% (379/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  50% (389/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  51% (395/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  52% (406/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  53% (410/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  54% (418/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  55% (431/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  56% (439/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  57% (443/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  58% (449/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  60% (464/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  65% (504/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  66% (513/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  69% (534/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  70% (543/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  71% (550/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  72% (561/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  73% (566/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  76% (593/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  77% (595/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  79% (617/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  80% (619/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  82% (634/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  83% (642/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  84% (649/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  85% (662/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  86% (665/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  87% (677/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  88% (680/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  89% (689/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  90% (695/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  91% (710/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  92% (711/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  93% (720/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  94% (728/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  95% (734/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  96% (748/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  97% (749/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  98% (758/772)   
+ DEBUG [fce4060c] 	Resolving deltas:  99% (771/772)   
+ DEBUG [fce4060c] 	Resolving deltas: 100% (772/772)   
+ DEBUG [fce4060c] 	Resolving deltas: 100% (772/772), done.
+ DEBUG [fce4060c] 	
+ DEBUG [fce4060c] 	Checking connectivity... 
+ DEBUG [fce4060c] 	done.
+ DEBUG [fce4060c] 	
+  INFO [fce4060c] Finished in 4.339 seconds with exit status 0 (successful).
+ DEBUG [8fd73be4] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [8fd73be4] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [42cf5a47] Finished in 0.152 seconds with exit status 0 (successful).
+  INFO [c6b2d2a2] Running /usr/bin/env git remote set-url origin git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git on 139.59.7.98
+ DEBUG [c6b2d2a2] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git remote set-url origin git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git )
+  INFO [e09482d7] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [2fd8d227] Running /usr/bin/env git remote update --prune on 139.59.7.98
+ DEBUG [2fd8d227] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f3f69977] 	Fetching origin
+ DEBUG [f3f69977] 	
+  INFO [f3f69977] Finished in 3.085 seconds with exit status 0 (successful).
+ DEBUG [6e494248] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [6e494248] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [4935bd71] Finished in 0.140 seconds with exit status 0 (successful).
+  INFO [86b35753] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544 on 139.59.7.98
+ DEBUG [86b35753] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544 )
+  INFO [5c99df23] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [c1b58b12] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544 on 139.59.7.98
+ DEBUG [c1b58b12] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544 )
+  INFO [9f91cba2] Finished in 0.218 seconds with exit status 0 (successful).
+ DEBUG [8cf9a857] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [8cf9a857] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [f578d23d] Finished in 0.185 seconds with exit status 0 (successful).
+ DEBUG [18ebf490] Running /usr/bin/env git rev-list --max-count=1 master on 139.59.7.98
+ DEBUG [18ebf490] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [9cb87e3c] 	7055d0f0df5ccc004eec82222bda8dd22971a138
+ DEBUG [9cb87e3c] 	
+ DEBUG [9cb87e3c] Finished in 0.193 seconds with exit status 0 (successful).
+ DEBUG [0ce3ab29] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [0ce3ab29] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544'" 1>&2; false; fi
+ DEBUG [16fa2ffd] Finished in 0.173 seconds with exit status 0 (successful).
+  INFO [ce3fde04] Running /usr/bin/env echo "7055d0f0df5ccc004eec82222bda8dd22971a138" > REVISION on 139.59.7.98
+ DEBUG [ce3fde04] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544 && /usr/bin/env echo "7055d0f0df5ccc004eec82222bda8dd22971a138" > REVISION
+  INFO [0c29669f] Finished in 0.186 seconds with exit status 0 (successful).
+  INFO [25a6a7e4] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/views/home on 139.59.7.98
+ DEBUG [25a6a7e4] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/views/home
+  INFO [52ce5d40] Finished in 0.184 seconds with exit status 0 (successful).
+ DEBUG [43e4a086] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/model/password.rb ] on 139.59.7.98
+ DEBUG [43e4a086] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/model/password.rb ]
+ DEBUG [7446e326] Finished in 0.180 seconds with exit status 1 (failed).
+ DEBUG [b35096eb] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/model/password.rb ] on 139.59.7.98
+ DEBUG [b35096eb] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/model/password.rb ]
+ DEBUG [d78db598] Finished in 0.185 seconds with exit status 1 (failed).
+  INFO [ae348fbb] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/model/password.rb on 139.59.7.98
+ DEBUG [ae348fbb] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/model/password.rb
+  INFO [9d05b653] Finished in 0.180 seconds with exit status 0 (successful).
+ DEBUG [94785459] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [94785459] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/views/home/technical.html.erb ]
+ DEBUG [b6eba275] Finished in 0.181 seconds with exit status 1 (failed).
+ DEBUG [c1df1850] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [c1df1850] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/views/home/technical.html.erb ]
+ DEBUG [d8b32eb0] Finished in 0.184 seconds with exit status 1 (failed).
+  INFO [8ecc4d29] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/views/home/technical.html.erb on 139.59.7.98
+ DEBUG [8ecc4d29] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544/app/views/home/technical.html.erb
+  INFO [84e23dac] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [7503f482] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544 /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current on 139.59.7.98
+ DEBUG [7503f482] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928090544 /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current
+  INFO [050e7366] Finished in 0.180 seconds with exit status 0 (successful).
+  INFO [6a1fe971] Running /usr/bin/env mv /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current /home/ubuntu/apps/Bacancy_Apptitude_Test on 139.59.7.98
+ DEBUG [6a1fe971] Command: /usr/bin/env mv /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current /home/ubuntu/apps/Bacancy_Apptitude_Test
+  INFO [5f2b037c] Finished in 0.187 seconds with exit status 0 (successful).
+ DEBUG [8ebda881] Running /usr/bin/env ls -x /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [8ebda881] Command: /usr/bin/env ls -x /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+ DEBUG [3a4c47b1] 	20180928090544
+ DEBUG [3a4c47b1] 	
+ DEBUG [3a4c47b1] Finished in 0.182 seconds with exit status 0 (successful).
+ DEBUG [86d91a56] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [86d91a56] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases'" 1>&2; false; fi
+ DEBUG [26ad7cc4] Finished in 0.194 seconds with exit status 0 (successful).
+  INFO [3f882f38] Running /usr/bin/env echo "Branch master (at 7055d0f0df5ccc004eec82222bda8dd22971a138) deployed as release 20180928090544 by bacancy" >> /home/ubuntu/apps/Bacancy_Apptitude_Test/revisions.log on 139.59.7.98
+ DEBUG [3f882f38] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/releases && /usr/bin/env echo "Branch master (at 7055d0f0df5ccc004eec82222bda8dd22971a138) deployed as release 20180928090544 by bacancy" >> /home/ubuntu/apps/Bacancy_Apptitude_Test/revisions.log
+  INFO [0b2075f1] Finished in 0.182 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:42:43 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [753458d6] Running /usr/bin/env mkdir -p /tmp on 139.59.7.98
+ DEBUG [753458d6] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:43:51 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [dae98e5d] Running /usr/bin/env mkdir -p /tmp on 139.59.7.98
+ DEBUG [dae98e5d] Command: /usr/bin/env mkdir -p /tmp
+  INFO [11df6d07] Finished in 4.758 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 100.0%
+  INFO [1d3def09] Running /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh on 139.59.7.98
+ DEBUG [1d3def09] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh
+  INFO [96caa720] Finished in 0.189 seconds with exit status 0 (successful).
+  INFO [c70ebbd4] Running /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD on 139.59.7.98
+ DEBUG [c70ebbd4] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD )
+ DEBUG [8820dca5] 	98c82a982961469c6ff7c4eb07eb4a646f57da96
+ DEBUG [8820dca5] 		HEAD
+  INFO [8820dca5] Finished in 3.315 seconds with exit status 0 (successful).
+  INFO [39bd59ce] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [39bd59ce] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+  INFO [b7288f6f] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [0f3429dc] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config on 139.59.7.98
+ DEBUG [0f3429dc] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config
+  INFO [e42f8787] Finished in 0.176 seconds with exit status 0 (successful).
+ DEBUG [dfd865c1] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ] on 139.59.7.98
+ DEBUG [dfd865c1] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ]
+ DEBUG [80160d63] Finished in 0.171 seconds with exit status 0 (successful).
+ DEBUG [55f825ed] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [55f825ed] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ]
+ DEBUG [02210be0] Finished in 0.182 seconds with exit status 0 (successful).
+ DEBUG [c9f2340f] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml ] on 139.59.7.98
+ DEBUG [c9f2340f] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml ]
+ DEBUG [89de81ac] Finished in 0.183 seconds with exit status 0 (successful).
+ DEBUG [59252146] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION ] on 139.59.7.98
+ DEBUG [59252146] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION ]
+ DEBUG [79506e5d] Finished in 0.174 seconds with exit status 0 (successful).
+ DEBUG [b942c52a] Running /usr/bin/env cat /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION 2>/dev/null on 139.59.7.98
+ DEBUG [b942c52a] Command: /usr/bin/env cat /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION 2>/dev/null
+ DEBUG [15c60799] 	7055d0f0df5ccc004eec82222bda8dd22971a138
+ DEBUG [15c60799] 	
+ DEBUG [15c60799] Finished in 0.175 seconds with exit status 0 (successful).
+ DEBUG [b69fc450] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/repo/HEAD ] on 139.59.7.98
+ DEBUG [b69fc450] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/repo/HEAD ]
+ DEBUG [1a877bde] Finished in 0.179 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/Bacancy_Apptitude_Test/repo
+ DEBUG [2ed5faf1] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [2ed5faf1] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [abf2527d] Finished in 0.174 seconds with exit status 0 (successful).
+  INFO [3edb0239] Running /usr/bin/env git remote set-url origin git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git on 139.59.7.98
+ DEBUG [3edb0239] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git remote set-url origin git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git )
+  INFO [8b272b4f] Finished in 0.177 seconds with exit status 0 (successful).
+  INFO [b6505b11] Running /usr/bin/env git remote update --prune on 139.59.7.98
+ DEBUG [b6505b11] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0ae7feed] 	Fetching origin
+ DEBUG [0ae7feed] 	
+ DEBUG [0ae7feed] 	remote: Counting objects: 4, done.[K
+ DEBUG [0ae7feed] 	
+ DEBUG [0ae7feed] 	remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0[K
+ DEBUG [0ae7feed] 	
+ DEBUG [0ae7feed] 	Unpacking objects:  25% (1/4)   
+ DEBUG [0ae7feed] 	Unpacking objects:  50% (2/4)   
+ DEBUG [0ae7feed] 	Unpacking objects:  75% (3/4)   
+ DEBUG [0ae7feed] 	Unpacking objects: 100% (4/4)   
+ DEBUG [0ae7feed] 	Unpacking objects: 100% (4/4), done.
+ DEBUG [0ae7feed] 	
+ DEBUG [0ae7feed] 	From github.com:swati-bacancy/Bacancy_Apptitude_Test
+ DEBUG [0ae7feed] 	
+ DEBUG [0ae7feed] 	   7055d0f..98c82a9  master     -> master
+ DEBUG [0ae7feed] 	
+  INFO [0ae7feed] Finished in 6.329 seconds with exit status 0 (successful).
+ DEBUG [c082f039] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [c082f039] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [d03ab176] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO [f07220ee] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401 on 139.59.7.98
+ DEBUG [f07220ee] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401 )
+  INFO [fc96b4f8] Finished in 0.168 seconds with exit status 0 (successful).
+  INFO [e4084389] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401 on 139.59.7.98
+ DEBUG [e4084389] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401 )
+  INFO [9b14af16] Finished in 0.183 seconds with exit status 0 (successful).
+ DEBUG [05bc901e] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [05bc901e] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [e73612f4] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [4e691773] Running /usr/bin/env git rev-list --max-count=1 master on 139.59.7.98
+ DEBUG [4e691773] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [8a823696] 	98c82a982961469c6ff7c4eb07eb4a646f57da96
+ DEBUG [8a823696] 	
+ DEBUG [8a823696] Finished in 0.161 seconds with exit status 0 (successful).
+ DEBUG [6e3dcccc] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [6e3dcccc] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401'" 1>&2; false; fi
+ DEBUG [d40326a3] Finished in 0.147 seconds with exit status 0 (successful).
+  INFO [ab39658a] Running /usr/bin/env echo "98c82a982961469c6ff7c4eb07eb4a646f57da96" > REVISION on 139.59.7.98
+ DEBUG [ab39658a] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401 && /usr/bin/env echo "98c82a982961469c6ff7c4eb07eb4a646f57da96" > REVISION
+  INFO [7a884fa9] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [797944e5] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/config on 139.59.7.98
+ DEBUG [797944e5] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/config
+  INFO [69c8c254] Finished in 0.154 seconds with exit status 0 (successful).
+ DEBUG [158fcabd] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/model/password.rb ] on 139.59.7.98
+ DEBUG [158fcabd] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/model/password.rb ]
+ DEBUG [5ed87e48] Finished in 0.148 seconds with exit status 1 (failed).
+ DEBUG [0bf912b8] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/model/password.rb ] on 139.59.7.98
+ DEBUG [0bf912b8] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/model/password.rb ]
+ DEBUG [86e26477] Finished in 0.171 seconds with exit status 1 (failed).
+  INFO [06328407] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/model/password.rb on 139.59.7.98
+ DEBUG [06328407] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/model/password.rb
+  INFO [4ac11445] Finished in 0.151 seconds with exit status 0 (successful).
+ DEBUG [d288b93d] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [d288b93d] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/views/home/technical.html.erb ]
+ DEBUG [feb0f723] Finished in 0.163 seconds with exit status 1 (failed).
+ DEBUG [872b7f0c] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [872b7f0c] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/views/home/technical.html.erb ]
+ DEBUG [0cfbd9ed] Finished in 0.169 seconds with exit status 1 (failed).
+  INFO [95433ec3] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/views/home/technical.html.erb on 139.59.7.98
+ DEBUG [95433ec3] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/app/views/home/technical.html.erb
+  INFO [bf0eac43] Finished in 0.181 seconds with exit status 0 (successful).
+ DEBUG [eb488458] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/config/database.yml ] on 139.59.7.98
+ DEBUG [eb488458] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/config/database.yml ]
+ DEBUG [04799d84] Finished in 0.153 seconds with exit status 1 (failed).
+ DEBUG [9efb5b2f] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/config/database.yml ] on 139.59.7.98
+ DEBUG [9efb5b2f] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/config/database.yml ]
+ DEBUG [2850d307] Finished in 0.155 seconds with exit status 1 (failed).
+  INFO [efea33ca] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/config/database.yml on 139.59.7.98
+ DEBUG [efea33ca] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401/config/database.yml
+  INFO [bfd8c032] Finished in 0.149 seconds with exit status 0 (successful).
+  INFO [3ea662e9] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401 /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current on 139.59.7.98
+ DEBUG [3ea662e9] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091401 /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current
+  INFO [4c7d7ce4] Finished in 0.151 seconds with exit status 0 (successful).
+  INFO [f5491eae] Running /usr/bin/env mv /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current /home/ubuntu/apps/Bacancy_Apptitude_Test on 139.59.7.98
+ DEBUG [f5491eae] Command: /usr/bin/env mv /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current /home/ubuntu/apps/Bacancy_Apptitude_Test
+  INFO [d93b1879] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [a7ff2903] Running /usr/bin/env ls -x /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [a7ff2903] Command: /usr/bin/env ls -x /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+ DEBUG [f790165f] 	20180928090544
+ DEBUG [f790165f] 		
+ DEBUG [f790165f] 	20180928091401
+ DEBUG [f790165f] 	
+ DEBUG [f790165f] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:44:19 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e60e268e] Running /usr/bin/env mkdir -p /tmp on 139.59.7.98
+ DEBUG [e60e268e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [73ebd079] Finished in 15.937 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 100.0%
+  INFO [eb04797b] Running /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh on 139.59.7.98
+ DEBUG [eb04797b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh
+  INFO [413071f0] Finished in 0.169 seconds with exit status 0 (successful).
+  INFO [56ef1f9a] Running /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD on 139.59.7.98
+ DEBUG [56ef1f9a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD )
+ DEBUG [b3669f46] 	98c82a982961469c6ff7c4eb07eb4a646f57da96
+ DEBUG [b3669f46] 		HEAD
+  INFO [b3669f46] Finished in 2.998 seconds with exit status 0 (successful).
+  INFO [31bc9f0e] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [31bc9f0e] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+  INFO [a667c2b3] Finished in 0.259 seconds with exit status 0 (successful).
+  INFO [5721a517] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config on 139.59.7.98
+ DEBUG [5721a517] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config
+  INFO [8bb2d76f] Finished in 0.208 seconds with exit status 0 (successful).
+ DEBUG [63399cf7] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ] on 139.59.7.98
+ DEBUG [63399cf7] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ]
+ DEBUG [7ac39ba0] Finished in 0.378 seconds with exit status 0 (successful).
+ DEBUG [6dae8ac7] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [6dae8ac7] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ]
+ DEBUG [f5fb1bf3] Finished in 0.299 seconds with exit status 0 (successful).
+ DEBUG [b969c2b6] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml ] on 139.59.7.98
+ DEBUG [b969c2b6] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml ]
+ DEBUG [303df4d3] Finished in 0.545 seconds with exit status 0 (successful).
+ DEBUG [676de270] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION ] on 139.59.7.98
+ DEBUG [676de270] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION ]
+ DEBUG [0229e118] Finished in 0.181 seconds with exit status 0 (successful).
+ DEBUG [6d339969] Running /usr/bin/env cat /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION 2>/dev/null on 139.59.7.98
+ DEBUG [6d339969] Command: /usr/bin/env cat /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION 2>/dev/null
+ DEBUG [8a06268c] 	98c82a982961469c6ff7c4eb07eb4a646f57da96
+ DEBUG [8a06268c] 	
+ DEBUG [8a06268c] Finished in 0.306 seconds with exit status 0 (successful).
+ DEBUG [4708858a] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/repo/HEAD ] on 139.59.7.98
+ DEBUG [4708858a] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/repo/HEAD ]
+ DEBUG [c64e51c9] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/Bacancy_Apptitude_Test/repo
+ DEBUG [e742c59a] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [e742c59a] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [b6dbd935] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [e3f7dabf] Running /usr/bin/env git remote set-url origin git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git on 139.59.7.98
+ DEBUG [e3f7dabf] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git remote set-url origin git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git )
+  INFO [e8fef3a8] Finished in 0.182 seconds with exit status 0 (successful).
+  INFO [3ddc7d29] Running /usr/bin/env git remote update --prune on 139.59.7.98
+ DEBUG [3ddc7d29] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9aaa1be4] 	Fetching origin
+ DEBUG [9aaa1be4] 	
+  INFO [9aaa1be4] Finished in 2.928 seconds with exit status 0 (successful).
+ DEBUG [9f125e3b] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [9f125e3b] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [87a33808] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [659ea5a5] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440 on 139.59.7.98
+ DEBUG [659ea5a5] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440 )
+  INFO [8b2c6864] Finished in 0.163 seconds with exit status 0 (successful).
+  INFO [f57f72ff] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440 on 139.59.7.98
+ DEBUG [f57f72ff] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440 )
+  INFO [bead8ae9] Finished in 0.200 seconds with exit status 0 (successful).
+ DEBUG [c6573ddd] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [c6573ddd] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [30e2a9f2] Finished in 0.148 seconds with exit status 0 (successful).
+ DEBUG [a1bf362c] Running /usr/bin/env git rev-list --max-count=1 master on 139.59.7.98
+ DEBUG [a1bf362c] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [97184f72] 	98c82a982961469c6ff7c4eb07eb4a646f57da96
+ DEBUG [97184f72] 	
+ DEBUG [97184f72] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [9f21bc62] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [9f21bc62] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440'" 1>&2; false; fi
+ DEBUG [89b09f02] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO [9afa2b13] Running /usr/bin/env echo "98c82a982961469c6ff7c4eb07eb4a646f57da96" > REVISION on 139.59.7.98
+ DEBUG [9afa2b13] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440 && /usr/bin/env echo "98c82a982961469c6ff7c4eb07eb4a646f57da96" > REVISION
+  INFO [6b2cf72c] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [a2ca1497] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/config on 139.59.7.98
+ DEBUG [a2ca1497] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/config
+  INFO [38cd47df] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [7c6a6d42] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/model/password.rb ] on 139.59.7.98
+ DEBUG [7c6a6d42] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/model/password.rb ]
+ DEBUG [d76f396b] Finished in 0.151 seconds with exit status 1 (failed).
+ DEBUG [a3f0ac98] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/model/password.rb ] on 139.59.7.98
+ DEBUG [a3f0ac98] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/model/password.rb ]
+ DEBUG [8c0842f3] Finished in 0.149 seconds with exit status 1 (failed).
+  INFO [54de7d87] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/model/password.rb on 139.59.7.98
+ DEBUG [54de7d87] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/model/password.rb
+  INFO [7b6d69ca] Finished in 0.147 seconds with exit status 0 (successful).
+ DEBUG [1932bbbe] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [1932bbbe] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/views/home/technical.html.erb ]
+ DEBUG [0fb34c7f] Finished in 0.159 seconds with exit status 1 (failed).
+ DEBUG [d07a37e7] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [d07a37e7] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/views/home/technical.html.erb ]
+ DEBUG [627d905f] Finished in 0.185 seconds with exit status 1 (failed).
+  INFO [f7cd64b9] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/views/home/technical.html.erb on 139.59.7.98
+ DEBUG [f7cd64b9] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/app/views/home/technical.html.erb
+  INFO [8d59ce55] Finished in 0.155 seconds with exit status 0 (successful).
+ DEBUG [0d0a1b44] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/config/database.yml ] on 139.59.7.98
+ DEBUG [0d0a1b44] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/config/database.yml ]
+ DEBUG [4876312c] Finished in 0.147 seconds with exit status 1 (failed).
+ DEBUG [37c9e026] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/config/database.yml ] on 139.59.7.98
+ DEBUG [37c9e026] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/config/database.yml ]
+ DEBUG [a8dfd0a5] Finished in 0.169 seconds with exit status 1 (failed).
+  INFO [74e7a75e] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/config/database.yml on 139.59.7.98
+ DEBUG [74e7a75e] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440/config/database.yml
+  INFO [65c441ae] Finished in 0.164 seconds with exit status 0 (successful).
+  INFO [2420b879] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440 /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current on 139.59.7.98
+ DEBUG [2420b879] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091440 /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current
+  INFO [bbe6bad9] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [ea6385dd] Running /usr/bin/env mv /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current /home/ubuntu/apps/Bacancy_Apptitude_Test on 139.59.7.98
+ DEBUG [ea6385dd] Command: /usr/bin/env mv /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current /home/ubuntu/apps/Bacancy_Apptitude_Test
+  INFO [8d81ab0d] Finished in 0.305 seconds with exit status 0 (successful).
+ DEBUG [9bd69da0] Running /usr/bin/env ls -x /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [9bd69da0] Command: /usr/bin/env ls -x /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+ DEBUG [53a681ca] 	20180928090544
+ DEBUG [53a681ca] 		
+ DEBUG [53a681ca] 	20180928091401
+ DEBUG [53a681ca] 		
+ DEBUG [53a681ca] 	20180928091440
+ DEBUG [53a681ca] 	
+ DEBUG [53a681ca] Finished in 0.180 seconds with exit status 0 (successful).
+ DEBUG [0d532a2a] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [0d532a2a] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases'" 1>&2; false; fi
+ DEBUG [dd9af4af] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO [abcd53c9] Running /usr/bin/env echo "Branch master (at 98c82a982961469c6ff7c4eb07eb4a646f57da96) deployed as release 20180928091440 by bacancy" >> /home/ubuntu/apps/Bacancy_Apptitude_Test/revisions.log on 139.59.7.98
+ DEBUG [abcd53c9] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/releases && /usr/bin/env echo "Branch master (at 98c82a982961469c6ff7c4eb07eb4a646f57da96) deployed as release 20180928091440 by bacancy" >> /home/ubuntu/apps/Bacancy_Apptitude_Test/revisions.log
+  INFO [cf4eed9c] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-28 14:46:20 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1ca36414] Running /usr/bin/env mkdir -p /tmp on 139.59.7.98
+ DEBUG [1ca36414] Command: /usr/bin/env mkdir -p /tmp
+  INFO [463481f5] Finished in 4.668 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh 100.0%
+  INFO [8ee23b69] Running /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh on 139.59.7.98
+ DEBUG [8ee23b69] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh
+  INFO [f9a960e6] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [2acd3cd1] Running /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD on 139.59.7.98
+ DEBUG [2acd3cd1] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git ls-remote git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git HEAD )
+ DEBUG [679c40c2] 	98c82a982961469c6ff7c4eb07eb4a646f57da96
+ DEBUG [679c40c2] 		
+ DEBUG [679c40c2] 	HEAD
+  INFO [679c40c2] Finished in 2.849 seconds with exit status 0 (successful).
+  INFO [8d0557aa] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [8d0557aa] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+  INFO [4539ea4d] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [8ddc6515] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config on 139.59.7.98
+ DEBUG [8ddc6515] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config
+  INFO [09c15e20] Finished in 0.151 seconds with exit status 0 (successful).
+ DEBUG [e72920fe] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ] on 139.59.7.98
+ DEBUG [e72920fe] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb ]
+ DEBUG [9a6986d4] Finished in 0.153 seconds with exit status 0 (successful).
+ DEBUG [f70f91af] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [f70f91af] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb ]
+ DEBUG [1d4c5ad9] Finished in 0.167 seconds with exit status 0 (successful).
+ DEBUG [d2fca184] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml ] on 139.59.7.98
+ DEBUG [d2fca184] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml ]
+ DEBUG [4d06421e] Finished in 0.175 seconds with exit status 0 (successful).
+ DEBUG [11d3309f] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION ] on 139.59.7.98
+ DEBUG [11d3309f] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION ]
+ DEBUG [c227e1d7] Finished in 0.174 seconds with exit status 0 (successful).
+ DEBUG [d796bc18] Running /usr/bin/env cat /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION 2>/dev/null on 139.59.7.98
+ DEBUG [d796bc18] Command: /usr/bin/env cat /home/ubuntu/apps/Bacancy_Apptitude_Test/current/REVISION 2>/dev/null
+ DEBUG [394ddf06] 	98c82a982961469c6ff7c4eb07eb4a646f57da96
+ DEBUG [394ddf06] 	
+ DEBUG [394ddf06] Finished in 0.168 seconds with exit status 0 (successful).
+ DEBUG [a5127853] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/repo/HEAD ] on 139.59.7.98
+ DEBUG [a5127853] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/repo/HEAD ]
+ DEBUG [c26df65c] Finished in 0.230 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/Bacancy_Apptitude_Test/repo
+ DEBUG [8eb49ba2] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [8eb49ba2] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [49cadcf8] Finished in 0.213 seconds with exit status 0 (successful).
+  INFO [5c01710a] Running /usr/bin/env git remote set-url origin git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git on 139.59.7.98
+ DEBUG [5c01710a] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git remote set-url origin git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git )
+  INFO [4d21c785] Finished in 0.354 seconds with exit status 0 (successful).
+  INFO [2b38cb7d] Running /usr/bin/env git remote update --prune on 139.59.7.98
+ DEBUG [2b38cb7d] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ec85e45d] 	Fetching origin
+ DEBUG [ec85e45d] 	
+  INFO [ec85e45d] Finished in 3.224 seconds with exit status 0 (successful).
+ DEBUG [acbd2547] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [acbd2547] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [7ebdf7ff] Finished in 0.206 seconds with exit status 0 (successful).
+  INFO [c0a71905] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629 on 139.59.7.98
+ DEBUG [c0a71905] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629 )
+  INFO [0d2983e1] Finished in 0.328 seconds with exit status 0 (successful).
+  INFO [a6158863] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629 on 139.59.7.98
+ DEBUG [a6158863] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629 )
+  INFO [34f875b2] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [098ef877] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [098ef877] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/repo; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/repo'" 1>&2; false; fi
+ DEBUG [d7dc9aaa] Finished in 0.164 seconds with exit status 0 (successful).
+ DEBUG [e191b99e] Running /usr/bin/env git rev-list --max-count=1 master on 139.59.7.98
+ DEBUG [e191b99e] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Bacancy_Apptitude_Test-production-bacancy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [db3eaf76] 	98c82a982961469c6ff7c4eb07eb4a646f57da96
+ DEBUG [db3eaf76] 	
+ DEBUG [db3eaf76] Finished in 0.171 seconds with exit status 0 (successful).
+ DEBUG [5bed6561] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [5bed6561] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629'" 1>&2; false; fi
+ DEBUG [e750a85a] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [c84ac251] Running /usr/bin/env echo "98c82a982961469c6ff7c4eb07eb4a646f57da96" > REVISION on 139.59.7.98
+ DEBUG [c84ac251] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629 && /usr/bin/env echo "98c82a982961469c6ff7c4eb07eb4a646f57da96" > REVISION
+  INFO [5314594c] Finished in 0.166 seconds with exit status 0 (successful).
+  INFO [7e704b2a] Running /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/config on 139.59.7.98
+ DEBUG [7e704b2a] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/model /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/views/home /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/config
+  INFO [544e8c29] Finished in 0.164 seconds with exit status 0 (successful).
+ DEBUG [af9ffd6d] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/model/password.rb ] on 139.59.7.98
+ DEBUG [af9ffd6d] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/model/password.rb ]
+ DEBUG [467179f8] Finished in 0.157 seconds with exit status 1 (failed).
+ DEBUG [37838f0c] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/model/password.rb ] on 139.59.7.98
+ DEBUG [37838f0c] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/model/password.rb ]
+ DEBUG [d4efec26] Finished in 0.160 seconds with exit status 1 (failed).
+  INFO [28891635] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/model/password.rb on 139.59.7.98
+ DEBUG [28891635] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/model/password.rb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/model/password.rb
+  INFO [96217158] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [ee2933f7] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [ee2933f7] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/views/home/technical.html.erb ]
+ DEBUG [e9b1db21] Finished in 0.151 seconds with exit status 1 (failed).
+ DEBUG [1bdcbdc2] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/views/home/technical.html.erb ] on 139.59.7.98
+ DEBUG [1bdcbdc2] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/views/home/technical.html.erb ]
+ DEBUG [37a3eae9] Finished in 0.156 seconds with exit status 1 (failed).
+  INFO [eb9917fc] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/views/home/technical.html.erb on 139.59.7.98
+ DEBUG [eb9917fc] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/app/views/home/technical.html.erb /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/app/views/home/technical.html.erb
+  INFO [602cfd5d] Finished in 0.162 seconds with exit status 0 (successful).
+ DEBUG [bf55a278] Running [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/config/database.yml ] on 139.59.7.98
+ DEBUG [bf55a278] Command: [ -L /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/config/database.yml ]
+ DEBUG [b330fce2] Finished in 0.159 seconds with exit status 1 (failed).
+ DEBUG [f8f5c36f] Running [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/config/database.yml ] on 139.59.7.98
+ DEBUG [f8f5c36f] Command: [ -f /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/config/database.yml ]
+ DEBUG [5f025160] Finished in 0.162 seconds with exit status 1 (failed).
+  INFO [655ef51a] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/config/database.yml on 139.59.7.98
+ DEBUG [655ef51a] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/shared/config/database.yml /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629/config/database.yml
+  INFO [1e2a8451] Finished in 0.167 seconds with exit status 0 (successful).
+  INFO [a77ab900] Running /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629 /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current on 139.59.7.98
+ DEBUG [a77ab900] Command: /usr/bin/env ln -s /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/20180928091629 /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current
+  INFO [432ff0d5] Finished in 0.154 seconds with exit status 0 (successful).
+  INFO [161668d2] Running /usr/bin/env mv /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current /home/ubuntu/apps/Bacancy_Apptitude_Test on 139.59.7.98
+ DEBUG [161668d2] Command: /usr/bin/env mv /home/ubuntu/apps/Bacancy_Apptitude_Test/releases/current /home/ubuntu/apps/Bacancy_Apptitude_Test
+  INFO [f74ed6e0] Finished in 0.168 seconds with exit status 0 (successful).
+ DEBUG [14e6f87f] Running /usr/bin/env ls -x /home/ubuntu/apps/Bacancy_Apptitude_Test/releases on 139.59.7.98
+ DEBUG [14e6f87f] Command: /usr/bin/env ls -x /home/ubuntu/apps/Bacancy_Apptitude_Test/releases
+ DEBUG [e4e1cb1d] 	20180928090544
+ DEBUG [e4e1cb1d] 		
+ DEBUG [e4e1cb1d] 	20180928091401
+ DEBUG [e4e1cb1d] 		
+ DEBUG [e4e1cb1d] 	20180928091440
+ DEBUG [e4e1cb1d] 		
+ DEBUG [e4e1cb1d] 	20180928091629
+ DEBUG [e4e1cb1d] 	
+ DEBUG [e4e1cb1d] Finished in 0.196 seconds with exit status 0 (successful).
+ DEBUG [579fe69f] Running if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases'" 1>&2; false; fi on 139.59.7.98
+ DEBUG [579fe69f] Command: if test ! -d /home/ubuntu/apps/Bacancy_Apptitude_Test/releases; then echo "Directory does not exist '/home/ubuntu/apps/Bacancy_Apptitude_Test/releases'" 1>&2; false; fi
+ DEBUG [1da07040] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO [8b575eb1] Running /usr/bin/env echo "Branch master (at 98c82a982961469c6ff7c4eb07eb4a646f57da96) deployed as release 20180928091629 by bacancy" >> /home/ubuntu/apps/Bacancy_Apptitude_Test/revisions.log on 139.59.7.98
+ DEBUG [8b575eb1] Command: cd /home/ubuntu/apps/Bacancy_Apptitude_Test/releases && /usr/bin/env echo "Branch master (at 98c82a982961469c6ff7c4eb07eb4a646f57da96) deployed as release 20180928091629 by bacancy" >> /home/ubuntu/apps/Bacancy_Apptitude_Test/revisions.log
+  INFO [66fbba07] Finished in 0.166 seconds with exit status 0 (successful).

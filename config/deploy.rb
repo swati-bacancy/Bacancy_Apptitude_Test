@@ -8,7 +8,7 @@ set :application,     'Bacancy_Apptitude_Test'
 set :user,            'ubuntu'
 
 set :rvm_bin_path, "$HOME/bin"
-# set :rvm_ruby_version, '2.2.2@nuvo'
+set :rvm_ruby_version, '2.5.0@bacancy_aptitude_test'
 
 # Don't change these unless you know what you're doing
 set :pty,             true
@@ -32,7 +32,7 @@ namespace :deploy do
     end
   end
 
-  set :linked_files, %w{app/model/password.rb app/views/home/technical.html.erb}
+  set :linked_files, %w{app/model/password.rb app/views/home/technical.html.erb config/database.yml}
   # after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
