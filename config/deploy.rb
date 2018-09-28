@@ -1,10 +1,10 @@
 # config valid only for current version of Capistrano
 lock "3.11.0"
 
-server '54.161.174.215', port: 22, roles: [:web, :app, :db], primary: true
+server '139.59.7.98', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:swati-bacancy/Bacancy_Apptitude_Test.git'
-set :application,     'apptitude_test'
+set :application,     'Bacancy_Apptitude_Test'
 set :user,            'ubuntu'
 
 set :rvm_bin_path, "$HOME/bin"
