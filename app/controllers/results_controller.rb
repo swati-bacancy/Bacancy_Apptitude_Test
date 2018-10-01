@@ -1,14 +1,14 @@
 class ResultsController < ApplicationController
   before_action :find_result, only: [:show, :destroy, :edit, :update, :technical_answers, :check_student_answers]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
+  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
 
   require 'csv'
 
   def index
     if(params[:search] || params[:collage_name])
-      @results =  Result.joins(:student).where('students.email ilike ? and students.collage_name ilike ?', "%#{params[:search]}%", "%#{params[:collage_name]}%")
+      @results =  Result.joins(:student).includes(student: :test).where('students.email ilike ? and students.collage_name ilike ?', "%#{params[:search]}%", "%#{params[:collage_name]}%")
     else
-      @results = Result.all
+      @results = Result.includes(student: :test)
     end
     if params[:format] == 'csv'
       respond_to do |format|
@@ -38,7 +38,7 @@ class ResultsController < ApplicationController
 
   def technical_answers
     @student = @result.student
-    @answers = @student.answers
+    @answers = @student.answers.includes(:question)
     respond_to do |format|
       format.js
     end
