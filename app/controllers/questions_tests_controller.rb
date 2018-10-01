@@ -1,5 +1,5 @@
 class QuestionsTestsController < ApplicationController
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
+  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
   before_action :find_test, only: [:edit, :update, :show]
 
   def index

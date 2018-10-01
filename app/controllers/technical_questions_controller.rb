@@ -1,6 +1,6 @@
 class TechnicalQuestionsController < ApplicationController
   before_action :find_technical_question, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
+  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
 
   def index
   	@technical_questions = Question.technical

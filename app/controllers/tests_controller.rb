@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :find_test, only:[:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD
+  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
   def new
     @test = Test.new
   end
