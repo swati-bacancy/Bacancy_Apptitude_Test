@@ -33,7 +33,7 @@ namespace :deploy do
   end
 
   set :linked_files, %w{app/model/password.rb app/views/home/technical.html.erb config/database.yml}
-  # after  :finishing,    :compile_assets
+  after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
