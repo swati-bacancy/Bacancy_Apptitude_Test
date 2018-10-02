@@ -1,0 +1,46 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+       <h4 class="modal-title">Aptitude Test Answer</h4>
+    </div>
+    <div class="modal-body">
+      <h4>Student Name: <b><%= @student&.name %></b></h4>
+      <h4>Enrollment No: <b><%= @student&.roll_number %></b></h4>
+      <h4>Test: <b><%= @student_answers&.first&.test&.name %></b></h3>
+      <% if @student_answers.present? %> 
+        <% @student_answers.each_with_index do |st_an, index| %>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p><%= index + 1 %>.<%= raw(st_an.question.question_description) %></p>
+              <% st_an.question.options.each do |option| %>
+                <% if st_an.option.option_value == option.option_value  %>
+                  <p class="col-lg-1 col-md-1 col-sm-1"><b><%= option.option %></p></b>
+                  <p><b><%= option.option_value %></b></p>
+                <% else %>
+                  <p class="col-lg-1 col-md-1 col-sm-1"><%= option.option %></p>
+                  <p><%= option.option_value %></p>
+                <% end %>
+              <% end %></p>
+            </div>
+          </div>
+
+          <p>Correct Answer</p>
+          <% st_an.question.options.each do |option| %>
+            <% if option.is_answer==true %>
+              <p class="col-lg-1 col-md-1 col-sm-1"><b><%= option.option %></p></b>
+              <p><b><%= option.option_value %></b></p>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <h3>Student has not attempted any question.</h3>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(".close").click(function(){
+    $(".modal").hide();
+  });
+</script>

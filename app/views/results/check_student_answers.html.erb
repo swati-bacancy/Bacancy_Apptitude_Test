@@ -1,6 +1,6 @@
-<%= render partial: "shared/header"%>
-<div class="container">
-	<h3>Test: <%= @student.test.name %></h3>
+<%#= render partial: "shared/header"%>
+<!-- <div class="container">
+	<h3>Test: <%= @student_answers&.first&.test&.name %></h3>
 	<% @student_answers.each_with_index do |st_an, index| %>
 		<p><%= index + 1 %>.<%= raw(st_an.question.question_description) %></p>
 		<% st_an.question.options.each do |option| %>
@@ -20,4 +20,4 @@
 			<% end %>
 		<% end %>
 	<% end %>
-</div>
+</div> -->

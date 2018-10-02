@@ -46,7 +46,10 @@ class ResultsController < ApplicationController
 
   def check_student_answers
     @student = @result.student
-    @student_answers = @student.student_answers.where(test_id: @student.test.id)
+    @student_answers = @student.student_answers
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

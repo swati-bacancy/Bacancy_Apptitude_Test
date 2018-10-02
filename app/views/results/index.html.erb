@@ -35,7 +35,7 @@
         <td><%= result.student.collage_name %></td>
         <td><%= result.total_questions %></td>
         <td><%= result.attempted_questions %></td>
-        <td><%= link_to "Check Answers", check_student_answers_path(result)  %></td>
+        <td><%= link_to "Check Answers", check_student_answers_path(result), remote: true %></td>
         <td><%= result.correct_answer %></td>
         <% if result.student.test.is_technical %>
           <td>
