@@ -20,8 +20,8 @@
          <% end %>
          <div class="row">
             <div class="col-md-12 pull-left">
-               <% if !@result.technical_marks.present? %>
-               <%= text_field_tag 'marks', nil, placeholder:'Enter marks of question', class: 'marks' %>
+               <% if !@result&.technical_marks.present? || @result&.technical_marks.nan? %>
+               <%= number_field_tag 'marks', nil, placeholder:'Enter marks of question', class: 'marks' %>
                <% end %>
             </div>
          </div>
@@ -29,7 +29,7 @@
          <div class="row">
             <div class="col-md-12">
                <%= link_to 'Back', :back, class: "btn btn-primary"%>
-               <% if !@result.technical_marks.present? %>
+               <% if !@result&.technical_marks.present? || @result&.technical_marks.nan? %>
                <%= link_to 'submit', '', class: "btn btn-primary", id: 'submit' %>
                <% end %>
             </div>
