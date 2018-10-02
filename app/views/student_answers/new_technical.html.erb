@@ -12,12 +12,12 @@
     <div class="rows">
       <label>Please Fill Up The Following Questions :</label></br></br>
     </div>
-    <% @student.test.questions.each_with_index do |question, index| %>
+    <% @student&.test&.questions.each_with_index do |question, index| %>
       <b>
-        <%= index+1 %>.
-        <%= raw(question.question_description) %></b></br></br>
-        <div class="col-md-12">
-          <%= text_area_tag "response_item[#{question.id}]", nil, size: "90x10" %>
+        <h4><%= index+1 %>.</h4>
+        <%= raw(question&.question_description) %></b>
+        <div class="col-md-12 mb-50">
+          <%= text_area_tag "response_item[#{question.id}]", nil, size: "90x10",placeholder: "Add your code here" %>
         </div>
     <% end %>
     <% if @student.test_started == false %>
