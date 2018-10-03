@@ -46,7 +46,7 @@
  }
 
 .modal-dialog {
-    // width: 80%;
+    width: 80%;
     max-height: calc(100% - 200px);
     overflow-y: scroll;
 }
@@ -60,4 +60,7 @@
 }
 .mb-50{
     margin-bottom: 50px;
+}
+.modal-header{
+    background-color: lightblue;
 }
