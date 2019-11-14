@@ -6,6 +6,6 @@ class Student < ApplicationRecord
 
   validates :course,:collage_name, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})\z/ }
-  validates :roll_number, presence: true
+  validates :roll_number, :location, :preferred_position, presence: true
   validates :name, presence: true, format: { with: /\A[a-zA-Z .]+\z/ }, length: { maximum: 50, :message => "Must be less than 50 characters"}
 end
