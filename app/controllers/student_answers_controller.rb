@@ -25,20 +25,20 @@ class StudentAnswersController < ApplicationController
     @student.student_answers.map {|i| @count+=1 if (i.option.is_answer == true && i.test_id == @student.test_id)}
     @test = @student.test
     @result.update_attributes(correct_answer: @count,
-    attempted_questions: @student.student_answers.where(test_id: @test.id).count,
-    total_questions: @test.questions.count,
-    test_id: @test.id)
-    redirect_to root_path
+                              attempted_questions: @student.student_answers.where(test_id: @test.id).count,
+                              total_questions: @test.questions.count,
+                              test_id: @test.id)
+    # redirect_to root_path
     flash[:success] = "Your Aptitude Test submitted successfully"
-    # tech_test = Test.technical.ids.sample
-    # if tech_test.present?
-    #   @student.update_attributes(test_id: Test.technical.ids.sample, test_started: false)
-    #   redirect_to new_technical_student_answers_path
-    #   flash[:success] = "Your Aptitude Test submitted successfully And Start your Technical Test!"
-    # else
-    #   redirect_to root_path
-    #   flash[:success] = "Your Aptitude Test submitted successfully And No Technical Test available! "
-    # end
+    tech_test = Test.technical.ids.sample
+    if tech_test.present?
+      @student.update_attributes(test_id: Test.technical.ids.sample, test_started: false)
+      redirect_to new_technical_student_answers_path
+      flash[:success] = "Your Aptitude Test submitted successfully And Start your Technical Test!"
+    else
+      redirect_to root_path
+      flash[:success] = "Your Aptitude Test submitted successfully And No Technical Test available! "
+    end
   end
 
   def new_technical
