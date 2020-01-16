@@ -20,7 +20,7 @@
                 <% if b.object.is_technical %>
                   <%= raw(b.object.question_description) %>
                 <% else %>
-                  <pre><%= b.label %></pre>.
+                  <pre><%= raw(b.object.question_description) %></pre>
                 <% end %>
               </div>
             </div>

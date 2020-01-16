@@ -4,7 +4,7 @@
 	<h3>Show Question</h3>
 	<p>
 	  <strong>Question :</strong>
-	  <%= @question.question_description %>
+	  <%= raw(@question.question_description) %>
 	</p>
 	<strong>Options :</strong></br><br/>
 	<% if @question.options.present? %>
