@@ -12,7 +12,7 @@
     <div class="rows">
       <label>Please Fill Up The Following Questions :</label></br></br>
     </div>
-    <% @student.test.questions.each_with_index do |question, index| %>
+    <% @student.test.questions.order('random()').each_with_index do |question, index| %>
       <b>
         <%= index+1 %>.
         <%= question.question_description %></b></br></br>

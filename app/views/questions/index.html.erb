@@ -13,7 +13,7 @@
       <% @questions.each_with_index do |question,index| %>
         <tr>
         	<td><%= index + 1 %></td>
-          <td width="950px"><%= question.question_description %></td>
+          <td width="950px"><%= raw(question.question_description) %></td>
           <td>
           	<%= link_to 'Edit', edit_question_path(question) %> |
           	<%= link_to 'Show', question_path(question) %> |
