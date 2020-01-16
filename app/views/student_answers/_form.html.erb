@@ -15,7 +15,7 @@
     <% @student.test.questions.order('random()').each_with_index do |question, index| %>
       <b>
         <%= index+1 %>.
-        <%= question.question_description %></b></br></br>
+        <%= raw(question.question_description) %></b></br></br>
         <div class="col-md-12">
           <% question.options.order(:option).each do |option|%>
             <%= radio_button("response_item", question.id, option.id)  %>
