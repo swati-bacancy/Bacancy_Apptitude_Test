@@ -11,8 +11,11 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_params)
+    @student = Student.new(student_params)@student.test_id
+    # pr loc no_tech true
     @student.test_id = Test.non_technical.ids.sample
+    # else
+    # @student.test_id = Test.technical.ids.sample
     if @student.save
       redirect_to new_student_answer_path
       flash[:success] = "Welcome to the Test Page!"
@@ -76,7 +79,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:name, :email, :course, :roll_number, :collage_name, :mobile_number, :test_id, :test_started, :preferred_position, :location)
+    params.require(:student).permit(:name, :email, :course, :roll_number, :collage_name, :mobile_number, :test_id, :test_started, :preferred_position_id, :location)
   end
 
   def find_student

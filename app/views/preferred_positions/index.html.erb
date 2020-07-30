@@ -1,0 +1,29 @@
+<%= render partial: "shared/header"%>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Preferred Positions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @preferred_positions.each do |preferred_position| %>
+      <tr>
+        <td><%= preferred_position.name %></td>
+        <td><%= link_to 'Show', preferred_position %></td>
+        <td><%= link_to 'Edit', edit_preferred_position_path(preferred_position) %></td>
+        <td><%= link_to 'Destroy', preferred_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Preferred Position', new_preferred_position_path %>
