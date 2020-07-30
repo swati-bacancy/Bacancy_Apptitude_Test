@@ -91,7 +91,7 @@
           <div class="form-group">
             <%= f.label :preferred_position, 'Preferred Position', class: 'control-label col-sm-4' %>
             <div class="col-sm-6">
-              <%= f.select :preferred_position, options_for_select(['Digital marketing']), { include_blank: 'Select Preferred Position' }, class: 'form-control' %>
+              <%= f.select :preferred_position_id, options_for_select(PreferredPosition.pluck(:name, :id)), { include_blank: 'Select Preferred Position' }, class: 'form-control' %>
             </div>
           </div>
           <%= f.submit class: "btn btn-success" %>

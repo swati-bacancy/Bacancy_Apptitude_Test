@@ -31,7 +31,7 @@ class StudentAnswersController < ApplicationController
     # redirect_to root_path
     flash[:success] = "Your Aptitude Test submitted successfully"
     tech_test = Test.technical.ids.sample
-    if tech_test.present?
+    if tech_test.present? && @student.preferred_position.tech
       @student.update_attributes(test_id: Test.technical.ids.sample, test_started: false)
       redirect_to new_technical_student_answers_path
       flash[:success] = "Your Aptitude Test submitted successfully And Start your Technical Test!"

@@ -1,0 +1,39 @@
+<%= render partial: "shared/header"%>
+
+<div class="container">
+
+  <%= form_with(model: preferred_position, local: true) do |form| %>
+    <%= render "shared/error_messages", :target => preferred_position %>
+		<h3><%= preferred_position.new_record? ? 'Add' : 'Edit' %> Preferred Position</h3>
+
+    <div class="row">
+			<div class="col-md-1">
+        <%= form.label :name %>
+      </div>
+      <div class="col-md-5">
+        <%= form.text_field :name, class: "form-control", placeholder: 'Enter Question Discription', tabindex: 1, autofocus: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <%= form.label "technical" %>
+      </div>
+      <div class="col-md-5">
+        <%= form.check_box :tech %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <%= form.label "non-technical" %>
+      </div>
+      <div class="col-md-5">
+        <%= form.check_box :non_tech %>
+      </div>
+    </div>
+    <div class="row">
+			<div class="col-md-6">
+        <%= form.submit%>
+			</div>
+    </div>
+  <% end %>
+</div>
