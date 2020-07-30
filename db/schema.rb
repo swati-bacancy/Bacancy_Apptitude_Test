@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191113135138) do
+ActiveRecord::Schema.define(version: 20200730144747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20191113135138) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_options_on_question_id"
+  end
+
+  create_table "preferred_positions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "tech", default: true
+    t.boolean "non_tech", default: true
   end
 
   create_table "questions", force: :cascade do |t|
@@ -106,7 +114,8 @@ ActiveRecord::Schema.define(version: 20191113135138) do
     t.datetime "start_time"
     t.boolean "test_started", default: false
     t.string "location"
-    t.string "preferred_position"
+    t.bigint "preferred_position_id"
+    t.index ["preferred_position_id"], name: "index_students_on_preferred_position_id"
     t.index ["test_id"], name: "index_students_on_test_id"
   end
 
@@ -136,6 +145,7 @@ ActiveRecord::Schema.define(version: 20191113135138) do
   add_foreign_key "student_answers", "questions"
   add_foreign_key "student_answers", "students"
   add_foreign_key "student_answers", "tests"
+  add_foreign_key "students", "preferred_positions"
   add_foreign_key "students", "tests"
   add_foreign_key "test_questions", "questions"
   add_foreign_key "test_questions", "tests"

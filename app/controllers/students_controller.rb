@@ -11,13 +11,23 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_params)@student.test_id
+    @student = Student.new(student_params)
     # pr loc no_tech true
-    @student.test_id = Test.non_technical.ids.sample
+    if @student.preferred_position.non_tech
+      # for mcq
+      @student.test_id = Test.non_technical.ids.sample
+    else
+      # for code question
+      @student.test_id = Test.technical.ids.sample
+    end
     # else
     # @student.test_id = Test.technical.ids.sample
     if @student.save
-      redirect_to new_student_answer_path
+      if @student.preferred_position.non_tech
+        redirect_to new_student_answer_path
+      else
+        redirect_to new_technical_student_answers_path
+      end
       flash[:success] = "Welcome to the Test Page!"
     else
       render 'new'
