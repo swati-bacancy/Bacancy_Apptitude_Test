@@ -23,6 +23,7 @@
 //= require_tree .
 
 $(document).ready(function(){
+	document.addEventListener('contextmenu', event => event.preventDefault());
 	$(".alert").delay(3000).slideUp(1000, function(){
 	  $(".alert").alert('close');
 	});
