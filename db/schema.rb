@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 20210513122529) do
     t.boolean "test_started", default: false
     t.string "location"
     t.bigint "preferred_position_id"
-    t.text "url", null: false
+    t.text "url"
     t.index ["preferred_position_id"], name: "index_students_on_preferred_position_id"
     t.index ["test_id"], name: "index_students_on_test_id"
   end
