@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200730144747) do
+ActiveRecord::Schema.define(version: 20210513122529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(version: 20200730144747) do
     t.boolean "test_started", default: false
     t.string "location"
     t.bigint "preferred_position_id"
+    t.text "url", null: false
     t.index ["preferred_position_id"], name: "index_students_on_preferred_position_id"
     t.index ["test_id"], name: "index_students_on_test_id"
   end
