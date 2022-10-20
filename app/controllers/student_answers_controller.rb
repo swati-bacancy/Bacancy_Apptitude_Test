@@ -46,6 +46,7 @@ class StudentAnswersController < ApplicationController
       @answer = Answer.new
       return redirect_to root_path if @student.test_started?
       @student.update_attributes(test_started: false, start_time: DateTime.now)
+
     else
       redirect_to root_path
     end
@@ -59,6 +60,10 @@ class StudentAnswersController < ApplicationController
                           answer: value,
                         )
     }
+    unless @student.preferred_position.preferred_position.non_tech
+      Result.create(student_id: @student.id, test_id: @test.id)
+    end
+
     redirect_to root_path
     flash[:success] = "Your Technical Test submitted successfully!"
   end
