@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     # pr loc no_tech true
-    if @student.preferred_position.non_tech
+    if @student.preferred_position&.non_tech
       # for mcq
       @student.test_id = Test.non_technical.ids.sample
     else
@@ -23,7 +23,7 @@ class StudentsController < ApplicationController
     # else
     # @student.test_id = Test.technical.ids.sample
     if @student.save
-      if @student.preferred_position.non_tech
+      if @student.preferred_position&.non_tech
         redirect_to new_student_answer_path
       else
         redirect_to new_technical_student_answers_path
