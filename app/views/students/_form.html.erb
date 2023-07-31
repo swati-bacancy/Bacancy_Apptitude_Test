@@ -100,7 +100,7 @@
               <%# <%= f.select :preferred_position_id, options_for_select(PreferredPosition.pluck(:name, :id)), { include_blank: 'Select Preferred Position' }, class: 'form-control' %>
             <%# </div> %>
             <%# <br/><br/> %>
-          </div>
+          <%# </div> %>
           <h3 style="color:firebrick"> Caution: once the test is started, we are monitoring your browser activity, and you will disqualify for the test if we found any other tab open in the browser. </h3>
           <%= f.submit class: "btn btn-success", value: "Start Test" %>
         <% end %>
