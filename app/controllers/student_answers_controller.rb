@@ -60,8 +60,8 @@ class StudentAnswersController < ApplicationController
                           answer: value,
                         )
     }
-    unless @student.preferred_position.preferred_position.non_tech
-      Result.create(student_id: @student.id, test_id: @test.id)
+    unless @student.preferred_position&.non_tech
+      Result.create(student_id: @student.id, test_id: @student.test.id)
     end
 
     redirect_to root_path
