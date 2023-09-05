@@ -1,13 +1,13 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-  	<a class="navbar-brand" href="/"><%= image_tag 'logo-dark.png'%></a>
-    <ul class="nav navbar-nav pull-right">
-    	<% if session[:student_id].present? %>
-	      <li><%= link_to "logout", logout_path, method: :delete %></li>
-	    <% end %>
+    <a class="navbar-brand" href="/"><%= image_tag 'logo-dark.png' %></a>
+    <ul class="nav navbar-nav pull-right header-links">
+      <li>
+        <div id="countdowntimer" class="navbar-text"><span id="future_date" class="style colorDefinition size_lg">00:28:32</span></div>
+      </li>
+      <% if session[:student_id].present? %>
+        <li><%= link_to "Logout", logout_path, method: :delete %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
-<style type="text/css">
-  img{ margin-top: -11px;}
-</style>

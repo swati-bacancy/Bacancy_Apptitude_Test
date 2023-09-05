@@ -9,9 +9,15 @@
   </head>
 
   <body>
-  	<% flash.each do |key, value| %>
-		  <div class="alert alert-<%= key %>"><%= value %></div>
-		<% end %>
+    <% flash.each do |key, value| %>
+      <% if key == "final_submit" %>
+        <script>
+          alert("<%= j value %>");
+        </script>
+      <% else %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
