@@ -1,5 +1,4 @@
 <%= render partial: "shared/header_logout"%>
-<div id="countdowntimer" class="pull-right"><span id="future_date"><span></div>
 <div class="container" id="technical_student_answer">
   <h3><div id='warning_text'></div></h3>
   <%= form_for @answer, url: create_technical_student_answers_path do |f| %>
@@ -21,7 +20,7 @@
         </div>
     <% end %>
     <% if @student.test_started == false %>
-      <div class="col-md-12">
+      <div class="col-md-12" style="margin-bottom: 3rem;">
         <%= f.submit 'Submit' , class: "btn btn-primary", type: 'submit', id: 'submit'%>
       </div>
     <% end %>
