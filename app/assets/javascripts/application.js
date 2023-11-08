@@ -23,12 +23,55 @@
 //= require ckeditor/init
 //= require_tree .
 
+  
+$(document).ready(function() {
+	$('#your-form-name').parsley().on('field:validate', function() {
+	  if (!this.isValid()) {
+		if (this.value === "") {
+		  $('#name-error').text("Please enter name");
+		} else if (!/^[A-Za-z ]+$/.test(this.value)) {
+		  $('#name-error').text("Not allowed, only Characters are allowed");
+		} else {
+		  $('#name-error').text(""); // Clear the error message
+		}
+	  } else {
+		$('#name-error').text(""); // Clear the error message
+	  }
+	});
+
+	// Validate the email field
+	$('#your-form-email').parsley().on('field:validate', function() {
+	  if (!this.isValid()) {
+		if (this.value === "") {
+		  $('#email-error').text("Please enter email");
+		} else if (!/^[A-Za-z ]+$/.test(this.value)) {
+		  $('#email-error').text("Invalid Email Format");
+		} 
+	  } else {
+		$('#email-error').text(""); // Clear the error message
+	  }
+	});
+	// Validate the enroll number field
+	$('#your-form-enroll-number').parsley().on('field:validate', function() {
+	if (!this.isValid()) {
+	  if (this.value === "") {
+		$('#enroll-number-error').text("Please enter Enroll Number");
+	  } else if (!/^[0-9]+$/.test(this.value)) {
+		$('#enroll-number-error').text("Only digits allowed");
+	  }
+	} else {
+	  $('#enroll-number-error').text(""); // Clear the error message
+	}
+});
+
+  });
 $(document).ready(function(){
 	document.addEventListener('contextmenu', event => event.preventDefault());
 	$(".alert").delay(3000).slideUp(1000, function(){
 	  $(".alert").alert('close');
 	});
 });
+
 
 
 function preventBack() { window.history.forward(); }

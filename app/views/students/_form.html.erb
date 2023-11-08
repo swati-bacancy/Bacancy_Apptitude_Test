@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -9,35 +8,59 @@
       border-left: 1px solid #000;
       height: 100%;
     }
-    .required-label{
-      margin-left: 8px;
+    .required-label {
+      margin-left: 7px;
       float: left;
     }
     .required-label::after {
       content: " *";
       color: red;
     }
+    .parsley-success {
+    background-color: white !important;
+     color: #000 !important;
+    }
     .custom-label {
       font-weight: bold;
-      font-size: 18px; /* Increased font size */
+      font-size: 18px;
     }
-    .parsley-errors-list {
-      color: red; /* Display error messages in red */
-      font-size: 18px; 
+    #name-error {
+      color: red;
+      font-size: 18px;
       float: left;
-      margin-top: 10px;/* Increase font size for error messages */
+      margin-top: 10px;
     }
-     .parsley-error {
-    background-color: #fff !important; /* Remove red background color */
-  }
-    .form-control {
-      font-size: 18px; /* Increased font size */
+    #email-error {
+      color: red;
+      font-size: 18px;
+      float: left;
+      margin-top: 10px;
+    }
+    #enroll-number-error{
+      color: red;
+      font-size: 18px;
+      float: left;
+      margin-top: 10px;
     }
     .parsley-errors-list {
-      color: red; /* Display error messages in red */
+      color: red;
+      font-size: 18px;
+      float: left;
+      margin-top: 10px;
+    }
+    .parsley-error {
+      background-color: #fff !important;
+    }
+    .form-control {
+      font-size: 18px;
+      width: 100%;
     }
     .space-between-fields {
       margin-bottom: 25px;
+      margin-top: 15px;
+    }
+    .form-horizontal {
+      margin-left: 85px;
     }
     .caution-message {
       color: red;
@@ -53,14 +76,20 @@
       height: 50px;
       font-size: 18px;
     }
-    .btn{
-      background-color: orange;
-      width: 200px;
+    .jumbotron {
+      width: 1090px;
+    }
+    .btn {
+      background-color: #ed7c19;
+      width: 230px;
+      height: 45px;
       border: 1px solid white;
       outline: auto;
+      border-radius: 10px;
+      font-weight: bold;
       color: white;
     }
-    .btn:hover{
+    .btn:hover {
       background-color: white;
       color: #000;
     }
@@ -74,45 +103,50 @@
       <h2 style="font-weight: bold; margin-top: 20px">Student Registration Form</h2>
       <hr>
       <div class="row extra-padding">
-        <%= form_for @student, :html => {class: 'form-horizontal', data: {parsley_validate: true}} do |f| %>
+        <%= form_for @student, :html => { class: 'form-horizontal', data: {parsley_validate: true}} do |f| %>
           <%= render "shared/error_messages", :target => @student %>
           <div class="form-group row space-between-fields">
-            <div class="col-sm-6">
+            <div class="col-sm-5">
               <%= f.label :name, "Name", class: 'required-label custom-label' %>
-              <%= f.text_field :name, class: "form-control", data: {parsley_pattern: "^[A-Za-z ]+$", parsley_required: true, parsley_error_message: "Only characters are allowed (no digits and special characters)"} %>
+              <%= f.text_field :name, id: 'your-form-name', class: "form-control custom-text-field", data: {parsley_pattern: "^[A-Za-z ]+$", parsley_required: true, parsley_error_message: ""} %>
+              <span class="error-message" id="name-error"></span>
             </div>
             <div class="col-sm-1 vertical-line"></div>
             <div class="col-sm-5">
               <%= f.label :email, "Email", class: 'required-label custom-label' %>
-              <%= f.email_field :email, class: "form-control", data: {parsley_type: "email", parsley_required: true, parsley_error_message: "Please enter a valid email address"} %>
+              <%= f.email_field :email, id: 'your-form-email', class: "form-control custom-text-field", data: {parsley_type: "email", parsley_required: true, parsley_error_message: ""} %>
+              <span class="error-message" id="email-error"></span>
             </div>
           </div>
           <div class="form-group row space-between-fields">
-            <div class="col-sm-6">
+            <div class="col-sm-5">
               <%= f.label :course, "Course", class: 'required-label custom-label' %>
-              <%= f.text_field :course, class: "form-control", data: {parsley_required: true} %>
+              <%= f.text_field :course, class: "form-control custom-text-field", data: {parsley_required: true, parsley_error_message: "Please enter course name"} %>
             </div>
             <div class="col-sm-1 vertical-line"></div>
-            <div class="col-sm-5">
-              <%= f.label :roll_number, 'EnRoll Number', class: 'required-label custom-label' %>
-              <%= f.text_field :roll_number, class: "form-control", data: {parsley_pattern: "^[0-9]+$", parsley_required: true, parsley_error_message: "Must be digits only"} %>
+           <div class="col-sm-5">
+            <%= f.label :roll_number, 'Er Number', class: 'required-label custom-label' %>
+            <%= f.text_field :roll_number, id: 'your-form-enroll-number', class: "form-control custom-text-field", data: {parsley_pattern: "^[0-9]+$", parsley_required: true, parsley_error_message: ""} %>
+            <span class="error-message" id="enroll-number-error"></span>
             </div>
           </div>
           <div class="form-group row space-between-fields">
-            <div class="col-sm-6">
+            <div class="col-sm-5">
               <%= f.label :collage_name, "College Name", class: 'required-label custom-label' %>
-              <%= f.select :collage_name, ['Select College', 'Vishwakarma Government Engineering College', 'LJ Institute', 'Sigma', 'Ld Engineering', 'LDRP'], {data: {parsley_required: true},},parsley_error_message: "Please enter a valid email address", class: "form-control" %>
+              <%= f.select :collage_name, ['Vishwakarma Government', 'LJ Institute', 'Sigma', 'Ld Engineering', 'LDRP'], {include_blank: "Select college" }, parsley_error_message: "Please select a college",  data: { parsley_required: true }, class: "form-control custom-text-field" %>
+            <span class="error-message" id="enroll-number-error"></span>
             </div>
+            
             <div class="col-sm-1 vertical-line"></div>
             <div class="col-sm-5">
               <%= f.label :location, "Location", class: 'required-label custom-label' %>
-              <%= f.select :location, ['Select Location', 'New York', 'Los Angeles', 'Chicago', 'Houston', 'Miami'], {data: {parsley_required: true}}, class: "form-control" %>
+              <%= f.select :location, ['Select Location', 'New York', 'Los Angeles', 'Chicago', 'Houston', 'Miami'],{include_blank: "Select Location" } , data: { parsley_required: true } , parsley_error_message: "Please select a location", required:true,class: "form-control custom-text-field" %>
             </div>
           </div>
           <div class="form-group row space-between-fields">
-            <div class="col-sm-6">
+            <div class="col-sm-5">
               <%= f.label :preferred_location, "Select a location", class: 'required-label custom-label' %>
-              <%= f.select :location, ['Select Preferred Location', 'Ahmedabad', 'Surat', 'Bharuch', 'Vapi'], {data: {parsley_required: true}}, class: "form-control" %>
+              <%= f.select :location, [ 'Ahmedabad', 'Surat', 'Bharuch', 'Vapi'],{include_blank: "Select Preffered Location" }  ,data: { parsley_required: true }, parsley_error_message: "Please select a preferred location", class: "form-control custom-text-field" %>
             </div>
           </div>
           <div class="form-group row space-between-fields">
@@ -121,7 +155,7 @@
             </div>
           </div>
           <div class="form-group row space-between-fields centered-button">
-            <div class="col-sm-12 text-center"> <!-- Adjust the width of the column as needed -->
+            <div class="col-sm-12 text-center">
               <%= f.submit class: "btn btn-lg", value: "Start Test" %>
             </div>
           </div>
@@ -134,5 +168,4 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
 </body>
-
 </html>
