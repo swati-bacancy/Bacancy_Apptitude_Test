@@ -1,109 +1,138 @@
-  <style type="text/css">
-   html, body {
-     height: 93%;
-   }
-   .container{
-     width: 1025px;
-   }
-   .vertical-center {
-     height: 100%;
-     width: 100%;
-     text-align: center;  /* align the inline(-block) elements horizontally */
-     font: 0/0 a;         /* remove the gap between inline(-block) elements */
-   }
-   .vertical-center:before {    /* create a full-height inline block pseudo=element */
-     content: ' ';
-     display: inline-block;
-     vertical-align: middle;  /* vertical alignment of the inline element */
-     height: 100%;
-   }
-   .vertical-center > .container {
-     max-width: 100%;
-     background-color: #eeeeee;
-     display: inline-block;
-     vertical-align: middle;  /* vertical alignment of the inline element */
-     font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;        /* <-- reset the font property */
-   }
-   @media (max-width: 768px) {
-     .vertical-center:before {
-       /* height: auto; */
-       display: none;
-     }
-   }
+<!DOCTYPE html>
+<html>
 
-   .jumbotron{ background-color: transparent !important;}
-   .extra-pedding{
-      padding-top: 50px;
-      padding-bottom: 50px;
-      padding-left: 50px;
-      padding-right: 50px;
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .vertical-line {
+      border-left: 1px solid #000;
+      height: 100%;
     }
-    .container{
-      border:1px solid black;
+    .required-label{
+      margin-left: 8px;
+      float: left;
     }
- </style>
-
+    .required-label::after {
+      content: " *";
+      color: red;
+    }
+    .custom-label {
+      font-weight: bold;
+      font-size: 18px; /* Increased font size */
+    }
+    .parsley-errors-list {
+      color: red; /* Display error messages in red */
+      font-size: 18px; 
+      float: left;
+      margin-top: 10px;/* Increase font size for error messages */
+    }
+     .parsley-error {
+    background-color: #fff !important; /* Remove red background color */
+  }
+    .form-control {
+      font-size: 18px; /* Increased font size */
+    }
+    .parsley-errors-list {
+      color: red; /* Display error messages in red */
+    }
+    .space-between-fields {
+      margin-bottom: 25px;
+    }
+    .caution-message {
+      color: red;
+      text-align: left;
+      margin-top: 15px;
+    }
+    .centered-button {
+      text-align: center;
+    }
+    .centered-button button {
+      background-color: blue;
+      width: 300px;
+      height: 50px;
+      font-size: 18px;
+    }
+    .btn{
+      background-color: orange;
+      width: 200px;
+      border: 1px solid white;
+      outline: auto;
+      color: white;
+    }
+    .btn:hover{
+      background-color: white;
+      color: #000;
+    }
+  </style>
 </head>
+
 <body>
-  <div class="jumbotron vertical-center">
-    <div class="container text-center">
-      <h1>Student Registration Form</h1>
-      <div class="row extra-pedding">
-        <%= form_for @student, :html => {class: 'form-horizontal'} do |f| %>
+  <div class="container text-center mt-5">
+    <div class="jumbotron" style="border: 1px solid #000;">
+      <img src="<%= asset_path('logo-dark.png') %>" alt="Registration Image" class="img-fluid" />
+      <h2 style="font-weight: bold; margin-top: 20px">Student Registration Form</h2>
+      <hr>
+      <div class="row extra-padding">
+        <%= form_for @student, :html => {class: 'form-horizontal', data: {parsley_validate: true}} do |f| %>
           <%= render "shared/error_messages", :target => @student %>
-          <div class="form-group">
-            <%= f.label :Name, class: 'control-label col-sm-4' %>
+          <div class="form-group row space-between-fields">
             <div class="col-sm-6">
-              <%= f.text_field :name, class: "form-control" %>
+              <%= f.label :name, "Name", class: 'required-label custom-label' %>
+              <%= f.text_field :name, class: "form-control", data: {parsley_pattern: "^[A-Za-z ]+$", parsley_required: true, parsley_error_message: "Only characters are allowed (no digits and special characters)"} %>
+            </div>
+            <div class="col-sm-1 vertical-line"></div>
+            <div class="col-sm-5">
+              <%= f.label :email, "Email", class: 'required-label custom-label' %>
+              <%= f.email_field :email, class: "form-control", data: {parsley_type: "email", parsley_required: true, parsley_error_message: "Please enter a valid email address"} %>
             </div>
           </div>
-          <div class="form-group">
-            <%= f.label :Email, class: 'control-label col-sm-4' %>
+          <div class="form-group row space-between-fields">
             <div class="col-sm-6">
-              <%= f.email_field :email, class: "form-control" %>
+              <%= f.label :course, "Course", class: 'required-label custom-label' %>
+              <%= f.text_field :course, class: "form-control", data: {parsley_required: true} %>
+            </div>
+            <div class="col-sm-1 vertical-line"></div>
+            <div class="col-sm-5">
+              <%= f.label :roll_number, 'EnRoll Number', class: 'required-label custom-label' %>
+              <%= f.text_field :roll_number, class: "form-control", data: {parsley_pattern: "^[0-9]+$", parsley_required: true, parsley_error_message: "Must be digits only"} %>
             </div>
           </div>
-          <div class="form-group">
-            <%= f.label :Course, class: 'control-label col-sm-4' %>
-            <div class="col-sm-6 offset-lg-2">
-              <%= f.text_field :course, class: "form-control" %>
-            </div>
-          </div>
-          <div class="form-group">
-            <%= f.label :roll_number, 'EnRoll Number', class: 'control-label col-sm-4' %>
+          <div class="form-group row space-between-fields">
             <div class="col-sm-6">
-              <%= f.text_field :roll_number, class: "form-control" %>
+              <%= f.label :collage_name, "College Name", class: 'required-label custom-label' %>
+              <%= f.select :collage_name, ['Select College', 'Vishwakarma Government Engineering College', 'LJ Institute', 'Sigma', 'Ld Engineering', 'LDRP'], {data: {parsley_required: true},},parsley_error_message: "Please enter a valid email address", class: "form-control" %>
+            </div>
+            <div class="col-sm-1 vertical-line"></div>
+            <div class="col-sm-5">
+              <%= f.label :location, "Location", class: 'required-label custom-label' %>
+              <%= f.select :location, ['Select Location', 'New York', 'Los Angeles', 'Chicago', 'Houston', 'Miami'], {data: {parsley_required: true}}, class: "form-control" %>
             </div>
           </div>
-          <div class="form-group">
-            <%= f.label :Collage_Name, 'College Name',class: 'control-label col-sm-4' %>
+          <div class="form-group row space-between-fields">
             <div class="col-sm-6">
-              <%#= f.collection_select :collage_name, Collage.all, :name, :name, { include_blank: 'Select a Collage' }, class: 'form-control' %>
-              <%= f.text_field :collage_name, class: "form-control" %>
+              <%= f.label :preferred_location, "Select a location", class: 'required-label custom-label' %>
+              <%= f.select :location, ['Select Preferred Location', 'Ahmedabad', 'Surat', 'Bharuch', 'Vapi'], {data: {parsley_required: true}}, class: "form-control" %>
             </div>
           </div>
-          <%# <div class="form-group"> %>
-            <%# <%= f.label :location, 'Location', class: 'control-label col-sm-4' %>
-            <%# <div class="col-sm-6
-              <%# <%= f.text_field :location, class: "form-control" %>
-            <%# </div>
-          <%# </div> %>
-          <%# <div class="form-group"> %>
-            <%#= f.label :url, 'URL', class: 'control-label col-sm-4' %>
-            <%# <div class="col-sm-6"> %>
-              <%#= f.text_field :url, class: "form-control", required: true %>
-            <%# </div> %>
-          <%# </div> %>
-          <%# <div class="form-group"> %>
-            <%# <%= f.label :preferred_position, 'Preferred Position', class: 'control-label col-sm-4' %>
-            <%# <div class="col-sm-6"> %>
-              <%# <%= f.select :preferred_position_id, options_for_select(PreferredPosition.pluck(:name, :id)), { include_blank: 'Select Preferred Position' }, class: 'form-control' %>
-            <%# </div> %>
-            <%# <br/><br/> %>
-          <%# </div> %>
-          <h3 style="color:firebrick"> Caution: once the test is started, we are monitoring your browser activity, and you will disqualify for the test if we found any other tab open in the browser. </h3>
-          <%= f.submit class: "btn btn-success", value: "Start Test" %>
+          <div class="form-group row space-between-fields">
+            <div class="col-sm-12 caution-message">
+              <h3>Caution: Once the test is started, we are monitoring your browser activity, and you will be disqualified for the test if we find any other tab open in the browser.</h3>
+            </div>
+          </div>
+          <div class="form-group row space-between-fields centered-button">
+            <div class="col-sm-12 text-center"> <!-- Adjust the width of the column as needed -->
+              <%= f.submit class: "btn btn-lg", value: "Start Test" %>
+            </div>
+          </div>
         <% end %>
-     </div>
-   </div>
-</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+</body>
+
+</html>

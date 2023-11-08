@@ -18,6 +18,7 @@
 //= require bootstrap-sprockets
 //= require jquery.countdownTimer
 //= require moment
+//= require parsley
 //= require bootstrap-datetimepicker
 //= require ckeditor/init
 //= require_tree .
