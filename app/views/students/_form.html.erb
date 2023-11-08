@@ -82,25 +82,29 @@
               <%= f.text_field :collage_name, class: "form-control" %>
             </div>
           </div>
-          <%# <div class="form-group"> %>
-            <%# <%= f.label :location, 'Location', class: 'control-label col-sm-4' %>
-            <%# <div class="col-sm-6
-              <%# <%= f.text_field :location, class: "form-control" %>
-            <%# </div>
-          <%# </div> %>
-          <%# <div class="form-group"> %>
-            <%#= f.label :url, 'URL', class: 'control-label col-sm-4' %>
-            <%# <div class="col-sm-6"> %>
-              <%#= f.text_field :url, class: "form-control", required: true %>
-            <%# </div> %>
-          <%# </div> %>
-          <%# <div class="form-group"> %>
-            <%# <%= f.label :preferred_position, 'Preferred Position', class: 'control-label col-sm-4' %>
-            <%# <div class="col-sm-6"> %>
-              <%# <%= f.select :preferred_position_id, options_for_select(PreferredPosition.pluck(:name, :id)), { include_blank: 'Select Preferred Position' }, class: 'form-control' %>
-            <%# </div> %>
-            <%# <br/><br/> %>
-          <%# </div> %>
+          <div class="form-group">
+            <%= f.label :location, 'Location', class: 'control-label col-sm-4' %>
+            <div class="col-sm-6">
+              <%= f.text_field :location, class: "form-control" %>
+            </div>
+          </div>
+          <%
+=begin%>
+ <div class="form-group">
+            <%= f.label :url, 'URL', class: 'control-label col-sm-4' %>
+            <div class="col-sm-6">
+              <%= f.text_field :url, class: "form-control", required: true %>
+            </div>
+          </div> 
+<%
+=end%>
+          <div class="form-group">
+            <%= f.label :preferred_position, 'Preferred Position', class: 'control-label col-sm-4' %>
+            <div class="col-sm-6">
+              <%= f.select :preferred_position_id, options_for_select(PreferredPosition.pluck(:name, :id)), { include_blank: 'Select Preferred Position' }, class: 'form-control' %>
+            </div>
+            <br/><br/>
+          </div>
           <h3 style="color:firebrick"> Caution: once the test is started, we are monitoring your browser activity, and you will disqualify for the test if we found any other tab open in the browser. </h3>
           <%= f.submit class: "btn btn-success", value: "Start Test" %>
         <% end %>

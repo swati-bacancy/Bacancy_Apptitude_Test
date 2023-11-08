@@ -1,16 +1,16 @@
 <%= render partial: "shared/header"%>
-<div class="container">
-  <h3> Student Result </h3>
-  <%= form_tag  results_path , :method => 'get' do %>
-    <%= label_tag :Search %>
-    <%= text_field_tag :search, params[:search], options = {style:"width:200px"} %>
-    <%= select_tag :collage_name, options_for_select(Student.pluck(:collage_name).uniq, params[:collage_name]), :prompt => "Select College Name" %>
-    <%= submit_tag("search", :style => "width:100px;") %>
+<div class="result-container">
+  <div class="result-section">
+    <h3> Student Result </h3>
+    <%= button_to "Export CSV", results_path(format: 'csv', search: params[:search], collage_name: params[:collage_name]), class: 'btn btn-primary export_csv' %>
+  </div>
+  <hr/>  
+  <%= form_tag  results_path ,  class: 'searchBar' , :method => 'get' do %>
+    <%= select_tag :collage_name, options_for_select(Student.pluck(:collage_name).uniq, params[:collage_name]), :prompt => "Select College Name",style: "padding:10px" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Find by Enr. No or Student Name or Student Email", style: "width:400px; padding:8px" %>
+    <%= submit_tag("search",class: "btn btn-primary search-btn") %>
   <%end%>
 
-  <div class="float-right">
-    <%= link_to "Export CSV", results_path(format: 'csv', search: params[:search], collage_name: params[:collage_name]), class: 'export_csv' %>
-  </div>
   <table class="table table-striped">
     <tr>
       <th> Enr. No </th>
@@ -51,9 +51,6 @@
     <% end %>
   </table>
 </div>
-<style type="text/css">
-  .export_csv{ margin-left: 93%; }
-</style>
 
 <div class="modal" style="display:none;">
 </div>
