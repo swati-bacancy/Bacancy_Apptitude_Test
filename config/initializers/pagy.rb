@@ -1,2 +1,2 @@
-Pagy::DEFAULT[:items] = 10
+Pagy::DEFAULT[:items] = 9
 require 'pagy/extras/bootstrap'
