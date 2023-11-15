@@ -1,21 +1,30 @@
 class ResultsController < ApplicationController
+  include Pagy::Backend
   before_action :find_result, only: [:show, :destroy, :edit, :update, :technical_answers, :check_student_answers]
   http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
 
   require 'csv'
 
   def index
-    if(params[:search] || params[:collage_name])
-      @results =  Result.joins(:student).includes(student: :test).where('students.email ilike ? and students.collage_name ilike ?', "%#{params[:search]}%", "%#{params[:collage_name]}%")
+    @search = params[:search]
+    @collage_name = params[:collage_name]
+    @search = @search.to_i if @search.present? && @search.count("0-9") == @search.length
+    
+    if @search.present? || @collage_name.present?
+      @results = Result.joins(student: :test)
+                .includes(student: :test)
+                .where('students.email ilike ?  or students.roll_number ilike ? or students.name ilike ? ', "%#{@search}%", "%#{@search}%", "%#{@search}%")
+                .where('students.collage_name ilike ?', "%#{@collage_name}%")
     else
       @results = Result.includes(student: :test)
     end
-    if params[:format] == 'csv'
+    @pagy, @results = pagy(@results)
+    # if params[:format] == 'csv'
       respond_to do |format|
         format.html
-        format.csv { send_data @results.to_csv }
+        format.js
       end
-    end
+    # end
   end
 
   def show
@@ -50,6 +59,25 @@ class ResultsController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  def export_csv    
+    @search = params[:search]
+    @collage_name = params[:collage_name]
+    @roll_number= params[:roll_number]
+
+    if @search.present? || @collage_name.present?
+      @results = Result.joins(student: :test)
+                .includes(student: :test)
+                .where('students.email ilike ?', "%#{@search}%")
+                .where('students.collage_name ilike ?', "%#{@collage_name}%")
+    else
+      @results = Result.includes(student: :test)
+    end                  
+                  
+    respond_to do |format|
+      format.csv { send_data @results.to_csv, filename: 'results.csv' }
+    end                
   end
 
   private

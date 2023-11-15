@@ -2,58 +2,56 @@
 <div class="result-container">
   <div class="result-section">
     <h3> Student Result </h3>
-    <%= button_to "Export CSV", results_path(format: 'csv', search: params[:search], collage_name: params[:collage_name]), class: 'btn btn-primary export_csv' %>
+    <%= button_to "Export CSV", export_csv_results_path(format: 'csv', search: params[:search], roll_number: params[:roll_number]), class: 'btn btn-primary export_csv', method: :post %>
   </div>
   <hr/>
-  <div class="d-flex align-items-center">  
-    <%= form_tag  results_path ,  class: 'searchBar' , :method => 'get' do %>
+  <div class="form-continer">  
+    <%= form_tag  results_path ,  class: 'searchBar' , method: :get, remote: true do %>
       <%= select_tag :collage_name, options_for_select(Student.pluck(:collage_name).uniq, params[:collage_name]), :prompt => "Select College Name",style: "padding:10px" %>
       <%= text_field_tag :search, params[:search], placeholder: "Find by Enr. No, Student Name, Student Email", style: "width:400px; padding:8px" %>
       <%= submit_tag("search",class: "btn btn-primary search-btn") %>
     <%end%>
-  </div>  
-
-  <table class="table table-striped">
-    <tr>
-      <th> Enr. No </th>
-      <th>Student Name</th>
-      <th>Student Email</th>
-      <th>Course</th>
-      <th>College Name</th>
-      <th>Total Questions</th>
-      <th>Attempted Questions</th>
-      <th>Check Answer</th>
-      <th>Correct Answers</th>
-      <th>Technical Answer</th>
-      <th>Technical Marks</th>
-      <th colspan="2">Action</th>
-    </tr>
-    <% @results && @results.each do |result| %>
-      <tr>
-        <td><%= result.student.roll_number %></td>
-        <td><%= result.student.name %></td>
-        <td><%= result.student.email %></td>
-        <td><%= result.student.course %></td>
-        <td><%= result.student.collage_name %></td>
-        <td><%= result.total_questions %></td>
-        <td><%= result.attempted_questions %></td>
-        <td><%= link_to "Check Answers", check_student_answers_path(result), remote: true %></td>
-        <td><%= result.correct_answer %></td>
-        <% if result.student.test.is_technical %>
-          <td>
-            <%= link_to 'Answer', technical_answers_path(result), remote: true %>
-          </td>
-        <% else %>
-          <td> Technical Test not available.</td>
-        <% end %>
-        <td><%= result.technical_marks ? result.technical_marks : 'Check Technical Answer' %></td>
-        <td><%= link_to 'Show', result_path(result) %></td>
-        <td><%= link_to 'Delete', result_path(result), method: :delete, data: {confirm: 'Are You Sure You Want To Delete???'} %></td>
-      </tr>
-    <% end %>
-  </table>
-  <%= paginate @results, window: 2 %>  
+  </div>
+  <div class='all-results'>
+    <%= render 'results', results: @results  %>
+  </div>
 </div>
 
 <div class="modal" style="display:none;">
 </div>
+
+<script>
+  document.querySelector('.search-btn').addEventListener('click', function() {
+    var searchValue = document.getElementById('search').value;
+    var url;
+    if (searchValue === '') {
+      url = window.location.origin + window.location.pathname;
+    } else {
+      url = window.location.origin + window.location.pathname + '?search=' + encodeURIComponent(searchValue);
+    }
+    window.location.replace(url);
+  });
+</script>
+
+<%
+=begin%>
+ <script >
+$(document).ready(function(){
+
+  $('.search-btn').onClick(function(){
+    console.log('fgdsufsf')
+  var searchValue = $('#search').val();
+  var url;
+  debugger
+  if (searchValue= ''){
+    url = window.location.origin + window.location.pathname
+  }else{
+    // url = window.location.origin + window.location.pathname + '?' 'search'=${searchValue}
+  }
+  window.location.replace(url)
+});
+    })
+</script> 
+<%
+=end
+%>
