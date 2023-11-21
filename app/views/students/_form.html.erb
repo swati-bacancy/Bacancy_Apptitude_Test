@@ -133,25 +133,18 @@
             <div class="col-sm-1 vertical-line"></div>
            <div class="col-sm-5">
             <%= f.label :roll_number, 'enroll number', class: 'required-label custom-label' %>
-            <%= f.text_field :roll_number, id: 'your-form-enroll-number', class: "form-control custom-text-field", data: {parsley_pattern: "^[0-9]+$", parsley_required: true, parsley_error_message: ""} %>
+            <%= f.text_field :roll_number, id: 'your-form-enroll-number', class: "form-control custom-text-field", data: {parsley_pattern: "^[0-9]+$", parsley_required: true, parsley_error_message: "Please enter enroll number"} %>
             <span class="error-message" id="enroll-number-error"></span>
             </div>
           </div>
           <div class="form-group row space-between-fields">
             <div class="col-sm-5">
               <%= f.label :collage_name, "College Name", class: 'required-label custom-label' %>
-              <%= f.collection_select :collage_name, Collage.all, :name, :name, { include_blank: "Select College" }, { class: "form-control custom-text-field", data: { parsley_required: true, parsley_error_message: "Please select a college" } } %>
+              <%= f.collection_select :collage_name, Collage.all, :name, :name, { include_blank: "Select College" }, { class: "form-control custom-text-field", data: { parsley_required: true, parsley_error_message: "Please select a college name" } } %>
             <span class="error-message" id="enroll-number-error"></span>
             </div>
-            
             <div class="col-sm-1 vertical-line"></div>
-            <div class="col-sm-5">
-              <%= f.label :location, "Location", class: 'required-label custom-label' %>
-              <%= f.collection_select :location, Location.all, :name, :name, { include_blank: "Select Location" }, { class: "form-control custom-text-field", data: { parsley_required: true, parsley_error_message: "Please select a location" } } %>
-            </div>
-          </div>
-           <div class="form-group row space-between-fields">
-            <div class="col-sm-5">
+           <div class="col-sm-5">
               <%= f.label :preferred_position, "Preferred Position", class: 'required-label custom-label' %>
               <%= f.collection_select :preferred_position_id, PreferredPosition.all, :id, :name, { include_blank: "Select Preferred Position" }, { class: "form-control custom-text-field", data: { parsley_required: true, parsley_error_message: "Please select a preferred position" } } %>
             </div>

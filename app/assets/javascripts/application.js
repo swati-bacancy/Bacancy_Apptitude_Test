@@ -52,17 +52,6 @@ $(document).ready(function() {
 	  }
 	});
 	// Validate the enroll number field
-	$('#your-form-enroll-number').parsley().on('field:validate', function() {
-	if (!this.isValid()) {
-	  if (this.value === "") {
-		$('#enroll-number-error').text("Please enter enroll number");
-	  } else if (!/^[0-9]+$/.test(this.value)) {
-		$('#enroll-number-error').text("Only digits are allowed");
-	  }
-	} else {
-	  $('#enroll-number-error').text(""); // Clear the error message
-	}
-});
 
   });
 $(document).ready(function(){

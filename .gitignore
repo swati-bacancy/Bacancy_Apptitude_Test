@@ -23,6 +23,7 @@
 
 .byebug_history
 /config/database.yml
-
+.ruby-gemset
+.ruby-version
 
 /public/assets
