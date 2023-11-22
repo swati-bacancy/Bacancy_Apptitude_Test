@@ -31,3 +31,117 @@
 	background-color: #ed7c19 !important;
 	border: white !important;
 }
+
+.update-result{
+	width: 150px;
+	padding: 10px !important;
+	background-color: #ed7c19 !important;
+	border: white !important;
+	margin-top: 35px;
+}
+
+.vertical-line {
+	border-left: 1px solid #000;
+	height: 100%;
+}
+.main-div{
+	margin-left: 370px;
+}
+.required-label {
+	margin-left: 7px;
+	float: left;
+}
+.required-label::after {
+	content: " *";
+	color: red;
+}
+.parsley-success {
+	background-color: white !important;
+	color: #000 !important;
+}
+.custom-label {
+	font-weight: bold;
+	font-size: 18px;
+}
+#name-error {
+	color: red;
+	font-size: 18px;
+	float: left;
+	margin-top: 10px;
+}
+#email-error {
+	color: red;
+	font-size: 18px;
+	float: left;
+	margin-top: 10px;
+}
+#enroll-number-error{
+	color: red;
+	font-size: 18px;
+	float: left;
+	margin-top: 10px;
+}
+.parsley-errors-list {
+	color: red;
+	font-size: 18px;
+	float: left;
+	margin-top: 10px;
+}
+.parsley-error {
+	background-color: #fff !important;
+}
+.form-control {
+	background-color: #fff !important;
+	font-size: 18px;
+	width: 100%;
+}
+.space-between-fields {
+	margin-bottom: 25px;
+	margin-top: 15px;
+	margin-left: 55px !important;
+}
+
+.caution-message {
+	color: red;
+	text-align: left;
+	margin-top: 15px;
+}
+#caution-message {
+	color: red;
+	text-align: left;
+	margin-top: 15px;
+	font-size: 18px; /* Adjust the font size as needed */
+}
+
+.btn-custom {
+	margin-right: 100px;
+	width: 400px; 
+	height: 60px; 
+	font-size: 16px; 
+}
+
+.centered-button {
+	text-align: center;
+}
+.centered-button button {
+	background-color: blue;
+	width: 300px;
+	height: 50px;
+	font-size: 18px;
+}
+.jumbotron {
+	// background-color: #faebeb;
+	width: 1090px;
+	padding: 35px 35px !important;
+}
+.btn {
+	background-color: #ed7c19;
+	height: 45px;
+	border-radius: 10px;
+	font-weight: bold;
+	color: white;
+}
+.btn:hover {
+	background-color: white;
+	color: #000;
+}

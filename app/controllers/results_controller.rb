@@ -33,13 +33,15 @@ class ResultsController < ApplicationController
   def edit
   end
 
-  def update  
+  def update
     if @result.update(result_params)
-      redirect_to result_path(@result)
+      flash[:success] = "Technical Marks Sucsessfully updated!"
+      redirect_to results_path
     else
       render :edit, status: :unprocessable_entity
     end
   end
+  
   
 
   def destroy
