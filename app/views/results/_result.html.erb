@@ -17,7 +17,25 @@
 	<% end %>
 	<td><%= result.technical_marks ? result.technical_marks : 'Check Technical Answer' %></td>
 	<td><%= result.technical_marks + result.correct_answer %></td>
-	<td><%= link_to 'Show', result_path(result) %></td>
-	<td><%= link_to 'Edit', edit_result_path(result) %></td>
-	<td><%= link_to 'Delete', result_path(result), method: :delete, data: {confirm: 'Are You Sure You Want To Delete???'} %></td>	
+	<td>
+		<%= link_to result_path(result), style: "color: black" do %>
+			<div class="cross">
+				<%= link_to content_tag(:i, nil, class: 'fa fa-eye', style: "color: black"), result_path(result) %>
+			</div>
+  	<% end %>
+	</td>
+	<td>
+		<%= link_to result_path(result), style: "color: black" do %>
+			<div class="cross">
+				<%= link_to content_tag(:i, nil, class: 'fa fa-edit', style: "color: black"), result_path(result) %>
+			</div>
+  	<% end %>
+	</td>
+	<td>
+		<%= link_to result_path(result), style: "color: black" do %>
+			<div class="cross">
+				<%= link_to content_tag(:i, nil, class: 'fa fa-trash', style: "color: black"), result_path(result) %>
+			</div>
+  	<% end %>
+	</td>	
 </tr>
