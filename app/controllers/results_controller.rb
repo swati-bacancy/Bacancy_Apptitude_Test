@@ -21,8 +21,8 @@ class ResultsController < ApplicationController
     @pagy, @results = pagy(@results)
     # if params[:format] == 'csv'
       respond_to do |format|
-        format.html
         format.js
+        format.html
       end
     # end
   end
@@ -33,12 +33,14 @@ class ResultsController < ApplicationController
   def edit
   end
 
-  def update
-    if params[:sum].present?
-      @result.update_attributes(technical_marks: params[:sum])
-      redirect_to results_path
+  def update  
+    if @result.update(result_params)
+      redirect_to result_path(@result)
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
+  
 
   def destroy
     @result.destroy
@@ -61,26 +63,30 @@ class ResultsController < ApplicationController
     end
   end
 
-  def export_csv    
-    @search = params[:search]
-    @collage_name = params[:collage_name]
+  def export_csv
+    @search = params[:searchValue]
+    @collage_name = params[:dropdownValue]
     @roll_number= params[:roll_number]
 
     if @search.present? || @collage_name.present?
       @results = Result.joins(student: :test)
                 .includes(student: :test)
-                .where('students.email ilike ?', "%#{@search}%")
+                .where('students.email ilike ?  or students.roll_number ilike ? or students.name ilike ? ', "%#{@search}%", "%#{@search}%", "%#{@search}%")
                 .where('students.collage_name ilike ?', "%#{@collage_name}%")
+                
     else
       @results = Result.includes(student: :test)
-    end                  
-                  
+    end  
     respond_to do |format|
       format.csv { send_data @results.to_csv, filename: 'results.csv' }
     end                
   end
 
   private
+
+  def result_params
+    params.require(:result).permit(:technical_mark, :total_questions, :attempted_questions, :correct_answer, :roll_number, :technical_marks, :total_marks, :student_id, :test_id)
+  end
 
   def find_result
     @result = Result.find(params[:id])

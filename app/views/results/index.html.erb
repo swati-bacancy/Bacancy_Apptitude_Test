@@ -2,16 +2,24 @@
 <div class="result-container">
   <div class="result-section">
     <h3> Student Result </h3>
-    <%= button_to "Export CSV", export_csv_results_path(format: 'csv', search: params[:search], roll_number: params[:roll_number]), class: 'btn btn-primary export_csv', method: :post %>
+    <button class="btn btn-primary export_csv">Export CSV</button>
   </div>
   <hr/>
-  <div class="form-continer">  
+  <%
+=begin%>
+ <div class="form-continer">   
+<%
+=end%>
     <%= form_tag  results_path ,  class: 'searchBar' , method: :get, remote: true do %>
       <%= select_tag :collage_name, options_for_select(Student.pluck(:collage_name).uniq, params[:collage_name]), :prompt => "Select College Name",style: "padding:10px" %>
       <%= text_field_tag :search, params[:search], placeholder: "Find by Enr. No, Student Name, Student Email", style: "width:400px; padding:8px" %>
       <%= submit_tag("search",class: "btn btn-primary search-btn") %>
     <%end%>
-  </div>
+  <%
+=begin%>
+ </div> 
+<%
+=end%>
   <div class='all-results'>
     <%= render 'results', results: @results  %>
   </div>
@@ -21,17 +29,60 @@
 </div>
 
 <script>
-  document.querySelector('.search-btn').addEventListener('click', function() {
-    var searchValue = document.getElementById('search').value;
-    var url;
-    if (searchValue === '') {
-      url = window.location.origin + window.location.pathname;
-    } else {
-      url = window.location.origin + window.location.pathname + '?search=' + encodeURIComponent(searchValue);
-    }
-    window.location.replace(url);
-  });
-</script>
+  // document.querySelector('.search-btn').addEventListener('click', function() {
+    //   var url;
+  //   if (searchValue === '') {
+    //     url = window.location.origin + window.location.pathname;
+  //   } else {
+    //     url = window.location.origin + window.location.pathname + '?search=' + encodeURIComponent(searchValue);
+  //   }
+  //   window.location.replace(url);
+  // });
+  $(document).ready(function() {
+    $('.export_csv').click(function() {
+        var searchValue = $('#search').val();
+        var dropdownValue = $('#collage_name').val();
+        $.ajax({
+          url: '/results/export_csv.csv',
+          method: 'POST',
+          data: { searchValue: searchValue, dropdownValue: dropdownValue},
+          success: function (response) {
+            blob = new Blob([response])
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            // the filename you want
+            a.download = 'result.csv';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+          },
+          error: function (error) {
+            console.error('Error:', error);
+          }
+        });
+        // fetch(`/results/export_csv?searchValue=${searchValue}&format=csv`)
+        // .then(resp => resp.blob())
+        // .then(blob => {
+        //   const url = window.URL.createObjectURL(blob);
+        //   const a = document.createElement('a');
+        //   a.style.display = 'none';
+        //   a.href = url;
+        //   // the filename you want
+        //   a.download = 'result.csv';
+        //   document.body.appendChild(a);
+        //   a.click();
+        //   window.URL.revokeObjectURL(url);
+        //   // alert('your file has downloaded!'); // or you know, something with better UX...
+        // })
+        // .catch(() => alert('oh no!'));
+    })
+  })
+
+    </script>
+
+
 
 <%
 =begin%>

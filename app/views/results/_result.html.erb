@@ -16,6 +16,8 @@
 		<td> Technical Test not available.</td>
 	<% end %>
 	<td><%= result.technical_marks ? result.technical_marks : 'Check Technical Answer' %></td>
+	<td><%= result.technical_marks + result.correct_answer %></td>
 	<td><%= link_to 'Show', result_path(result) %></td>
+	<td><%= link_to 'Edit', edit_result_path(result) %></td>
 	<td><%= link_to 'Delete', result_path(result), method: :delete, data: {confirm: 'Are You Sure You Want To Delete???'} %></td>	
 </tr>

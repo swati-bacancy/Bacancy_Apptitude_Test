@@ -1,0 +1,33 @@
+<div class="container text-center mt-5">
+  <div class="jumbotron" style="border: 1px solid #000;">
+    <%
+=begin%>
+ <img src="<%= asset_path('logo-dark.png') %>" alt="Logo" class="img-fluid" /> 
+<%
+=end%>
+    <h2 style="font-weight: bold; margin-top: 10px; text-align: left">Edit Result</h2>
+    <hr>
+    <div class="row extra-padding">
+      <%= form_for @result, :html => { class: 'form-horizontal', data: { parsley_validate: true } } do |f| %>
+        <%= render "shared/error_messages", :target => @result %>
+
+        <div class="form-group row space-between-fields">
+          <div class="col-sm-5">
+            <%= f.label :technical_marks, "Technical Marks", class: 'required-label custom-label' %>
+            <%= f.number_field :technical_marks, class: "form-control custom-text-field", data: { parsley_required: true, parsley_error_message: "Please enter technical marks" } %>
+            <span class="error-message" id="technical-marks-error"></span>
+          </div>
+
+          <!-- You can add more fields here based on your Result model attributes -->
+
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <%= f.submit "Update Result", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
