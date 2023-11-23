@@ -8,8 +8,6 @@
     <th> Course </th>
     <th> EnRoll Number </th>
     <th> College Name </th>
-    <th> Location </th>
-    <th> URL </th>
     <th> Preferred Position </th>
     <th width="130"> Action</th>
   </tr>
@@ -20,8 +18,6 @@
       <td><%= student.course %></td>
       <td><%= student.roll_number %></td>
       <td><%= student.collage_name %></td>
-      <td><%= student.location %></td>
-       <td><%= student.url %></td>
       <td><%= student.preferred_position&.name %></td>
       <td><%= link_to 'Show',student_path(student) %> |
         <%#= link_to 'Edit', edit_student_path(student) %>
@@ -29,4 +25,4 @@
     </tr>
   <% end %>
 </table>
-</div>
+</div>  

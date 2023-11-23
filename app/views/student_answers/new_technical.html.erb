@@ -1,5 +1,5 @@
 <%= render partial: "shared/header_logout"%>
-<div class="container" id="technical_student_answer">
+<div class="container border rounded mt-5" id="technical_student_answer">
   <h3><div id='warning_text'></div></h3>
   <%= form_for @answer, url: create_technical_student_answers_path do |f| %>
     <%= render "shared/error_messages", :target => @answer %>
@@ -12,16 +12,15 @@
       <label>Please Fill Up The Following Questions :</label></br></br>
     </div>
     <% @student&.test&.questions.each_with_index do |question, index| %>
-      <b>
-        <h4><%= index+1 %>.</h4>
-        <%= raw(question&.question_description) %></b>
-        <div class="col-md-12 mb-50">
-          <%= text_area_tag "response_item[#{question.id}]", nil, size: "90x10",placeholder: "Add your code here" %>
-        </div>
+      <div class="col-md-12 mb-50">
+        <b><span><%= index+1 %>.</span></b>
+        <%= raw(question&.question_description) %>
+        <%= text_area_tag "response_item[#{question.id}]", nil, size: "90x10", placeholder: "Add your code here" %>
+      </div>
     <% end %>
     <% if @student.test_started == false %>
       <div class="col-md-12" style="margin-bottom: 3rem;">
-        <%= f.submit 'Submit' , class: "btn btn-primary", type: 'submit', id: 'submit'%>
+        <%= f.submit 'Submit', class: "btn btn-primary", type: 'submit', id: 'submit' %>
       </div>
     <% end %>
   <% end %>

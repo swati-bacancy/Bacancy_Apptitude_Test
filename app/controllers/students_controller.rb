@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
       @student.test_id = Test.technical.ids.sample
     end
     # else
-    # @student.test_id = Test.technical.ids.sample
+    @student.test_id = Test.technical.ids.sample
     if @student.save
       if @student.preferred_position&.non_tech
         redirect_to new_student_answer_path
@@ -89,7 +89,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:name, :email, :course, :roll_number, :collage_name, :mobile_number, :test_id, :test_started, :preferred_position_id, :location, :url)
+    params.require(:student).permit(:name, :email, :course, :roll_number, :collage_name, :test_id, :test_started, :preferred_position_id)
   end
 
   def find_student

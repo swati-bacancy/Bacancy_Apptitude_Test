@@ -18,18 +18,17 @@
 //= require bootstrap-sprockets
 //= require jquery.countdownTimer
 //= require moment
+//= require parsley
 //= require bootstrap-datetimepicker
 //= require ckeditor/init
-//= require_tree .
-
-$(document).ready(function(){
+//= require_tree .  
+  $(document).ready(function(){
 	document.addEventListener('contextmenu', event => event.preventDefault());
 	$(".alert").delay(3000).slideUp(1000, function(){
 	  $(".alert").alert('close');
 	});
-});
-
-
-function preventBack() { window.history.forward(); }
-setTimeout("preventBack()", 0);
-window.onunload = function () { null };
+  });
+  function preventBack() { window.history.forward(); }
+  setTimeout("preventBack()", 0);
+  window.onunload = function () { null };
+  
