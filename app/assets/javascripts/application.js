@@ -21,21 +21,14 @@
 //= require parsley
 //= require bootstrap-datetimepicker
 //= require ckeditor/init
-//= require_tree .
-
-  
-
-  
+//= require_tree .  
   $(document).ready(function(){
 	document.addEventListener('contextmenu', event => event.preventDefault());
 	$(".alert").delay(3000).slideUp(1000, function(){
 	  $(".alert").alert('close');
 	});
   });
-  
   function preventBack() { window.history.forward(); }
   setTimeout("preventBack()", 0);
   window.onunload = function () { null };
-  
-  
   
