@@ -26,14 +26,13 @@
      font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;        /* <-- reset the font property */
    }
    @media (max-width: 768px) {
-     .vertical-center:before {
+    .vertical-center:before {
+display: none;
+}
+}
 
-       display: none;
-     }
-   }
-
-   .jumbotron{ background-color: transparent !important;}
-   .extra-pedding{
+.jumbotron{ background-color: transparent !important;}
+.extra-pedding{
       padding-top: 96px;
       padding-bottom: 174px;
       padding-left: 170px;
@@ -55,6 +54,6 @@
           <%= link_to 'Registration', new_student_path , class: "btn" %>
         </div>
       </div>
-     </div>
+      </div>
    </div>
 </div>

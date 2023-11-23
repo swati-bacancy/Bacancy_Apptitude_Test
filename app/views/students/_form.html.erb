@@ -7,7 +7,7 @@
       <%= form_for @student, :html => { class: 'form-horizontal', data: {parsley_validate: true}} do |f| %>
         <%= render "shared/error_messages", :target => @student %>
         <div class="form-group row space-between-fields">
-           <div class="col-sm-5">
+          <div class="col-sm-5">
             <%= f.label :name, "Name", class: 'required-label custom-label' %>
             <%= f.text_field :name, id: 'your-form-name', class: "form-control custom-text-field", data: {parsley_pattern: "^[A-Za-z ]+$", parsley_required: true, parsley_required_message: "Please enter name", parsley_pattern_message: "Only characters are allowed"} %>
             <span class="error-message" id="name-error"></span>
