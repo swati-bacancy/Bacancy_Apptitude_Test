@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20231117062935) do
+ActiveRecord::Schema.define(version: 20231123053725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,17 +108,20 @@ ActiveRecord::Schema.define(version: 20231117062935) do
     t.string "course"
     t.string "roll_number"
     t.string "collage_name"
-    t.string "mobile_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "test_id"
     t.datetime "start_time"
     t.boolean "test_started", default: false
-    t.string "location"
     t.bigint "preferred_position_id"
-    t.text "url"
     t.index ["preferred_position_id"], name: "index_students_on_preferred_position_id"
     t.index ["test_id"], name: "index_students_on_test_id"
+  end
+
+  create_table "term_and_conditions", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "test_questions", force: :cascade do |t|

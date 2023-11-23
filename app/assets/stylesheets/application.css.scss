@@ -12,11 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ 
  */
 @import "bootstrap-sprockets";
+@import 'parsley';
 @import "bootstrap";
 @import "bootstrap-datetimepicker";
 @import "font-awesome";
+@import "student_registration";
 
 .alert{
   z-index: 9999;
@@ -71,6 +74,10 @@
   background-color: lightblue;
 }
 
+.container-of-new-technical{
+    margin-top: 80px;
+    border: 1px solid black;
+}
 .container{
   margin-top: 70px;
 }

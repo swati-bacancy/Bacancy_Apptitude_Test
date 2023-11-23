@@ -12,8 +12,8 @@ class Student < ApplicationRecord
 
   after_initialize do |student|
     if !student.preferred_position.present?
-      preferred_position = PreferredPosition.where(tech: true, non_tech: true)&.first
-      student.preferred_position = preferred_position
+      # preferred_position = PreferredPosition.where(tech: true, non_tech: true)&.first
+      # student.preferred_position = preferred_position
     end
   end
 end

@@ -35,8 +35,8 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
 gem 'paperclip'
-
-
+#parsley.js for form validation
+gem "parsley-rails"
 gem 'ckeditor'
 
 # Use Redis adapter to run Action Cable in production

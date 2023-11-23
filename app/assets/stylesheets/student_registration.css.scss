@@ -1,0 +1,102 @@
+.vertical-line {
+    border-left: 1px solid #000;
+    height: 100%;
+  }
+  .main-div{
+    margin-left: 370px;
+  }
+  .required-label {
+    margin-left: 7px;
+    float: left;
+  }
+  .required-label::after {
+    content: " *";
+    color: red;
+  }
+  .parsley-success {
+  background-color: white !important;
+   color: #000 !important;
+  }
+  .custom-label {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  #name-error {
+    color: red;
+    font-size: 18px;
+    float: left;
+    margin-top: 10px;
+  }
+  #email-error {
+    color: red;
+    font-size: 18px;
+    float: left;
+    margin-top: 10px;
+  }
+  #enroll-number-error{
+    color: red;
+    font-size: 18px;
+    float: left;
+    margin-top: 10px;
+  }
+  .parsley-errors-list {
+    color: red;
+    font-size: 18px;
+    float: left;
+    margin-top: 10px;
+  }
+  .parsley-error {
+    background-color: #fff !important;
+  }
+  .form-control {
+    font-size: 18px;
+    width: 100%;
+  }
+  .space-between-fields {
+    margin-bottom: 25px;
+    margin-top: 15px;
+  }
+  .form-horizontal {
+    margin-left: 85px;
+  }
+  .caution-message {
+    color: red;
+    text-align: left;
+    margin-top: 15px;
+  }
+  #caution-message {
+    color: red;
+    text-align: left;
+    margin-top: 15px;
+    font-size: 18px; /* Adjust the font size as needed */
+  }
+  .btn-custom {
+    margin-right: 100px;
+    width: 400px; 
+    height: 60px; 
+    font-size: 16px; 
+}
+  .centered-button {
+    text-align: center;
+  }
+  .centered-button button {
+    background-color: blue;
+    width: 300px;
+    height: 50px;
+    font-size: 18px;
+  }
+  .jumbotron {
+    // background-color: #faebeb;
+    width: 1090px;
+  }
+  .btn {
+    background-color: #ed7c19;
+    height: 45px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+  }
+  .btn:hover {
+    background-color: white;
+    color: #000;
+  }

@@ -17,11 +17,12 @@
 /log/*
 !/tmp/.keep
 
+/log
+
 /node_modules
 /yarn-error.log
 
 .byebug_history
 /config/database.yml
-
 
 /public/assets
