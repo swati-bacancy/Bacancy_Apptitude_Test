@@ -7,15 +7,15 @@
       <%= form_for @student, :html => { class: 'form-horizontal', data: {parsley_validate: true}} do |f| %>
         <%= render "shared/error_messages", :target => @student %>
         <div class="form-group row space-between-fields">
-          <div class="col-sm-5">
+           <div class="col-sm-5">
             <%= f.label :name, "Name", class: 'required-label custom-label' %>
-            <%= f.text_field :name, id: 'your-form-name', class: "form-control custom-text-field", data: {parsley_pattern: "^[A-Za-z ]+$", parsley_required: true, parsley_error_message: "Please enter name"} %>
+            <%= f.text_field :name, id: 'your-form-name', class: "form-control custom-text-field", data: {parsley_pattern: "^[A-Za-z ]+$", parsley_required: true, parsley_required_message: "Please enter name", parsley_pattern_message: "Only characters are allowed"} %>
             <span class="error-message" id="name-error"></span>
           </div>
           <div class="col-sm-1 vertical-line"></div>
           <div class="col-sm-5">
             <%= f.label :email, "Email", class: 'required-label custom-label' %>
-            <%= f.email_field :email, id: 'your-form-email', class: "form-control custom-text-field", data: {parsley_type: "email", parsley_required: true, parsley_error_message: "Please enter email"} %>
+            <%= f.email_field :email, id: 'your-form-email', class: "form-control custom-text-field", data: {parsley_type: "email", parsley_required: true, parsley_required_message:"Please enter email", parsley_type_message: "Invalid email format", parsley_pattern: "/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,4}$/", parsley_pattern_message: "Invalid email format"} %>
             <span class="error-message" id="email-error"></span>
           </div>
         </div>
@@ -62,50 +62,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
 
-<script>
-  $(document).ready(function () {
-    // Initialize Parsley.js for the form
-    $('form').parsley({
-      errorsContainer: function (parsleyField) {
-        return parsleyField.$element.closest('.form-group').find('.error-message');
-      },
-      errorTemplate: '<span></span>'
-    });
-    function showErrorMessage(field, errorMessage) {
-      $(field).text(errorMessage);
-    }
-    var nameField = $('#your-form-name');
-    if (!nameField.val().trim()) {
-      // showErrorMessage('#name-error', 'Please enter name');
-    } else if (/\d/.test(nameField.val())) {
-      showErrorMessage('#name-error', 'Only characters are allowed');
-    }
-    nameField.on('input', function () {
-      var nameValue = this.value.trim();
-      if (!nameValue) {
-        // showErrorMessage('#name-error', 'Please enter name');
-        showErrorMessage('#name-error', ''); // Clear the "Please enter name" message
-      } else if (/\d/.test(nameValue)) {
-        showErrorMessage('#name-error', 'Only characters are allowed');
-      } else {
-        showErrorMessage('#name-error', '');
-      }
-    });
-    var emailField = $('#your-form-email');
-    emailField.on('input', function () {
-      var emailValue = this.value.trim();
-      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      if (!emailValue) {
-        // showErrorMessage('#email-error', 'Please enter email');
-      } else if (!emailRegex.test(emailValue)) {
-        showErrorMessage('#email-error', 'Invalid format, enter valid email');
-      } else {
-        showErrorMessage('#email-error', '');
-      }
-    });
-  });
-</script>
+
+
 
 
 
