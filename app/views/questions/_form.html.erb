@@ -14,13 +14,12 @@
         <%= f.cktext_area :question_description, class: "form-control", placeholder: 'Enter Question Discription', tabindex: 1, autofocus: true %>
       </div>
     </div>
-    
     <div id= 'options' class="form-inline">
       <%= f.fields_for :options, @option do |ab| %>
        <%= render "option_fields", :f => ab %>
       <% end %>
     </div>
-    <div class="rows col-sm-offset-1 mr-top">
+    <div clas s="rows col-sm-offset-1 mr-top">
       <%= link_to_add_association 'Add More Options', f, :options, class: "btn btn-primary" %>
       <%= f.button  @question.new_record? ? 'Save' : 'Update' , class: "btn btn-primary", type: 'submit', tabindex: 4 %>
       <%= link_to 'Back', :back, class: "btn btn-primary" %>
