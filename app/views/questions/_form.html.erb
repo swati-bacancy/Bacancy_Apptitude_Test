@@ -14,6 +14,7 @@
         <%= f.cktext_area :question_description, class: "form-control", placeholder: 'Enter Question Discription', tabindex: 1, autofocus: true %>
       </div>
     </div>
+    
     <div id= 'options' class="form-inline">
       <%= f.fields_for :options, @option do |ab| %>
        <%= render "option_fields", :f => ab %>

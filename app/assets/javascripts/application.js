@@ -24,45 +24,18 @@
 //= require_tree .
 
   
-$(document).ready(function() {
-	$('#your-form-name').parsley().on('field:validate', function() {
-	  if (!this.isValid()) {
-		if (this.value === "") {
-		  $('#name-error').text("Please enter name");
-		} else if (!/^[A-Za-z ]+$/.test(this.value)) {
-		  $('#name-error').text("Not allowed, only Characters are allowed");
-		} else {
-		  $('#name-error').text(""); // Clear the error message
-		}
-	  } else {
-		$('#name-error').text(""); // Clear the error message
-	  }
-	});
 
-	// Validate the email field
-	$('#your-form-email').parsley().on('field:validate', function() {
-	  if (!this.isValid()) {
-		if (this.value === "") {
-		  $('#email-error').text("Please enter email");
-		} else if (!/^[A-Za-z ]+$/.test(this.value)) {
-		  $('#email-error').text("Invalid Email Format");
-		} 
-	  } else {
-		$('#email-error').text(""); // Clear the error message
-	  }
-	});
-	// Validate the enroll number field
-
-  });
-$(document).ready(function(){
+  
+  $(document).ready(function(){
 	document.addEventListener('contextmenu', event => event.preventDefault());
 	$(".alert").delay(3000).slideUp(1000, function(){
 	  $(".alert").alert('close');
 	});
-});
-
-
-
-function preventBack() { window.history.forward(); }
-setTimeout("preventBack()", 0);
-window.onunload = function () { null };
+  });
+  
+  function preventBack() { window.history.forward(); }
+  setTimeout("preventBack()", 0);
+  window.onunload = function () { null };
+  
+  
+  
