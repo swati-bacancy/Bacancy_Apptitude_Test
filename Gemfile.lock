@@ -98,6 +98,8 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.1.0)
@@ -138,6 +140,7 @@ GEM
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
+    pagy (6.1.0)
     paperclip (6.0.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -257,10 +260,12 @@ DEPENDENCIES
   ckeditor
   cocoon
   coffee-rails (~> 4.2)
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails (= 4.3.1)
   listen (>= 3.0.5, < 3.2)
   momentjs-rails (>= 2.9.0)
+  pagy
   paperclip
   parsley-rails
   pg (>= 0.18, < 2.0)

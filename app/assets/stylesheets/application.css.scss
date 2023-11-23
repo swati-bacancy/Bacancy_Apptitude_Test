@@ -18,45 +18,46 @@
 @import 'parsley';
 @import "bootstrap";
 @import "bootstrap-datetimepicker";
+@import "font-awesome";
 @import "student_registration";
 
 .alert{
-    z-index: 9999;
-    position: relative;
+  z-index: 9999;
+  position: relative;
 }
 
 .alert-error {
-    background-color: #f2dede;
-    border-color: #eed3d7;
-    color: #b94a48;
-    text-align: left;
- }
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
 
 .alert-alert {
-    background-color: #f2dede;
-    border-color: #eed3d7;
-    color: #b94a48;
-    text-align: left;
- }
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
 
 .alert-success {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #468847;
-    text-align: left;
- }
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
 
 .alert-notice {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #468847;
-    text-align: left;
- }
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
 
 .modal-dialog {
-    width: 80%;
-    max-height: calc(100% - 200px);
-    overflow-y: scroll;
+  width: 80%;
+  max-height: calc(100% - 200px);
+  overflow-y: scroll;
 }
 
 .modal-dialog .modal-body{
@@ -67,10 +68,10 @@
 	color: #FF8C00;
 }
 .mb-50{
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 .modal-header{
-    background-color: lightblue;
+  background-color: lightblue;
 }
 
 .container-of-new-technical{
@@ -78,10 +79,10 @@
     border: 1px solid black;
 }
 .container{
-    margin-top: 70px;
+  margin-top: 70px;
 }
 
 .header-links{
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }

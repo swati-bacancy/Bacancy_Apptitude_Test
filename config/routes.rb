@@ -14,7 +14,10 @@
         post 'create_technical'
       end
     end
-    resources :results, only: %i[index show destroy edit update]
+    resources :results, only: %i[index show destroy edit update] do 
+      post 'export_csv', on: :collection
+      get 'export_csv', on: :collection
+    end
     get 'student/existing_user' => 'students#existing_user'
     post 'student/assign_test' => 'students#assign_test'
     get '/technical' => 'home#technical'

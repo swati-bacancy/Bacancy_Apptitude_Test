@@ -1,0 +1,39 @@
+<div class="container text-center mt-5">
+  <div class="jumbotron" style="border: 1px solid #000;">
+    <h2 style="font-weight: bold; margin-top: 10px; text-align: center">Update Marks</h2>
+    <hr>
+    <div class="row extra-padding">
+      <%= form_for @result, :html => { class: 'form-horizontal', data: { parsley_validate: true } } do |f| %>
+        <%= render "shared/error_messages", :target => @result %>
+        <div class="form-group row space-between-fields">
+          <div class="col-sm-5">
+            <%= f.label :name, "Name", class: 'required-label custom-label' %>
+            <%= f.text_field :student_name, value: @result.student.name, class: "form-control custom-text-field", readonly: true %>
+          </div>
+          <div class="col-sm-1 vertical-line"></div>
+          <div class="col-sm-5">
+            <%= f.label :email, "Email", class: 'required-label custom-label' %>
+            <%= f.email_field :email, value: @result.student.email, class: "form-control custom-text-field", readonly: true %>
+          </div>
+        </div>        
+        <div class="form-group row space-between-fields form-field">
+          <div class="col-sm-5">
+            <%= f.label :college_name, "College Name", class: 'required-label custom-label' %>
+            <%= f.text_field :college_name, value: @result.student.collage_name, class: "form-control custom-text-field", readonly: true %>
+          </div>
+          <div class="col-sm-1 vertical-line"></div>
+          <div class="col-sm-5">
+            <%= f.label :technical_marks, "Technical Marks", class: 'required-label custom-label' %>
+            <%= f.number_field :technical_marks, class: "form-control custom-text-field", data: { parsley_required: true, parsley_error_message: "Please enter technical marks" } %>
+            <span class="error-message" id="technical-marks-error"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <%= f.submit "Update", class: "btn btn-primary update-result" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
