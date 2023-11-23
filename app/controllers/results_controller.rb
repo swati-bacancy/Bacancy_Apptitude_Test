@@ -1,5 +1,5 @@
+include Pagy::Backend
 class ResultsController < ApplicationController
-  include Pagy::Backend
   before_action :find_result, only: [:show, :destroy, :edit, :update, :technical_answers, :check_student_answers]
   http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
 
@@ -11,10 +11,7 @@ class ResultsController < ApplicationController
     @search = @search.to_i if @search.present? && @search.count("0-9") == @search.length
     
     if @search.present? || @collage_name.present?
-      @results = Result.joins(student: :test)
-                .includes(student: :test)
-                .where('students.email ilike ?  or students.roll_number ilike ? or students.name ilike ? ', "%#{@search}%", "%#{@search}%", "%#{@search}%")
-                .where('students.collage_name ilike ?', "%#{@collage_name}%")
+      @results = filter_result(@search,@collage_name)
     else
       @results = Result.includes(student: :test)
     end
@@ -71,11 +68,7 @@ class ResultsController < ApplicationController
     @roll_number= params[:roll_number]
 
     if @search.present? || @collage_name.present?
-      @results = Result.joins(student: :test)
-                .includes(student: :test)
-                .where('students.email ilike ?  or students.roll_number ilike ? or students.name ilike ? ', "%#{@search}%", "%#{@search}%", "%#{@search}%")
-                .where('students.collage_name ilike ?', "%#{@collage_name}%")
-                
+      @results = filter_result(@search,@collage_name)
     else
       @results = Result.includes(student: :test)
     end  
@@ -92,5 +85,12 @@ class ResultsController < ApplicationController
 
   def find_result
     @result = Result.find(params[:id])
+  end
+  
+  def filter_result(search,collage_name)
+    Result.joins(student: :test)
+                .includes(student: :test)
+                .where('students.email ilike ?  or students.roll_number ilike ? or students.name ilike ? ', "%#{search}%", "%#{search}%", "%#{search}%")
+                .where('students.collage_name ilike ?', "%#{collage_name}%")
   end
 end

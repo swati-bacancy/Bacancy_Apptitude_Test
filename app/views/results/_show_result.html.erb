@@ -1,68 +1,68 @@
 <div class="container">
-	<h3> Student Result </h3>
+  <h3> Student Result </h3>
 
-		<div class="row">
-			<label class="col-md-2 ">Student Name : </label>
-			<div class="col-md-4">
-				<p><%= @result.student.name %></p>
-			</div>
-		</div>
+  <div class="row">
+    <label class="col-md-2 ">Student Name : </label>
+    <div class="col-md-4">
+      <p><%= @result.student.name %></p>
+	  </div>
+  </div>
 
-		<div class="row">
-			<label class="col-md-2">Student Email : </label>
-			<div class="col-md-4">
-				<p><%= @result.student.email %></p>
-			</div>
-		</div>
+   <div class="row">
+     <label class="col-md-2">Student Email : </label>
+     <div class="col-md-4">
+       <p><%= @result.student.email %></p>
+     </div>
+   </div>
 
-		<div class="row">
-			<label class="col-md-2">Course : </label>
-			<div class="col-md-4">
-				<p><%= @result.student.course %></p>
-			</div>
-		</div>
+    <div class="row">
+	    <label class="col-md-2">Course : </label>
+	    <div class="col-md-4">
+	      <p><%= @result.student.course %></p>
+	    </div>
+    </div>
 
-		<div class="row">
-			<label class="col-md-2">College Name : </label>
-			<div class="col-md-4">
-				<p><%= @result.student.collage_name %></p>
-			</div>
-		</div>
+    <div class="row">
+      <label class="col-md-2">College Name : </label>
+      <div class="col-md-4">
+        <p><%= @result.student.collage_name %></p>
+	    </div>
+    </div>
 
-		<div class="row">
-			<label class="col-md-2">Total Questions :</label>
-			<div class="col-md-4">
-			 <p> <%= @result.total_questions %></p>
-			</div>
-		</div>
+    <div class="row">
+	    <label class="col-md-2">Total Questions :</label>
+	    <div class="col-md-4">
+		    <p> <%= @result.total_questions %></p>
+	    </div>
+    </div>
 
-		<div class="row">
-			<label class="col-md-2"> Attempted Questions : </label>
-			<div class="col-md-4">
-				<p><%= @result.attempted_questions %></p>
-			</div>
-		</div>
+    <div class="row">
+	    <label class="col-md-2"> Attempted Questions : </label>
+	    <div class="col-md-4">
+		    <p><%= @result.attempted_questions %></p>
+	    </div>
+    </div>
 
-		<div class="row">
-			<label class="col-md-2">Correct Answers : </label>
-			<div class="col-md-4">
-				<p><%= @result.correct_answer %></p>
-			</div>
-		</div>
+    <div class="row">
+      <label class="col-md-2">Correct Answers : </label>
+      <div class="col-md-4">
+		    <p><%= @result.correct_answer %></p>
+	    </div>
+    </div>
 
-		<div class="row">
-			<label class="col-md-2">Technical Answers : </label>
-			<div class="col-md-4">
-				<p><%= @result.technical_marks %></p>
-			</div>
-		</div>
+    <div class="row">
+		  <label class="col-md-2">Technical Answers : </label>
+	    <div class="col-md-4">
+		    <p><%= @result.technical_marks %></p>
+	    </div>
+    </div>
 
-		<div class="row">
-			<label class="col-md-2">Total Marks : </label>
-			<div class="col-md-4">
-				<p><%= @result.correct_answer + @result.technical_marks %></p>
-			</div>
-		</div>
+    <div class="row">
+      <label class="col-md-2">Total Marks : </label>
+	    <div class="col-md-4">
+		    <p><%= @result.correct_answer + @result.technical_marks %></p>
+	    </div>
+    </div>
 
 	<%= link_to 'back', :back, class: "btn btn-primary" %>
 </div>

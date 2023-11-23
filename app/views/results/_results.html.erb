@@ -1,23 +1,23 @@
 <table class="table table-striped">
 	<tr>
-		<th> Enr. No </th>
-		<th>Student Name</th>
-		<th>Student Email</th>
-		<th>Course</th>
-		<th>College Name</th>
-		<th>Total Questions</th>
-		<th>Attempted Questions</th>
-		<th>Check Answer</th>
-		<th>Correct Answers</th>
-		<th>Technical Answer</th>
-		<th>Technical Marks</th>
-		<th>Total Marks</th>
-		<th colspan="3">Action</th>
-	</tr>
-	<tbody>
-		<% @results&.each do |result| %>
-			<%= render 'result', result: result%>
-		<% end %>
-	</tbody>
+    <th> Enr. No </th>
+    <th>Student Name</th>
+    <th>Student Email</th>
+    <th>Course</th>
+    <th>College Name</th>
+    <th>Total Questions</th>
+    <th>Attempted Questions</th>
+    <th>Check Answer</th>
+    <th>Correct Answers</th>
+    <th>Technical Answer</th>
+    <th>Technical Marks</th>
+    <th>Total Marks</th>
+    <th colspan="3">Action</th>
+  </tr>
+  <tbody>
+	  <% @results&.each do |result| %>
+		  <%= render 'result', result: result%>
+	  <% end %>
+  </tbody>
 </table>	
 <%= pagy_bootstrap_nav(@pagy).html_safe %>

@@ -5,21 +5,11 @@
     <button class="btn btn-primary export_csv">Export CSV</button>
   </div>
   <hr/>
-  <%
-=begin%>
- <div class="form-continer">   
-<%
-=end%>
-    <%= form_tag  results_path ,  class: 'searchBar' , method: :get, remote: true do %>
-      <%= select_tag :collage_name, options_for_select(Student.pluck(:collage_name).uniq, params[:collage_name]), :prompt => "Select College Name",style: "padding:10px" %>
-      <%= text_field_tag :search, params[:search], placeholder: "Find by Enr. No, Student Name, Student Email", style: "width:400px; padding:8px" %>
-      <%= submit_tag("search",class: "btn btn-primary search-btn") %>
-    <%end%>
-  <%
-=begin%>
- </div> 
-<%
-=end%>
+  <%= form_tag  results_path ,  class: 'searchBar' , method: :get, remote: true do %>
+    <%= select_tag :collage_name, options_for_select(Student.pluck(:collage_name).uniq, params[:collage_name]), :prompt => "Select College Name",style: "padding:10px" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Find by Enr. No, Student Name, Student Email", style: "width:400px; padding:8px" %>
+    <%= submit_tag("search",class: "btn btn-primary search-btn") %>
+  <%end%>
   <div class='all-results'>
     <%= render 'results', results: @results  %>
   </div>
@@ -29,15 +19,6 @@
 </div>
 
 <script>
-  // document.querySelector('.search-btn').addEventListener('click', function() {
-    //   var url;
-  //   if (searchValue === '') {
-    //     url = window.location.origin + window.location.pathname;
-  //   } else {
-    //     url = window.location.origin + window.location.pathname + '?search=' + encodeURIComponent(searchValue);
-  //   }
-  //   window.location.replace(url);
-  // });
   $(document).ready(function() {
     $('.export_csv').click(function() {
         var searchValue = $('#search').val();
@@ -62,47 +43,6 @@
             console.error('Error:', error);
           }
         });
-        // fetch(`/results/export_csv?searchValue=${searchValue}&format=csv`)
-        // .then(resp => resp.blob())
-        // .then(blob => {
-        //   const url = window.URL.createObjectURL(blob);
-        //   const a = document.createElement('a');
-        //   a.style.display = 'none';
-        //   a.href = url;
-        //   // the filename you want
-        //   a.download = 'result.csv';
-        //   document.body.appendChild(a);
-        //   a.click();
-        //   window.URL.revokeObjectURL(url);
-        //   // alert('your file has downloaded!'); // or you know, something with better UX...
-        // })
-        // .catch(() => alert('oh no!'));
     })
   })
-
-    </script>
-
-
-
-<%
-=begin%>
- <script >
-$(document).ready(function(){
-
-  $('.search-btn').onClick(function(){
-    console.log('fgdsufsf')
-  var searchValue = $('#search').val();
-  var url;
-  debugger
-  if (searchValue= ''){
-    url = window.location.origin + window.location.pathname
-  }else{
-    // url = window.location.origin + window.location.pathname + '?' 'search'=${searchValue}
-  }
-  window.location.replace(url)
-});
-    })
-</script> 
-<%
-=end
-%>
+</script>

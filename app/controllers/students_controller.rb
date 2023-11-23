@@ -1,5 +1,5 @@
+include Pagy::Backend
 class StudentsController < ApplicationController
-  include Pagy::Backend
   before_action :find_student, only: [:show, :edit, :update, :destroy]
   http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD, only: [:index, :edit, :destroy] unless Rails.env == "development"
 

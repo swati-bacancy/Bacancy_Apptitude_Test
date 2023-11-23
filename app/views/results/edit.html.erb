@@ -1,17 +1,10 @@
 <div class="container text-center mt-5">
   <div class="jumbotron" style="border: 1px solid #000;">
-    <%
-=begin%>
- <img src="<%= asset_path('logo-dark.png') %>" alt="Logo" class="img-fluid" /> 
-<%
-=end%>
     <h2 style="font-weight: bold; margin-top: 10px; text-align: center">Update Marks</h2>
     <hr>
     <div class="row extra-padding">
       <%= form_for @result, :html => { class: 'form-horizontal', data: { parsley_validate: true } } do |f| %>
         <%= render "shared/error_messages", :target => @result %>
-
-        <!-- Uneditable Fields -->
         <div class="form-group row space-between-fields">
           <div class="col-sm-5">
             <%= f.label :name, "Name", class: 'required-label custom-label' %>
@@ -22,8 +15,7 @@
             <%= f.label :email, "Email", class: 'required-label custom-label' %>
             <%= f.email_field :email, value: @result.student.email, class: "form-control custom-text-field", readonly: true %>
           </div>
-        </div>
-        
+        </div>        
         <div class="form-group row space-between-fields form-field">
           <div class="col-sm-5">
             <%= f.label :college_name, "College Name", class: 'required-label custom-label' %>
@@ -36,16 +28,6 @@
             <span class="error-message" id="technical-marks-error"></span>
           </div>
         </div>
-        
-        <%
-=begin%>
- <!-- Editable Field -->
-        <div class="form-group row space-between-fields">
-          
-        </div> 
-<%
-=end%>
-
         <div class="form-group row">
           <div class="col-sm-12">
             <%= f.submit "Update", class: "btn btn-primary update-result" %>
