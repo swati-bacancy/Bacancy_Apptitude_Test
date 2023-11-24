@@ -17,7 +17,7 @@ class Result < ApplicationRecord
         attributes["course"] = result.student.course
         attributes["collage_name"] = result.student.collage_name
         attributes["technical_marks"] = result.technical_marks
-        attributes["total_marks"] = result.technical_marks + result.correct_answer
+        attributes["total_marks"] = result.technical_marks.to_i + result.correct_answer.to_i
         csv << attributes.values_at(*desired_columns)
       end
     end
