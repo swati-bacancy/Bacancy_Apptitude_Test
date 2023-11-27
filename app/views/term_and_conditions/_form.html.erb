@@ -1,0 +1,17 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<%= render partial: "shared/header"%>
+<div class="container content-center">
+  <%= form_for @term_and_condition do |f| %>
+  <%= render "shared/error_messages", :target => @term_and_condition %>
+    <div class="row">
+      <div class="col-md-12 offset-lg-2">
+        <%= f.label :terms_and_condition%>
+        <%= f.cktext_area :content, class: "form-control", placeholder: 'Enter Question Discription', tabindex: 1, autofocus: true %>
+      </div>
+    </div>
+    <div class="rows col-sm-offset-1 mr-top term-save">
+      <%= f.button  @term_and_condition.new_record? ? 'Save' : 'Update' , class: "btn btn-primary save-btn", type: 'submit', tabindex: 4 %>
+      <%= link_to 'Back', :back, class: "btn btn-primary back-btn" %>
+    </div>
+  <% end %>
+</div>
