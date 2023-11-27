@@ -1,0 +1,109 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Page</title>
+    <style>
+     body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+
+      .div1 {
+        height: 20%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+      }
+
+      .div2 {
+        height: 60%;
+        width: 100%;
+        display: flex;
+      }
+      .div2 img{
+        height: 450px;
+      }
+
+      .div2-left, .div2-right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .div2-left img, .div3 img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .div3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+}
+      .heading {
+        font-size: 4em; /* Adjust the font size as needed */
+        font-weight: bold; /* Make the text bold */
+      }
+
+      .div3 {
+        height: 20%;
+        width: 100%;
+        background-color: blue;
+      }
+      .btn {
+        width: 180px;
+        margin-top: 30px;
+        display: inline-block;
+        padding: 10px 20px; 
+        text-decoration: none;
+        font-weight: bold;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        background-color: #ED7C19;
+        transition: background-color 0.3s ease; 
+      }
+      .btn:hover {
+        background-color: #ff9933; 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Div 1 -->
+      <div class="div1">
+        <img src="<%= asset_path('bacancy.svg') %>" alt="Registration Image" />
+      </div>  
+
+      <!-- Div 2 -->
+      <div class="div2">
+        <div class="div2-left">
+        <img src="<%= asset_path('left-side-green-design.svg') %>" alt="Registration Image" class="img-fluid" />
+        </div>
+        <div class="div2-right">
+          <h2 class="heading">Your test has been <br>submitted successfully.</h2>
+          <%= link_to "Ok, Got it!", root_path, class: "btn registration-button" %>
+        </div>
+      </div>
+
+      <!-- Div 3 -->
+      <div class="div3">
+        <img src="<%= asset_path('footer_design-1.svg') %>" alt="Registration Image" class="img-fluid" />
+      </div>
+    </div>
+  </body>
+  </html>

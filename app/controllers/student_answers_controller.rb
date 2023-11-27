@@ -63,10 +63,12 @@ class StudentAnswersController < ApplicationController
       Result.create(student_id: @student.id, test_id: @student.test.id)
     end
 
-    redirect_to root_path
-    flash[:final_submit] = "Your Technical Test submitted successfully!"
+    redirect_to success_page_path
   end
 
+  def success_page
+    # 
+  end
   private
 
   def find_student
