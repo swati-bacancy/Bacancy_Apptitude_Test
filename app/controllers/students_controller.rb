@@ -24,7 +24,7 @@ class StudentsController < ApplicationController
       @student.test_id = Test.technical.ids.sample
     end
     # else
-    @student.test_id = Test.technical.ids.sample
+    # @student.test_id = Test.technical.ids.sample
     if @student.save
       if @student.preferred_position&.non_tech
         redirect_to new_student_answer_path

@@ -21,6 +21,9 @@ body{
     height: 80vh;
     /* Increased height */
 }
+.student-registration .card-body{
+    height: 400px;
+}
 
 .student-registration .custom-text-field {
     height: 40px;
@@ -79,9 +82,6 @@ body{
 
 .student-registration .required-label {}
 
-.student-registration .img-fluid {
-    margin-bottom: 65px;
-}
 
 .student-registration .col-md-4::before {
     content: "";
@@ -122,15 +122,24 @@ body{
 }
 
 .student-registration .overlay-image {
-    margin-left: 300px;
-    margin-top: 200px;
+    margin-left: 220px;
+    margin-top: 100px;
+    height: 800px;
+
 }
 
 .student-registration .main-left-div-image {
-    background-color: rgba(1, 1, 1, 1);
+opacity: 22%;
+}
+.student-registration .main-div-background{
+    background-color: #31314C;
 }
 
 /* Adjust the z-index of the image to make sure it's above the overlay */
 .student-registration .col-md-4 img {
     z-index: 2;
+}
+.li{
+    text-decoration: none;
+    text-decoration-style: none;
 }
