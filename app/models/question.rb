@@ -1,4 +1,5 @@
 class Question < ApplicationRecord
+  before_save :clean_question_description
 	has_many :options, dependent: :destroy
   has_one :answer, dependent: :destroy
   has_and_belongs_to_many :tests, dependent: :destroy
@@ -9,4 +10,10 @@ class Question < ApplicationRecord
 
   scope :technical, -> { where(is_technical: true) }
   scope :non_technical, -> { where(is_technical: false) }
+
+  private 
+
+  def clean_question_description
+    self.question_description = question_description.strip
+  end
 end
