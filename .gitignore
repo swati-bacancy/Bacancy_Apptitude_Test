@@ -16,7 +16,7 @@
 !/log/.keep
 /log/*
 !/tmp/.keep
-/db/schema.rb
+
 /log
 
 /node_modules
