@@ -1,72 +1,63 @@
-<section class="vh-100 s-section">
-    <div class="student-registration">
-    <div class="container-fluid h-100 p-0">
-      <div class="row no-gutters h-100">
-        <div class="col-md-4">
-          <img src="<%= asset_path('artboard.svg') %>" alt="Registration Image" class="img-fluid w-100 overlay-image" />
-          <div class="main-div-background">
-          <img src="<%= asset_path('div-background.png') %>" alt="Registration Image" class="img-fluid w-100 h-100 main-left-div-image" />
+<div class="container text-center mt-5 main-div mx-auto">
+  <div class="jumbotron" style="border: 1px solid #000;">
+    <img src="<%= asset_path('logo-dark.png') %>" alt="Registration Image" class="img-fluid" />
+    <h2 style="font-weight: bold; margin-top: 20px">Student Registration Form</h2>
+    <hr>
+    <div class="row extra-padding">
+      <%= form_for @student, :html => { class: 'form-horizontal', data: {parsley_validate: true}} do |f| %>
+        <%= render "shared/error_messages", :target => @student %>
+        <div class="form-group row space-between-fields">
+          <div class="col-sm-5">
+            <%= f.label :name, "Name", class: 'required-label custom-label' %>
+            <%= f.text_field :name, id: 'your-form-name', class: "form-control custom-text-field", data: {parsley_pattern: "^[A-Za-z ]+$", parsley_required: true, parsley_required_message: "Please enter name", parsley_pattern_message: "Only characters are allowed"} %>
+            <span class="error-message" id="name-error"></span>
+          </div>
+          <div class="col-sm-1 vertical-line"></div>
+          <div class="col-sm-5">
+            <%= f.label :email, "Email", class: 'required-label custom-label' %>
+            <%= f.email_field :email, id: 'your-form-email', class: "form-control custom-text-field", data: {parsley_type: "email", parsley_required: true, parsley_required_message:"Please enter email", parsley_type_message: "Invalid email format", parsley_pattern: "/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,4}$/", parsley_pattern_message: "Invalid email format"} %>
+            <span class="error-message" id="email-error"></span>
         </div>
         </div>
-        <div class="col-md-8">
-          <div class="card text-black" style=" height: 100%;">
-            <div class="card-body p-md-5">
-              <div class="main-content-wrapper">
-                  <img src="<%= asset_path('bacancy.svg') %>" alt="logo" class="image-logo mx-auto d-block" />
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" id="registration-form-heading">Student Registration Form</p>
-                <%= form_for @student, :html => { class: 'form-horizontal', data: {parsley_validate: true}} do |f| %>
-                  <div class="d-flex flex-row align-items-center mb-4">
-                      <div class="form-outline flex-fill mb-0">
-                        <%= f.label :name, "Name", class: 'required-label custom-label' %>
-                        <%= f.text_field :name, id: 'your-form-name', placeholder: "Enter your name",class: "form-control custom-text-field", data: {parsley_pattern: "^[A-Za-z ]+$", parsley_required: true, parsley_required_message: "Please enter name", parsley_pattern_message: "Only characters are allowed"} %>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <div class="form-outline flex-fill mb-0">
-                        <%= f.label :email, "Email", class: 'required-label custom-label' %>
-                          <%= f.email_field :email, id: 'your-form-email', placeholder:"Enter your email", class: "form-control custom-text-field", data: {parsley_type: "email", parsley_required: true, parsley_required_message:"Please enter email", parsley_type_message: "Invalid email format", parsley_pattern: "/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,4}$/", parsley_pattern_message: "Invalid email format"} %>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <div class="form-outline flex-fill mb-0">
-                        <%= f.label :course, "Course", class: 'required-label custom-label' %>
-                        <%= f.select :course, ["Bachelor of engineering", "Master of engineering","MBA", "BBA"], { include_blank: "Select the course" }, { class: "form-control custom-text-field custom-dropdown", data: { parsley_required: true, parsley_error_message: "Please select a valid course" } } %>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <div class="form-outline flex-fill mb-0">
-                        <%= f.label :roll_number, "Enroll No.", class: 'required-label custom-label' %>
-                        <%= f.text_field :roll_number, placeholder: "Enter your enroll no.",class: "form-control custom-text-field", data: { parsley_required: true, parsley_required_message: "Please enter enroll no"}%>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <div class="form-outline flex-fill mb-0">
-                        <%= f.label :collage_name, "College Name", class: 'required-label custom-label' %>
-                        <%= f.text_field :collage_name, placeholder: "Enter your college name",class: "form-control custom-text-field", data: {parsley_required: true, parsley_required_message: "Please enter college name"} %>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <div class="form-outline flex-fill mb-0">
-                        <%= f.label :preferred_position_id, "Preferred Position", class: 'required-label custom-label' %>
-                        <%= f.collection_select :preferred_position_id, PreferredPosition.all, :id, :name, { include_blank: "Select the preferred position" }, { class: "form-control custom-text-field custom-dropdown", data: { parsley_required: true, parsley_error_message: "Please select a valid preferred position" } } %>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <div class="form-outline flex-fill mb-0">
-                        <h3 id="caution-message-main-form">CAUTION: Once the test is started, we are monitoring your browser activity, and you will disqualify for the test if we found any other tab open in the browser.</h3>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <div class="form-outline flex-fill mb-0">
-                      <%= f.submit class: "btn  btn-custom form-control-1", value: "Let's Start The Test" %>
-                      </div>
-                    </div>              
-              </div>
-              <% end %>
-            </div>
+        <div class="form-group row space-between-fields">
+          <div class="col-sm-5">
+            <%= f.label :course, "Course", class: 'required-label custom-label' %>
+            <%= f.text_field :course, class: "form-control custom-text-field", data: {parsley_required: true, parsley_error_message: "Please enter course"} %>
+          </div>
+          <div class="col-sm-1 vertical-line"></div>
+          <div class="col-sm-5">
+            <%= f.label :roll_number, 'enroll number', class: 'required-label custom-label' %>
+            <%= f.text_field :roll_number, id: 'your-form-enroll-number', class: "form-control custom-text-field", data: { parsley_required: true, parsley_error_message: "Please enter enroll number"} %>
+            <span class="error-message" id="enroll-number-error"></span>
           </div>
         </div>
-      </div>
+        <div class="form-group row space-between-fields">
+          <div class="col-sm-5">
+            <%= f.label :collage_name, "College Name", class: 'required-label custom-label' %>
+            <%= f.collection_select :collage_name, Collage.all, :name, :name, { include_blank: "Select College" }, { class: "form-control custom-text-field", data: { parsley_required: true, parsley_error_message: "Please select a college name" } } %>
+            <span class="error-message" id="enroll-number-error"></span>
+          </div>
+          <div class="col-sm-1 vertical-line"></div>
+          <div class="col-sm-5">
+            <%= f.label :preferred_position, "Preferred Position", class: 'required-label custom-label' %>
+            <%= f.collection_select :preferred_position_id, PreferredPosition.all, :id, :name, { include_blank: "Select Preferred Position" }, { class: "form-control custom-text-field", data: { parsley_required: true, parsley_error_message: "Please select a preferred position" } } %>
+          </div>
+        </div>
+        <div class="form-group row space-between-fields">
+          <div class="col-sm-12 caution-message">
+            <h3 id="caution-message">Caution: Once the test is started, we are monitoring your browser activity, and you will be disqualified for the<br> test if we find any other tab open in the browser.</h3>
+          </div>
+        </div>
+        <div class="form-group row space-between-fields centered-button">
+          <div class="col-sm-12 text-center">
+            <%= f.submit class: "btn  btn-custom", value: "Start Test" %>
+          </div>
+        </div>
+      <% end %>
     </div>
-    </div>
-  </section>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>

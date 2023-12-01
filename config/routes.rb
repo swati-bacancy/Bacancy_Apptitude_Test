@@ -15,8 +15,6 @@
         post 'create_technical'
       end
     end
-    get 'success_page', to: 'student_answers#success_page', as: 'success_page'
-
     resources :results, only: %i[index show destroy edit update] do 
       post 'export_csv', on: :collection
       get 'export_csv', on: :collection

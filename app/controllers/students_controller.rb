@@ -14,7 +14,6 @@ class StudentsController < ApplicationController
 
   def create    
     @student = Student.new(student_params)
-  
     # pr loc no_tech true
     if @student.preferred_position&.non_tech
       # for mcq
@@ -92,7 +91,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:name, :email, :roll_number, :collage_name, :test_id, :test_started, :preferred_position_id)
+    params.require(:student).permit(:name, :email, :course, :roll_number, :collage_name, :test_id, :test_started, :preferred_position_id)
   end
 
   def find_student
