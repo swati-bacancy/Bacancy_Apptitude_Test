@@ -15,10 +15,9 @@
   }
   .parsley-success {
   background-color: white !important;
-   color: #000 !important;
+  color: #000 !important;
   }
   .custom-label {
-    font-weight: bold;
     font-size: 18px;
   }
   #name-error {
@@ -41,7 +40,7 @@
   }
   .parsley-errors-list {
     color: red;
-    font-size: 18px;
+    font-size: 17px;
     float: left;
     margin-top: 10px;
   }
@@ -68,7 +67,7 @@
     color: red;
     text-align: left;
     margin-top: 15px;
-    font-size: 18px; /* Adjust the font size as needed */
+    font-size: 18px; 
   }
   .btn-custom {
     margin-right: 100px;
@@ -86,7 +85,6 @@
     font-size: 18px;
   }
   .jumbotron {
-    // background-color: #faebeb;
     width: 1090px;
   }
   .btn {
