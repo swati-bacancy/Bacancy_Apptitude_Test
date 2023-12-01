@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
 
-  def create
+  def create    
     @student = Student.new(student_params)
   
     # pr loc no_tech true

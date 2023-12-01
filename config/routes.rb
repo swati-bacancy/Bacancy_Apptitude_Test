@@ -7,6 +7,7 @@
     resources :collages
     resources :students
     resources :preferred_positions
+    resources :term_and_conditions
     resources :questions_tests, except: %i[new create]
     resources :student_answers, only: %i[new create] do
       collection do
