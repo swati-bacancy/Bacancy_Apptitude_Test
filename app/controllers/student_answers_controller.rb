@@ -30,6 +30,7 @@ class StudentAnswersController < ApplicationController
                               test_id: @test.id)
     # redirect_to root_path
     tech_test = Test.technical.ids.sample
+    
     if tech_test.present? && @student.preferred_position.tech
       @student.update_attributes(test_id: Test.technical.ids.sample, test_started: false)
       redirect_to new_technical_student_answers_path
@@ -62,11 +63,12 @@ class StudentAnswersController < ApplicationController
     unless @student.preferred_position&.non_tech
       Result.create(student_id: @student.id, test_id: @student.test.id)
     end
-
-    redirect_to root_path
-    flash[:final_submit] = "Your Technical Test submitted successfully!"
+    redirect_to success_page_path
   end
 
+  def success_page
+    # 
+  end
   private
 
   def find_student

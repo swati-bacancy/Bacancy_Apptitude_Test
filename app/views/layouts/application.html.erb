@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if student_new_page? %>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <% end %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
     <title>BacancyApptitudeTest</title>
     <%= csrf_meta_tags %>
   </head>

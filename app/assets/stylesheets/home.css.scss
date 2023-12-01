@@ -1,0 +1,109 @@
+.left-div {
+  background-color: #fff; 
+  height: 90vh; 
+  position: relative;
+  left: 110px;
+}
+
+.heading {
+  font-size: 4em; 
+  font-weight: bold; 
+}
+
+.centered-content {
+  position: absolute;
+  top: 307px;
+  width: 570px;
+  height: 286px;
+  background-color: #ffffff; 
+  padding: 20px;
+  text-align: left; 
+}
+
+.centered-content-1 {
+  position: absolute;
+  top: 807px;
+  width: 570px;
+  height: 286px;
+  background-color: #ffffff; 
+  padding: 20px;
+  text-align: left; 
+}
+
+.centered-content h1 {
+  margin-bottom: 20px;
+}
+
+.registration-button {
+  background-color: #ED7C19;
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  border: 1px #fff;
+  border-radius: 5px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.centered-content h2 {
+  font-size: 44px; 
+  font-weight: bold; 
+  margin-bottom: 10px; 
+}
+
+.right-div {
+  width: 100%; 
+  height: 100%;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.bold-text {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.img-fluid {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-image {
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px; 
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: #ED7C19;
+  transition: background-color 0.3s ease; 
+}
+
+.btn:hover {
+  background-color: #ff9933; 
+}
+
+.sidebar-image {
+  background-color:#31314c;
+}
+.side-image{
+  opacity: 22%;
+}
+
+.manual-image {
+  margin-left: 580px;
+  position: absolute;
+  z-index: 1; /* Set a higher z-index value */
+}
