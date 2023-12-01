@@ -1,14 +1,22 @@
-<head>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<section class="vh-100 s-section">
-    <div class="student-registration">
-    <div class="container-fluid h-100 p-0">
-      <div class="row no-gutters h-100">
-        <div class="col-md-4">
-          <img src="<%= asset_path('artboard.svg') %>" alt="Registration Image" class="img-fluid w-100 overlay-image" />
-          <div class="main-div-background">
-          <img src="<%= asset_path('div-background.png') %>" alt="Registration Image" class="img-fluid w-100 h-100 main-left-div-image" />
+<div class="container text-center mt-5 main-div mx-auto">
+  <div class="jumbotron" style="border: 1px solid #000;">
+    <img src="<%= asset_path('logo-dark.png') %>" alt="Registration Image" class="img-fluid" />
+    <h2 style="font-weight: bold; margin-top: 20px">Student Registration Form</h2>
+    <hr>
+    <div class="row extra-padding">
+      <%= form_for @student, :html => { class: 'form-horizontal', data: {parsley_validate: true}} do |f| %>
+        <%= render "shared/error_messages", :target => @student %>
+        <div class="form-group row space-between-fields">
+          <div class="col-sm-5">
+            <%= f.label :name, "Name", class: 'required-label custom-label' %>
+            <%= f.text_field :name, id: 'your-form-name', class: "form-control custom-text-field", data: {parsley_pattern: "^[A-Za-z ]+$", parsley_required: true, parsley_required_message: "Please enter name", parsley_pattern_message: "Only characters are allowed"} %>
+            <span class="error-message" id="name-error"></span>
+          </div>
+          <div class="col-sm-1 vertical-line"></div>
+          <div class="col-sm-5">
+            <%= f.label :email, "Email", class: 'required-label custom-label' %>
+            <%= f.email_field :email, id: 'your-form-email', class: "form-control custom-text-field", data: {parsley_type: "email", parsley_required: true, parsley_required_message:"Please enter email", parsley_type_message: "Invalid email format", parsley_pattern: "/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,4}$/", parsley_pattern_message: "Invalid email format"} %>
+            <span class="error-message" id="email-error"></span>
         </div>
         </div>
         <div class="form-group row space-between-fields">
