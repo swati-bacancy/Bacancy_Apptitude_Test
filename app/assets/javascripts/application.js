@@ -23,7 +23,7 @@
 //= require ckeditor/init
 //= require_tree .  
 
-$(document).ready(function () {
+$(document).on('turbolinks:load', function() {
   $('form').parsley();
 });
   $(document).ready(function(){
