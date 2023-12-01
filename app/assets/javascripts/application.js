@@ -22,10 +22,6 @@
 //= require bootstrap-datetimepicker
 //= require ckeditor/init
 //= require_tree .  
-
-$(document).on('turbolinks:load', function() {
-  $('form').parsley();
-});
   $(document).ready(function(){
 	document.addEventListener('contextmenu', event => event.preventDefault());
 	$(".alert").delay(3000).slideUp(1000, function(){
