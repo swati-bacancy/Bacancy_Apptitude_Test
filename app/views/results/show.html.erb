@@ -61,7 +61,7 @@
     <div class="row">
 	    <label class="col-md-2">Total Marks : </label>
 	    <div class="col-md-4">
-		    <p><%= @result.correct_answer + @result.technical_marks %></p>
+		    <p><%= @result.correct_answer.to_i + @result.technical_marks.to_i %></p>
 	    </div>
     </div>
 

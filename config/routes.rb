@@ -1,7 +1,17 @@
   Rails.application.routes.draw do
+    devise_for :users, controllers: {
+      sessions: 'users/sessions',
+    #   registrations: 'users/registrations',
+      omniauth_callbacks: 'users/omniauth_callbacks'
+    }
+
   mount Ckeditor::Engine => '/ckeditor'
-    root 'home#index'
+    authenticated :user, ->(user) { user.roles_name[0]== 'Examinor' || user.roles_name[0]== 'HR'} do
+      root 'results#index'
+    end
+      root 'home#index'
     resources :tests
+    resources :users
     resources :questions
     resources :technical_questions
     resources :collages

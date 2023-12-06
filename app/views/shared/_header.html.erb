@@ -43,6 +43,10 @@
       <li><%= link_to 'Students', students_path%></li>
       <li><%= link_to 'Preferred Positions', preferred_positions_path%></li>
       <li><%= link_to 'Terms and Conditions', new_term_and_condition_path %></li>
+      <li><%= link_to 'Users', users_path %></li> 
+      <% if current_user.present? %>
+        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      <% end %>   
     </ul>
   </div>
 </nav>

@@ -36,13 +36,17 @@
 			<p><%= @student.collage_name %></p>
 		</div>
 	</div>
-
-	<div class="row">
+	
+	<%
+=begin%>
+ <div class="row">
 		<label class="col-md-2"> URL : </label>
 		<div class="col-md-4">
 			<p><%= @student.url %></p>
 		</div>
-	</div>
+	</div> 
+<%
+=end%>
 
   <%= link_to 'Back', :back, class: "btn btn-primary"%>
 </div>
