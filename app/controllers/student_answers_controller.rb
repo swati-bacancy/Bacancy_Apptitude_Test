@@ -36,7 +36,7 @@ class StudentAnswersController < ApplicationController
       redirect_to new_technical_student_answers_path
       flash[:success] = "Your Aptitude Test submitted successfully And Start your Technical Test!"
     else
-      redirect_to root_path
+      redirect_to success_page_path
       flash[:final_submit] = "Your Aptitude Test submitted successfully And No Technical Test available! "
     end
   end

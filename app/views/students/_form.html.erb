@@ -30,7 +30,7 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <div class="form-outline flex-fill mb-0">
                         <%= f.label :course, "Course", class: 'required-label custom-label' %>
-                        <%= f.select :course, ["Bachelor of engineering", "Master of engineering","MBA", "BBA"], { include_blank: "Select the course" }, { class: "form-control custom-text-field custom-dropdown", data: { parsley_required: true, parsley_error_message: "Please select a valid course" } } %>
+                        <%= f.collection_select :course, Course.all, :name, :name, { include_blank: "Select the course" }, { class: "form-control custom-text-field custom-dropdown", data: { parsley_required: true, parsley_error_message: "Please select a valid course" } } %>
                       </div>
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">

@@ -2,6 +2,7 @@
   mount Ckeditor::Engine => '/ckeditor'
     root 'home#index'
     resources :tests
+    resources :courses
     resources :questions
     resources :technical_questions
     resources :collages

@@ -1,0 +1,22 @@
+<%= render partial: "shared/header" %>
+
+<div class="container">
+  <%= form_with(model: course, local: true) do |form| %>
+    <%= render "shared/error_messages", target: course %>
+    <h3><%= course.new_record? ? 'Add' : 'Edit' %> course</h3>
+
+    <div class="row">
+      <div class="col-md-1">
+        <%= form.label :name %>
+      </div>
+      <div class="col-md-5">
+        <%= form.text_field :name, class: "form-control", placeholder: 'Enter Course', tabindex: 1, autofocus: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <%= form.submit "Submit", class: "btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>
