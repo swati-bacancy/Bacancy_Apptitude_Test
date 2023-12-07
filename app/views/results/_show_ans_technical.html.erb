@@ -8,6 +8,9 @@
          <h4>Student Name: <b><%= @student.name %></b></h4>
          <h4>Enrollment No: <b><%= @student.roll_number %></b></h4>
          <h4>Test: <b><%= @student.test.name %></b></h4>
+         <% if @result&.technical_marks.present? %>
+				 	<h4>Checked By: <%= @result.checked_by %></h4>
+         <%end%>
          <% if @answers.present? %>
          <% @answers.each_with_index do |answer, index|%>
          <b><%= index + 1 %>.</b>

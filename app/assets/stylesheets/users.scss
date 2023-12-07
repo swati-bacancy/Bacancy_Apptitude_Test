@@ -1,0 +1,26 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-table{
+  margin-top: 43px;
+}
+
+.update-user{
+  border: white !important;
+  margin-top: 25px;
+}
+
+.jumbotron{
+  border: white !important;
+}
+
+.student-field{
+  margin-top: 20px;
+}

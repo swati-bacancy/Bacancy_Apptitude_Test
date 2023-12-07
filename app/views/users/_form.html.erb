@@ -1,0 +1,47 @@
+<%= render partial: "shared/header" %>
+
+<div class="container text-center mt-5">
+  <div class="jumbotron" style="border: 1px solid #000;">
+    <h2 style="font-weight: bold; margin-top: 10px; text-align: left">Create User</h2>
+    <hr>
+    <%= form_for user do |f| %>
+      <div class="row extra-padding">
+        <div class="col-sm-6">
+          <div class="field">
+            <%= f.label :first_name, class: 'required-label custom-label' %>
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control custom-text-field" %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="field">
+            <%= f.label :last_name, class: 'required-label custom-label' %>
+            <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control custom-text-field" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row extra-padding student-field">
+        <div class="col-sm-6">
+          <div class="field">
+            <%= f.label :email, class: 'required-label custom-label' %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control custom-text-field" %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="field">
+            <%= f.label :role, class: 'required-label custom-label' %><br />
+            <%= f.select :role_ids, options_for_select(Role.all.pluck(:name, :id)), {}, class: "form-control custom-text-field" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="actions">
+            <%= f.submit (f.object.id.present? ? "Edit User" : "Create User"), class: "btn btn-primary update-user" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

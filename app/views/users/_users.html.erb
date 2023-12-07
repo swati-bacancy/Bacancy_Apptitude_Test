@@ -1,0 +1,19 @@
+<table class="table table-striped user-table">
+	<tr>
+    <th> First Name </th>
+    <th> Last Name </th>
+    <th> email </th>
+    <th> User Role </th>
+    <th colspan="2"> Action</th>
+  </tr>
+  <tbody>
+	  <% @users&.each do |user| %>
+		  <%= render 'user', user: user%>
+	  <% end %>
+  </tbody>
+</table>	
+<%
+=begin%>
+ <%= pagy_bootstrap_nav(@pagy).html_safe %> 
+<%
+=end%>
