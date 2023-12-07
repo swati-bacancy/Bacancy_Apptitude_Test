@@ -4,17 +4,17 @@
   <td><%= user.email %></td>
   <td><%= user.roles_name.join(" ,")%></td>
 	<td>
-  	<%= link_to '', style: "color: black" do %>
-    	<div class="cross">
-      	<%= link_to content_tag(:i, nil, class: 'fa fa-edit', style: "color: black"), edit_user_path(user) %>
-    	</div>
-  	<% end %>
-	</td>	
-	<td>
-  	<%= link_to '', style: "color: black" do %>
-    	<div class="cross">
-      	<%= link_to content_tag(:i, nil, class: 'fa fa-trash', style: "color: black"), user_path(user), method: :delete %>
-    	</div>
-  	<% end %>	
+		<div style="display:flex; gap:10px; align-items:center">
+			<%= link_to '', style: "color: black" do %>
+				<div class="cross" style="margin-top: 2px;">
+					<%= link_to content_tag(:i, nil, class: 'fa fa-edit', style: "color: black"), edit_user_path(user) %>
+				</div>
+			<% end %>
+			<%= link_to '', style: "color: black" do %>
+				<div class="cross">
+					<%= link_to content_tag(:i, nil, class: 'fa fa-trash', style: "color: black"), user_path(user), method: :delete %>
+				</div>
+			<% end %>
+		</div>		
 	</td>
 </tr>
