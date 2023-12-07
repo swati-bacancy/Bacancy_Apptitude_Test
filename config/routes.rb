@@ -11,6 +11,7 @@
     end
       root 'home#index'
     resources :tests
+    resources :courses
     resources :users
     resources :questions
     resources :technical_questions

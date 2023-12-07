@@ -13,11 +13,11 @@
       <% @technical_questions.each_with_index do |question,index| %>
         <tr>
         	<td><%= index + 1 %></td>
-          <td width="100px"><%= raw(question.question_description) %></td>
+          <td width="200px"><%= raw(question.question_description) %></td>
           <td>
-          	<%= link_to 'Edit', edit_technical_question_path(question) %> |
-          	<%= link_to 'Show', technical_question_path(question) %> |
-          	<%= link_to 'Delete', technical_question_path(question), method: :delete, data: { confirm: 'Are you sure want to delete?' } %>
+          	<%= link_to 'Edit', edit_technical_question_path(question), class:"btn" %> |
+          	<%= link_to 'Show', technical_question_path(question), class:"btn" %> |
+          	<%= link_to 'Delete', technical_question_path(question), method: :delete, data: { confirm: 'Are you sure want to delete?' }, class:"btn"%>
           </td>
         </tr>
       <% end %>
@@ -26,5 +26,6 @@
   <div class="col-md-2">
     <%= link_to '+ Add a New Technical Question', new_technical_question_path, class: "btn btn-primary" %>
   </div>
-  <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+        <%= link_to 'Back', root_path, class: 'btn btn-secondary mt-2 p' %>
+
 </div>
