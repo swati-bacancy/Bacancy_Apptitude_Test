@@ -1,0 +1,15 @@
+<%= render partial: "shared/header"%>
+<div class="result-container">
+  <div class="user-section">
+    <h3> Details Users</h3>
+    <%= button_to 'Create User', new_user_path, method: :get, class: 'btn btn-primary create-user-btn' %>
+  </div>
+  <hr/>
+  <div class='all-users'>
+    <% if @users.present? %>
+      <%= render 'users', users: @users  %>
+    <% else %>
+      <%= "There is no user yet"%>
+    <% end %>  
+  </div>
+</div>

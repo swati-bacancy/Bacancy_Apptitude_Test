@@ -32,6 +32,7 @@ class StudentsController < ApplicationController
         redirect_to new_technical_student_answers_path
       end
       flash[:success] = "Welcome to the Test Page!"
+      binding.pry
     else
       render 'new'
     end

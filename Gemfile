@@ -38,6 +38,12 @@ gem 'paperclip'
 #parsley.js for form validation
 gem "parsley-rails"
 gem 'ckeditor'
+gem 'devise', '~> 4.9', '>= 4.9.2'
+gem "rolify"
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

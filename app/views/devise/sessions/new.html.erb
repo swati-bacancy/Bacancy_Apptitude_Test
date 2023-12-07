@@ -1,0 +1,7 @@
+<div class='google-btn'>
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= button_to "Sign in", omniauth_authorize_path(resource_name, provider), class: 'btn sign-btn', data: { turbo: false } %><br />
+    <% end %>
+  <% end %>
+</div>  

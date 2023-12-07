@@ -9,33 +9,35 @@
   <td><%= link_to "Check Answers", check_student_answers_path(result), remote: true %></td>
   <td><%= result.correct_answer %></td>
   <% if result.student.test.is_technical %>
-	  <td>
-		  <%= link_to 'Answer', technical_answers_path(result), remote: true %>
-	  </td>
+    <td>
+      <%= link_to 'Answer', technical_answers_path(result), remote: true  %>
+    </td>
+    <td>
+			<%= result.technical_marks ? result.technical_marks : 'Check Technical Answer' %>
+    </td>
+    <td><%= result.technical_marks.to_i + result.correct_answer.to_i %></td>
   <% else %>
-	  <td> Technical Test not available.</td>
+    <td colspan="3">Technical Test not available.</td>
   <% end %>
-  <td><%= result.technical_marks ? result.technical_marks : 'Check Technical Answer' %></td>
-  <td><%= result.technical_marks + result.correct_answer %></td>
   <td>
-	  <%= link_to result_path(result), style: "color: black" do %>
-		  <div class="cross">
-			  <%= link_to content_tag(:i, nil, class: 'fa fa-eye', style: "color: black"), result_path(result) %>
-		  </div>
-	  <% end %>
+    <%= link_to '', style: "color: black" do %>
+      <div class="cross">
+        <%= link_to content_tag(:i, nil, class: 'fa fa-eye', style: "color: black"), result_path(result) %>
+      </div>
+    <% end %>
   </td>
   <td>
-	  <%= link_to result_path(result), style: "color: black" do %>
-		  <div class="cross">
-			  <%= link_to content_tag(:i, nil, class: 'fa fa-edit', style: "color: black"), edit_result_path(result) %>
-		  </div>
-	  <% end %>
+    <%= link_to '', style: "color: black" do %>
+      <div class="cross">
+        <%= link_to content_tag(:i, nil, class: 'fa fa-edit', style: "color: black"), edit_result_path(result) %>
+      </div>
+    <% end %>  
   </td>
   <td>
-	  <%= link_to result_path(result), style: "color: black" do %>
-		  <div class="cross">
-			  <%= link_to content_tag(:i, nil, class: 'fa fa-trash', style: "color: black"), result_path(result) %>
-		  </div>
-	  <% end %>
-  </td>	
+    <%= link_to '', style: "color: black" do %>
+      <div class="cross">
+        <%= link_to content_tag(:i, nil, class: 'fa fa-trash', style: "color: black"), result_path(result), method: :delete %>
+      </div>
+    <% end %>  
+  </td>
 </tr>

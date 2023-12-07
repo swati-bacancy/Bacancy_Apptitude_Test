@@ -1,5 +1,6 @@
 include Pagy::Backend
 class ResultsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_result, only: [:show, :destroy, :edit, :update, :technical_answers, :check_student_answers]
   http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
 
@@ -30,7 +31,7 @@ class ResultsController < ApplicationController
   def edit
   end
 
-  def update
+  def update    
     if @result.update(result_params)
       flash[:success] = "Technical Marks Sucsessfully updated!"
       redirect_to results_path
@@ -46,10 +47,12 @@ class ResultsController < ApplicationController
     redirect_to results_path
   end
 
-  def technical_answers
+  def technical_answers    
     @student = @result.student
+    @result.update_attributes(checked_by:current_user.first_name)
     @answers = @student.answers.includes(:question)
     respond_to do |format|
+      format.html
       format.js
     end
   end
@@ -58,6 +61,7 @@ class ResultsController < ApplicationController
     @student = @result.student
     @student_answers = @student.student_answers
     respond_to do |format|
+      format.html
       format.js
     end
   end
@@ -80,7 +84,7 @@ class ResultsController < ApplicationController
   private
 
   def result_params
-    params.require(:result).permit(:technical_mark, :total_questions, :attempted_questions, :correct_answer, :roll_number, :technical_marks, :total_marks, :student_id, :test_id)
+    params.require(:result).permit(:total_questions, :attempted_questions, :correct_answer, :roll_number, :technical_marks, :total_marks, :checked_by, :student_id, :test_id)
   end
 
   def find_result

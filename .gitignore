@@ -10,14 +10,15 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/db/schema.rb
 
 # Ignore all logfiles and tempfiles.
 /tmp/*
 !/log/.keep
 /log/*
 !/tmp/.keep
-/db/schema.rb
 /log
+/db/schema.rb
 
 /node_modules
 /yarn-error.log
@@ -26,3 +27,6 @@
 /config/database.yml
 
 /public/assets
+.env
+.ruby-version
+.ruby-gemset
