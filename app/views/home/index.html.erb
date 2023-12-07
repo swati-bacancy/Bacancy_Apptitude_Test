@@ -1,15 +1,16 @@
-<div class="container-fluid">
+<div class="main-home-screen">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-8 left-div position-relative">
         <!-- Left div background image -->
         <img src="<%= asset_path('artboard1.svg') %>" alt="Left Background Image" class="img-fluid position-absolute w-40 h-100 manual-image">
-        <!-- Content of left div -->
+        <!-- Content of the left div -->
         <img src="<%= asset_path('tag1.svg') %>" alt="SVG1" style="height: 157px; display: inline-block; margin-right: 10px;">
         <img src="<%= asset_path('bacancy.svg') %>" alt="SVG2" style="height: 48px; display: inline-block; margin-left: 30px">
         <div class="centered-content">
           <h1>Welcome!👋</h1>
           <h2 class="heading">Bacancy Technology<br>Aptitude Test</h2>
-          <%= link_to "Register Here", new_student_path, class: "btn registration-button home-btn" %>
+          <%= link_to "Register Here", new_student_path, class: "btn registration-button home-btn"%>
         </div>
         <div class="centered-content-1">
           <img src="<%= asset_path('footer_desin.svg') %>" alt="footer-logo" class="mx-auto">
@@ -24,4 +25,4 @@
       </div>
     </div>
   </div>
-
+</div>

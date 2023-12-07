@@ -1,5 +1,4 @@
 <section class="vh-100 s-section">
-    <%= render "shared/error_messages", :target => @student %>
     <div class="student-registration">
     <div class="container-fluid h-100 p-0">
       <div class="row no-gutters h-100">
@@ -14,7 +13,8 @@
             <div class="card-body p-md-5">
               <div class="main-content-wrapper">
                   <img src="<%= asset_path('bacancy.svg') %>" alt="logo" class="image-logo mx-auto d-block" />
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" id="registration-form-heading">Student Registration Form</p>
+                <p class="text-center fw-bold mb-5 mx-1 mx-md-4 mt-4" id="registration-form-heading">Student Registration Form</p>
+                  <%= render "shared/error_messages", :target => @student %>
                 <%= form_for @student, :html => { class: 'form-horizontal', data: {parsley_validate: true}} do |f| %>
                   <div class="d-flex flex-row align-items-center mb-4">
                       <div class="form-outline flex-fill mb-0">

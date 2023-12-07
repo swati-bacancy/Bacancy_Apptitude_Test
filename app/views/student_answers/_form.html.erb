@@ -1,82 +1,90 @@
-<%= render partial: "shared/header_logout"%>
-  <div class="container" id="student_answer">
-    <h3><div id='warning_text'></div></h3>
-    <%= form_for @student_answer do |f| %>
-      <%= render "shared/error_messages", :target => @student_answer %>
-      <div class="rows-center text-center">
-        <label class="big-font">Please Fill Up The Following Questions:</label><br><br>
+<%= render partial: "shared/header_logout" %>
+<div class="container" id="student_answer">
+  <h3><div id='warning_text'></div></h3>
+  <%= form_for @student_answer do |f| %>
+    <%= render "shared/error_messages", :target => @student_answer %>
+    <div class="rows-center text-center">
+      <label class="big-font">Please Fill Up The Following Questions:</label><br><br>
+    </div>
+    <% @student.test.questions.order('random()').limit(25).each_with_index do |question, index| %>
+      <div class="question-row">
+        <div class="question-index">
+          <b><%= index + 1 %>.</b>
+        </div>
+        <div class="question-content">
+          <%= raw(question.question_description) %><br>
+          <div class="option-container col-md-12">
+            <% question.options.order(:option).each do |option| %>
+              <%= radio_button("response_item", question.id, option.id) %>
+              <%= option.option %>.
+              <%= option.option_value %><br><br>
+            <% end %>
+            <hr/>
+          </div>
+        </div>
       </div>
-      <% @student.test.questions.order('random()').limit(25).each_with_index do |question, index| %>
-        <div class="question-row">
-          <div class="question-index">
-            <b><%= index + 1 %>.</b>
-          </div>
-          <div class="question-content">
-            <%= raw(question.question_description) %><br>
-            <div class="option-container col-md-12">
-              <% question.options.order(:option).each do |option| %>
-                <%= radio_button("response_item", question.id, option.id) %>
-                <%= option.option %>.
-                <%= option.option_value %><br><br>
-              <% end %>
-              <hr/> 
-            </div>
-          </div>
-        </div>
-      <% end %>
-      <% if @student.test_started == false %>
-        <div class="col-md-12" style="margin-bottom: 3rem;">
-          <%= f.submit 'Submit' , class: "btn btn-primary", type: 'submit', id: 'submit'%>
-        </div>
-      <% end %>
     <% end %>
-  </div>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      var time = "<%= @student.test.total_time.blank? ? '' : @student.test.total_time %>";
-      if (time == "") {
-        var hours = "1";
-        var minutes = "0";
-      } else {
-        var hours = "<%= @student.test.total_time.split(':').first %>";
-        var minutes = "<%= @student.test.total_time.split(':').last %>";
-      }
-      if (<%= @student.test_started %> == false) {
-        $("#future_date").countdowntimer({
-          hours: hours,
-          minutes: minutes,
-          size: "lg",
-          timeUp: timeIsUp
-        });
-        $.ajax({
-          url: "/students/" + <%= @student.id %>,
-          method: 'put',
-          data: {
-            student: {
-              test_started: true
-            }
-          },
-          type: 'script'
-        });
+    <% if @student.test_started == false %>
+      <div class="col-md-12" style="margin-bottom: 3rem;">
+        <%= f.submit 'Submit' , class: "btn btn-primary", type: 'submit', id: 'submit' %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
-        function timeIsUp() {
-          $("#submit").trigger('click');
-        }
-      }
-      $('#student_answer').bind('cut copy paste', function(e) {
-        e.preventDefault();
-      });
-      $("#student_answer").on("contextmenu", function(e) {
+<script type="text/javascript">
+  $(document).ready(function() {
+    var submitted = false; // Declare the variable only once
+
+    var time = "<%= @student.test.total_time.blank? ? '' : @student.test.total_time %>";
+    if (time == "") {
+      var hours = "1";
+      var minutes = "0";
+    } else {
+      var hours = "<%= @student.test.total_time.split(':').first %>";
+      var minutes = "<%= @student.test.total_time.split(':').last %>";
+    }
+
+    if (<%= @student.test_started %> == false) {
+      $("#future_date").countdowntimer({
+        hours: hours,
+        minutes: minutes,
+        size: "lg",
+        timeUp: timeIsUp
       });
 
-      var submitted = false;
-      $("#new_student_answer").submit(function() {
-        submitted = true;
+      $.ajax({
+        url: "/students/<%= @student.id %>",
+        method: 'put',
+        data: {
+          student: {
+            test_started: true
+          }
+        },
+        type: 'script'
       });
-      $(window).bind('beforeunload', function() {
-        if (!submitted) {
-          return 'Are you sure you want to leave?';
-        }
-      });
+
+      function timeIsUp() {
+        $("#submit").trigger('click');
+      }
+    }
+
+    $('#student_answer').bind('cut copy paste', function(e) {
+      e.preventDefault();
     });
-  </script>
+
+    $("#student_answer").on("contextmenu", function(e) {
+      e.preventDefault();
+    });
+
+    $("#new_student_answer").submit(function() {
+      submitted = true;
+    });
+
+    $(window).bind('beforeunload', function() {
+      if (!submitted) {
+        return 'Are you sure you want to leave?';
+      }
+    });
+  });
+</script>
