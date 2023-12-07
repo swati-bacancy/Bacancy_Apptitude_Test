@@ -3,17 +3,6 @@
   <td><%= user.last_name %></td>
   <td><%= user.email %></td>
   <td><%= user.roles_name.join(" ,")%></td>
-  <%
-=begin%>
- <td>
-  	<%= link_to result_path(result), style: "color: black" do %>
-    	<div class="cross">
-      	<%= link_to content_tag(:i, nil, class: 'fa fa-eye', style: "color: black"), result_path(result) %>
-    	</div>
-  	<% end %>
-	</td> 
-<%
-=end%>
 	<td>
   	<%= link_to '', style: "color: black" do %>
     	<div class="cross">

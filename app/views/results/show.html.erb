@@ -58,12 +58,12 @@
 	    </div>
     </div>
 
-    <div class="row">
-	    <label class="col-md-2">Total Marks : </label>
-	    <div class="col-md-4">
-		    <p><%= @result.correct_answer.to_i + @result.technical_marks.to_i %></p>
-	    </div>
-    </div>
+		<div class="row">
+			<label class="col-md-2">Total Marks : </label>
+			<div class="col-md-4">
+				<p><%= @result.correct_answer.to_i + @result.technical_marks.to_i %></p>
+			</div>
+		</div>
 
     <%= link_to 'back', results_path, class: "btn btn-primary" %>
 </div>

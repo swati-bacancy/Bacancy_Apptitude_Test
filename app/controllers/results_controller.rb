@@ -32,7 +32,7 @@ class ResultsController < ApplicationController
   end
 
   def update    
-    if @result.update!(result_params)
+    if @result.update(result_params)
       flash[:success] = "Technical Marks Sucsessfully updated!"
       redirect_to results_path
     else
