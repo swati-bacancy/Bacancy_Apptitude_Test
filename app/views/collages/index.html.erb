@@ -1,7 +1,7 @@
 <%= render partial: "shared/header"%>
 <div class="container">
   <h3> List of Colleges</h3>
-  <table class="table table-striped">
+  <table class="table table-striped", style="width:70% !important">
     <thead>
       <tr>
         <th>College Name</th>
@@ -13,9 +13,23 @@
         <tr>
           <td><%= collage.name %></td>
           <td>
-            <%= link_to 'Show', collage_path(collage) %> |
-            <%= link_to 'Edit', edit_collage_path(collage) %> |
-            <%= link_to 'Delete', collage_path(collage), method: :delete, data: {confirm: 'Are You Sure You Want To Delete?'} %>
+            <div class="test-action">  
+              <%= link_to '', style: "color: black" do %>
+				        <div class="cross">
+                  <%= link_to content_tag(:i, nil, class: 'fa fa-eye', style: "color: black"), collage_path(collage) %>
+                </div>  
+              <% end %>
+              <%= link_to '', style: "color: black" do %>
+				        <div class="cross">
+                  <%= link_to content_tag(:i, nil, class: 'fa fa-edit', style: "color: black"),edit_collage_path(collage) %>
+                </div>  
+              <% end %>
+              <%= link_to '', style: "color: black" do %>
+				        <div class="cross">
+                  <%= link_to content_tag(:i, nil, class: 'fa fa-trash', style: "color: black"), collage_path(collage), method: :delete %>
+                </div>  
+              <% end %>
+            </div>  
           </td>
         </tr>
       <% end %>
