@@ -24,7 +24,7 @@
         </div>
       </div>
     <% end %>
-    <% if @student.test_started == false %>
+    <% if @student.test_started %>
       <div class="col-md-12" style="margin-bottom: 3rem;">
         <%= f.submit 'Submit' , class: "btn btn-primary", type: 'submit', id: 'submit' %>
       </div>

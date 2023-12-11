@@ -1,6 +1,8 @@
 <%= render partial: "shared/header"%>
 
 <p id="notice"><%= notice %></p>
-
+<h2 class="text-center"><%= @course.name%></h2>
+<div class="text-center">
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
+</div>
