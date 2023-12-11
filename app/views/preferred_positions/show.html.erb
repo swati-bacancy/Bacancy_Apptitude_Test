@@ -1,6 +1,8 @@
 <%= render partial: "shared/header"%>
 
 <p id="notice"><%= notice %></p>
-
+<h2 class="text-center"><%= @preferred_position.name%></h2>
+<div class="text-center">
 <%= link_to 'Edit', edit_preferred_position_path(@preferred_position) %> |
 <%= link_to 'Back', preferred_positions_path %>
+</div>

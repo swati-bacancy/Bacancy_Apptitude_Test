@@ -3,9 +3,10 @@ body{
 }
 .s-section {
     overflow-x: hidden;
+
+    overflow-y: hidden;
     background-color: #eee;
 }
-
 
 .student-registration .smaller-image {
     max-width: 100%;
@@ -13,7 +14,7 @@ body{
 }
 
 .student-registration .main-content-wrapper {
-    padding: 30px;
+    padding: 10px;
     margin-left: 240px;
     /* Added margin-left */
     width: 70%;
@@ -21,12 +22,13 @@ body{
     height: 80vh;
     /* Increased height */
 }
+
 .student-registration .card-body{
     height: 400px;
 }
 
 .student-registration .custom-text-field {
-    height: 40px;
+    height: 35px;
     border-radius: 7px;
     font-size: 18px;
 }
@@ -42,13 +44,14 @@ body{
     font-size: 15px;
     color: red;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 7px;
 }
 
 .student-registration .required-label {
     font-weight: normal;
     font-size: 18px;
 }
+
 .student-registration .form-control-1{
     width: 100%;
 }
@@ -63,7 +66,7 @@ body{
     font-size: 18px;
 }
 .student-registration .form-horizontal {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .student-registration .btn:hover {
@@ -73,6 +76,8 @@ body{
 
 .student-registration #registration-form-heading {
     font-weight: bold;
+    font-size: 30px;
+    padding-top: 10px;
 }
 
 .student-registration .custom-dropdown {
@@ -118,7 +123,7 @@ body{
 }
 
 .student-registration .image-logo {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .student-registration .overlay-image {
