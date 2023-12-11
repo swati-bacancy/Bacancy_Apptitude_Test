@@ -40,4 +40,11 @@
       </div>
     <% end %>  
   </td>
+  <td>
+    <% if result.checked_by.present? %>
+      <%= result.checked_by %>
+    <% else %>
+      <span class="span-result"><%= "-" %></span>
+    <% end %>
+  </td>  
 </tr>
