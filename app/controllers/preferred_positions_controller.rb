@@ -1,6 +1,7 @@
 class PreferredPositionsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_user
   before_action :set_preferred_position, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
 
   def index
     @preferred_positions = PreferredPosition.all
@@ -37,11 +38,19 @@ class PreferredPositionsController < ApplicationController
   end
 
   private
-    def set_preferred_position
-      @preferred_position = PreferredPosition.find(params[:id])
-    end
 
-    def preferred_position_params
-      params.require(:preferred_position).permit(:name, :tech, :non_tech)
-    end
+  def set_preferred_position
+    @preferred_position = PreferredPosition.find(params[:id])
+  end
+
+  def preferred_position_params
+    params.require(:preferred_position).permit(:name, :tech, :non_tech)
+  end
+
+  def check_user
+    runless current_user.has_role?(:HR)
+      flash[:alert] = "You are not authorized to access this page."
+      redirect_to root_path
+    end   
+  end
 end

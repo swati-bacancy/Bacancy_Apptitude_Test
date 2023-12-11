@@ -1,6 +1,7 @@
 class TechnicalQuestionsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_user
   before_action :find_technical_question, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
 
   def index
   	@technical_questions = Question.technical
@@ -48,5 +49,12 @@ class TechnicalQuestionsController < ApplicationController
 
   def find_technical_question
   	@technical_question = Question.find(params[:id])
+  end
+
+  def check_user
+    unless current_user.has_role?(:HR)
+      flash[:alert] = "You are not authorized to access this page."
+      redirect_to root_path
+    end   
   end
 end

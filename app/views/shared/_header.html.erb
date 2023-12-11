@@ -2,54 +2,56 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <a class="navbar-brand" href="/"><%= image_tag 'logo-dark.png'%></a>
-      <li class="active"><%= link_to 'Home', root_path%></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Test
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><%= link_to 'Add', new_test_path%></li>
-          <li><%= link_to 'List', tests_path%></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Questions
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><%= link_to 'Add', new_question_path%></li>
-          <li><%= link_to 'List', questions_path%></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Technical Questions
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><%= link_to 'Add', new_technical_question_path%></li>
-          <li><%= link_to 'List', technical_questions_path%></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Colleges
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><%= link_to 'Add', new_collage_path%></li>
-          <li><%= link_to 'List', collages_path%></li>
-        </ul>
-      </li>
-
-      <li><%= link_to 'Results', results_path%></li>
-      </li>
-      <li><%= link_to 'Students', students_path%></li>
-      <li><%= link_to 'Preferred Positions', preferred_positions_path%></li>
-      <li><%= link_to 'Terms and Conditions', new_term_and_condition_path %></li>
-      <li><%= link_to 'Users', users_path %></li> 
+      <li class="active"><%= link_to 'Home', root_path %></li>
       <% if current_user.present? %>
-        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-      <% end %>   
+        <% if current_user.has_role?("Examinor") %>
+          <li><%= link_to 'Results', results_path %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        <% elsif current_user.has_role?("HR") %>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Test
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Add', new_test_path %></li>
+              <li><%= link_to 'List', tests_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Questions
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Add', new_question_path %></li>
+              <li><%= link_to 'List', questions_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Technical Questions
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Add', new_technical_question_path %></li>
+              <li><%= link_to 'List', technical_questions_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Colleges
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Add', new_collage_path %></li>
+              <li><%= link_to 'List', collages_path %></li>
+            </ul>
+          </li>
+          <li><%= link_to 'Results', results_path %></li>
+          <li><%= link_to 'Students', students_path %></li>
+          <li><%= link_to 'Preferred Positions', preferred_positions_path %></li>
+          <li><%= link_to 'Terms and Conditions', new_term_and_condition_path %></li>
+          <li><%= link_to 'Users', users_path %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 </nav>
-<style type="text/css">
-  img{ margin-top: -11px;}
-</style>

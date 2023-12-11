@@ -1,7 +1,8 @@
 include Pagy::Backend
 class StudentsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_user
   before_action :find_student, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD, only: [:index, :edit, :destroy] unless Rails.env == "development"
 
   def index
     @students = Student.all
@@ -97,5 +98,12 @@ class StudentsController < ApplicationController
 
   def find_student
     @student = Student.find(params[:id])
+  end
+
+  def check_user
+    unless current_user.has_role?(:HR)
+      flash[:alert] = "You are not authorized to access this page."
+      redirect_to root_path
+    end  
   end
 end
