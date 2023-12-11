@@ -2,7 +2,7 @@
 <div class="container" id="student_answer">
   <h3><div id='warning_text'></div></h3>
   <%= form_for @student_answer do |f| %>
-    <%= render "shared/error_messages", :target => @student_answer %>
+    <%= render "shared/error_messages", target: @student_answer %>
     <div class="rows-center text-center">
       <label class="big-font">Please Fill Up The Following Questions:</label><br><br>
     </div>
@@ -24,9 +24,10 @@
         </div>
       </div>
     <% end %>
-    <% if @student.test_started %>
+
+    <% unless @student.test_started %>
       <div class="col-md-12" style="margin-bottom: 3rem;">
-        <%= f.submit 'Submit' , class: "btn btn-primary", type: 'submit', id: 'submit' %>
+        <%= f.submit 'Submit', class: "btn btn-primary", type: 'submit', id: 'submit' %>
       </div>
     <% end %>
   <% end %>
