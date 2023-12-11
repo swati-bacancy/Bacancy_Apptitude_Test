@@ -1,6 +1,6 @@
 <%= render partial: "shared/header"%>
 <div class="container">
-  <h3>List Of Questions</h3>
+  <h3>List Of Preferred Positions</h3>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -17,15 +17,30 @@
         <td><%= preferred_position.name %></td>
         <td><%= preferred_position.tech %></td>
           <td><%= preferred_position.non_tech %></td>
-        <td><%= link_to 'Show', preferred_position %></td>
-        <td><%= link_to 'Edit', edit_preferred_position_path(preferred_position) %></td>
-        <td><%= link_to 'Destroy', preferred_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="test-action">  
+            <%= link_to '', style: "color: black" do %>
+              <div class="cross">
+                <%= link_to content_tag(:i, nil, class: 'fa fa-eye', style: "color: black"), preferred_position_path(preferred_position) %>
+              </div>  
+            <% end %>
+            <%= link_to '', style: "color: black" do %>
+              <div class="cross">
+                <%= link_to content_tag(:i, nil, class: 'fa fa-edit', style: "color: black"), edit_preferred_position_path(preferred_position) %>
+              </div>  
+            <% end %>
+            <%= link_to '', style: "color: black" do %>
+              <div class="cross">
+                <%= link_to content_tag(:i, nil, class: 'fa fa-trash', style: "color: black"), preferred_position_path(preferred_position), method: :delete %>
+              </div>  
+            <% end %>
+          </div>  
+        </td>
       </tr>
     <% end %>
   </tbody>
   </table>
-  <div class="col-md-2">
-    <%= link_to 'New Preferred Position', new_preferred_position_path %>
+  <div class="col-md-2 preferred-btn">
+    <%= link_to 'New Preferred Position', new_preferred_position_path, class: "btn btn-primary" %>
   </div>
-  <%= link_to 'Back', root_path, class: "btn btn-primary" %>
 </div>

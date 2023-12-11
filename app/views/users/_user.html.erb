@@ -4,9 +4,9 @@
   <td><%= user.email %></td>
   <td><%= user.roles_name.join(" ,")%></td>
 	<td>
-		<div style="display:flex; gap:10px; align-items:center">
+		<div class="action-main">
 			<%= link_to '', style: "color: black" do %>
-				<div class="cross" style="margin-top: 2px;">
+				<div class="cross user-action">
 					<%= link_to content_tag(:i, nil, class: 'fa fa-edit', style: "color: black"), edit_user_path(user) %>
 				</div>
 			<% end %>

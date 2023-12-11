@@ -2,26 +2,38 @@
 <div class="container">
   <h3>List Of Questions</h3>
   <table class="table table-striped">
-    <thead>
-      <tr>
-      	<th>ID</th>
-        <th>Question Description</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @questions.each_with_index do |question,index| %>
+    <tr>
+      <th>ID</th>
+      <th>Question Description</th>
+      <th colspan="2">Action</th>
+    </tr>
+    <% @questions.each_with_index do |question,index| %>
+      <tbody>
         <tr>
-        	<td><%= index + 1 %></td>
+          <td><%= index + 1 %></td>
           <td width="950px"><%= raw(question.question_description) %></td>
           <td>
-          	<%= link_to 'Edit', edit_question_path(question) %> |
-          	<%= link_to 'Show', question_path(question) %> |
-          	<%= link_to 'Delete', question_path(question), method: :delete, data: { confirm: 'Are you sure want to delete?' } %>
-          </td>
+            <div class="test-action">  
+              <%= link_to '', style: "color: black" do %>
+                <div class="cross">
+                  <%= link_to content_tag(:i, nil, class: 'fa fa-eye', style: "color: black"), question_path(question) %>
+                </div>  
+              <% end %>
+              <%= link_to '', style: "color: black" do %>
+                <div class="cross">
+                  <%= link_to content_tag(:i, nil, class: 'fa fa-edit', style: "color: black"), edit_question_path(question) %>
+                </div>  
+              <% end %>
+              <%= link_to '', style: "color: black" do %>
+                <div class="cross">
+                  <%= link_to content_tag(:i, nil, class: 'fa fa-trash', style: "color: black"), question_path(question), method: :delete %>
+                </div>  
+              <% end %>
+            </div>  
+            </td>
+          </tbody>  
         </tr>
-      <% end %>
-    </tbody>
+    <% end %>
   </table>
   <div class="col-md-2">
     <%= link_to '+ Add a New Question', new_question_path, class: "btn btn-primary" %>
