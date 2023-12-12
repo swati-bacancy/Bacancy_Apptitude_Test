@@ -47,10 +47,5 @@ class PreferredPositionsController < ApplicationController
     params.require(:preferred_position).permit(:name, :tech, :non_tech)
   end
 
-  def check_user
-    runless current_user.has_role?(:HR)
-      flash[:alert] = "You are not authorized to access this page."
-      redirect_to root_path
-    end   
-  end
+  
 end

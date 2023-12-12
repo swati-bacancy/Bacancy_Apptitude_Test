@@ -27,11 +27,4 @@ class TermAndConditionsController < ApplicationController
   def term_and_condition_params
     params.require(:term_and_condition).permit(:content)
   end
-
-  def check_user
-    unless current_user.has_role?(:HR)
-      flash[:alert] = "You are not authorized to access this page."
-      redirect_to root_path
-    end   
-  end
 end

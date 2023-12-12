@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_test, only:[:show, :edit, :update, :destroy]
   before_action :check_user
+  before_action :find_test, only:[:show, :edit, :update, :destroy]
 
   def new
     @test = Test.new
@@ -48,10 +48,4 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def check_user
-    unless current_user.has_role?(:HR)
-      flash[:alert] = "You are not authorized to access this page."
-      redirect_to root_path
-    end   
-  end
 end

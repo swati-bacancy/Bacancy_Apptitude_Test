@@ -49,11 +49,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :role_ids)
   end
-
-  def check_user
-    unless current_user.has_role?(:HR)
-      flash[:alert] = "You are not authorized to access this page."
-      redirect_to root_path
-    end   
-  end
 end

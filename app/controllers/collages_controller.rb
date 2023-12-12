@@ -49,11 +49,4 @@ class CollagesController < ApplicationController
   def find_collage
   	@collage = Collage.find(params[:id])
   end
-
-  def check_user
-    unless current_user.has_role?(:HR)
-      flash[:alert] = "You are not authorized to access this page."
-      redirect_to root_path
-    end   
-  end
 end
