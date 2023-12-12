@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_user
   before_action :find_question, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
 
   def index
   	@questions = Question.non_technical

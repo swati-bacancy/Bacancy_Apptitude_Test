@@ -1,6 +1,7 @@
 class CollagesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_user
   before_action :find_collage, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
 
   def index
   	@collages = Collage.all

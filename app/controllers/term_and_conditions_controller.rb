@@ -1,4 +1,6 @@
 class TermAndConditionsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_user
   before_action :set_term_and_condition, only: [:show, :edit, :update, :destroy]
   
   def new

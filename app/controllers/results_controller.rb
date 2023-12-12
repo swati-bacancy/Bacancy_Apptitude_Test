@@ -2,7 +2,6 @@ include Pagy::Backend
 class ResultsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_result, only: [:show, :destroy, :edit, :update, :technical_answers, :check_student_answers]
-  http_basic_authenticate_with name: Password::USERNAME, password: Password::PASSWORD unless Rails.env == "development"
 
   require 'csv'
 
